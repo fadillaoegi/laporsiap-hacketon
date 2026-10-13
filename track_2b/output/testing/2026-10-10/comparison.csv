@@ -1,0 +1,7 @@
+scenario,mode,result,successful_known_total,successful_unknown_amount,event_count,manual_entries_authored,ai_entries_corrected,draft_request_ui_ms,provider_duration_ms,input_tokens,output_tokens,recording_seconds,recording,result_file
+S01,apertus,Success,180000,0,5,0,0,6018,5775,542,354,38.0,output/testing/2026-10-10/S01/apertus/2026-10-10T05-44-22.926Z/LaporSiap_Success_1.mp4,output/testing/2026-10-10/S01/apertus/2026-10-10T05-44-22.926Z/result.json
+S01,manual,Success,180000,0,5,5,,143,,,,10.466667,output/testing/2026-10-10/S01/manual/2026-10-10T05-43-55.142Z/LaporSiap_Success_1.mp4,output/testing/2026-10-10/S01/manual/2026-10-10T05-43-55.142Z/result.json
+S02,apertus,Success,,0,3,0,0,3558,3380,459,202,36.533333,output/testing/2026-10-10/S02/apertus/2026-10-10T05-45-01.254Z/LaporSiap_Success_1.mp4,output/testing/2026-10-10/S02/apertus/2026-10-10T05-45-01.254Z/result.json
+S02,manual,Success,,0,3,3,,133,,,,8.833008,output/testing/2026-10-10/S02/manual/2026-10-10T05-44-14.315Z/LaporSiap_Success_1.mp4,output/testing/2026-10-10/S02/manual/2026-10-10T05-44-14.315Z/result.json
+S03,apertus,Success,225000,1,3,0,0,4005,3664,473,212,42.333333,output/testing/2026-10-10/S03/apertus/2026-10-10T05-45-36.605Z/LaporSiap_Success_1.mp4,output/testing/2026-10-10/S03/apertus/2026-10-10T05-45-36.605Z/result.json
+S03,manual,Success,225000,1,3,3,,131,,,,10.6,output/testing/2026-10-10/S03/manual/2026-10-10T05-44-32.037Z/LaporSiap_Success_1.mp4,output/testing/2026-10-10/S03/manual/2026-10-10T05-44-32.037Z/result.json

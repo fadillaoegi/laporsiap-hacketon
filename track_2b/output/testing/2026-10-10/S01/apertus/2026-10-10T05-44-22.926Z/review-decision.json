@@ -1,0 +1,7 @@
+{
+  "approved": true,
+  "reviewer": "Codex assistant",
+  "independent_human_evaluation": false,
+  "entries_corrected": 0,
+  "reason": "Compared all five summaries with the full sources. The commission remains a promise, both deposits remain requests, M3 remains the sender's claim with unknown transfer time, and M5 remains pending. Source IDs, order and full quotes including the final newline were checked separately. Omitted task/account details remain in the full evidence quote; no new outcome, amount, transfer time or refund is asserted."
+}

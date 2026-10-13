@@ -1,0 +1,78 @@
+{
+  "app": "LaporSiap",
+  "result": "Success",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": true,
+  "draft_metadata": {
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "language": "en",
+    "generated_at": "2026-10-09T23:40:01Z",
+    "duration_ms": 3535,
+    "usage": {
+      "input_tokens": 545,
+      "output_tokens": 366
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "provider_diagnostic": null,
+  "started_at": "2026-10-09T23:39:09.965Z",
+  "finished_at": "2026-10-09T23:41:45.389Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "235d5838e3ca91d00b116a8c68c928c60a25f7139df7ca7d",
+  "revision": 5,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-09T23:39:11.738Z",
+      "finished_at": "2026-10-09T23:39:28.324Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-09T23:39:28.326Z",
+      "finished_at": "2026-10-09T23:39:36.577Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-09T23:39:36.577Z",
+      "finished_at": "2026-10-09T23:39:50.896Z"
+    },
+    {
+      "name": "04 — Live Apertus draft",
+      "status": "passed",
+      "started_at": "2026-10-09T23:39:50.896Z",
+      "finished_at": "2026-10-09T23:40:05.563Z"
+    },
+    {
+      "name": "05 — Compare sources and edit all five entries",
+      "status": "passed",
+      "started_at": "2026-10-09T23:40:05.565Z",
+      "finished_at": "2026-10-09T23:40:22.571Z"
+    },
+    {
+      "name": "06 — Review sources, transfers and unknown details",
+      "status": "passed",
+      "started_at": "2026-10-09T23:40:22.571Z",
+      "finished_at": "2026-10-09T23:40:52.693Z"
+    },
+    {
+      "name": "07 — Download ZIP and chronology TXT",
+      "status": "passed",
+      "started_at": "2026-10-09T23:40:52.697Z",
+      "finished_at": "2026-10-09T23:41:04.276Z"
+    },
+    {
+      "name": "08 — Check revision history and the final result",
+      "status": "passed",
+      "started_at": "2026-10-09T23:41:04.276Z",
+      "finished_at": "2026-10-09T23:41:09.372Z"
+    }
+  ]
+}

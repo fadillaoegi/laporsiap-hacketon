@@ -1,0 +1,83 @@
+{
+  "id": "actor-direction-v6-time-preserved-en",
+  "language": "en",
+  "category": "targeted_actor_direction_regression",
+  "started_at": "2026-10-11T07:59:57.936Z",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "contract_passed": true,
+  "state_verified": true,
+  "transfers_unchanged": true,
+  "original_sources_unchanged": true,
+  "failed_draft_not_saved": false,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Preserve sending IDR 264000 and no refund as two assertions.",
+    "Do not assign the payment amount to an unspecified refund.",
+    "Recruiter is the promisor, not the message sender.",
+    "IDR 63000 commission is promised next week and not paid."
+  ],
+  "provider_attempts": 1,
+  "case_id": "83c2737bd42ffd6136ac17a751abe8d57851ef90dd67ff3e",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I sent IDR 264,000. No refund has reached me.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 12:00"
+    },
+    {
+      "id": "M2",
+      "text": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 12:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "en",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "I sent IDR 264,000. No refund has reached me."
+      },
+      {
+        "id": "M2",
+        "text": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "9e28b6bbcddfcab9bb77fb0eac36d00f2cc2a4157efaaba79d7eee7a0a9014cd"
+  },
+  "draft_request_seconds": 3.9624693750000004,
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender states they sent IDR 264,000 and no refund has been received.",
+        "evidence": "I sent IDR 264,000. No refund has reached me."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender reports the recruiter promises IDR 63,000 commission next week; it has not been paid.",
+        "evidence": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-11T08:00:05Z",
+    "duration_ms": 3857,
+    "usage": {
+      "input_tokens": 782,
+      "output_tokens": 94
+    },
+    "prompt_version": "bilingual-v6-time-preserved",
+    "prompt_sha256": "96e58e67a5dafec4ac1c23d788619ed6acfa048a5e887872112e25a3baafb96e",
+    "privacy_mode": "redacted"
+  },
+  "required_timing_preserved": true,
+  "recording": "actor-direction-v6-time-preserved-en/LaporSiap_Success_1.mp4"
+}

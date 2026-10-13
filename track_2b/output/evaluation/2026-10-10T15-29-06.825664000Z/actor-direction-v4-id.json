@@ -1,0 +1,51 @@
+{
+  "id": "actor-direction-v4-id",
+  "language": "id",
+  "category": "targeted_actor_direction_regression",
+  "status": "failed_or_rejected",
+  "error": "Apertus tidak merespons dalam batas waktu atau koneksi gagal. Coba lagi atau gunakan draft manual.",
+  "api_status": 502,
+  "started_at": "2026-10-10T15:29:46Z",
+  "case_id": "99463f1c82a935ab7ca633d54bbac6123e908f07e72dc3ea",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 12:00"
+    },
+    {
+      "id": "M2",
+      "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 12:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "id",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima."
+      },
+      {
+        "id": "M2",
+        "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "cc03c784780ea4761ae95a535f607b9e3fa828d46091513660a3bdba2118c367"
+  },
+  "contract_passed": false,
+  "transfers_unchanged": false,
+  "draft_request_seconds": 40.014877875,
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Preserve sending IDR 264000 and no refund as two assertions.",
+    "Do not assign the payment amount to an unspecified refund.",
+    "Recruiter is the promisor, not the message sender.",
+    "IDR 63000 commission is promised next week and not paid."
+  ]
+}

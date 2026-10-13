@@ -1,0 +1,66 @@
+{
+  "app": "LaporSiap",
+  "result": "Success",
+  "mode": "manual",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": false,
+  "started_at": "2026-10-09T18:36:39.278Z",
+  "finished_at": "2026-10-09T18:39:04.851Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "7ed1da2489e769695098f696e7710ae8a89c555262176f04",
+  "revision": 5,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-09T18:36:41.086Z",
+      "finished_at": "2026-10-09T18:36:57.563Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-09T18:36:57.564Z",
+      "finished_at": "2026-10-09T18:37:05.714Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-09T18:37:05.714Z",
+      "finished_at": "2026-10-09T18:37:14.412Z"
+    },
+    {
+      "name": "04 — Create a manual draft",
+      "status": "passed",
+      "started_at": "2026-10-09T18:37:14.413Z",
+      "finished_at": "2026-10-09T18:37:22.694Z"
+    },
+    {
+      "name": "05 — Compare sources and edit all five entries",
+      "status": "passed",
+      "started_at": "2026-10-09T18:37:22.695Z",
+      "finished_at": "2026-10-09T18:37:50.366Z"
+    },
+    {
+      "name": "06 — Review sources, transfers and unknown details",
+      "status": "passed",
+      "started_at": "2026-10-09T18:37:50.366Z",
+      "finished_at": "2026-10-09T18:38:20.258Z"
+    },
+    {
+      "name": "07 — Download ZIP and chronology TXT",
+      "status": "passed",
+      "started_at": "2026-10-09T18:38:20.258Z",
+      "finished_at": "2026-10-09T18:38:27.792Z"
+    },
+    {
+      "name": "08 — Check revision history and the final result",
+      "status": "passed",
+      "started_at": "2026-10-09T18:38:27.792Z",
+      "finished_at": "2026-10-09T18:38:32.597Z"
+    }
+  ]
+}

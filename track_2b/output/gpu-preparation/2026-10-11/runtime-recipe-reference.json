@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/swiss-ai/model-launch/blob/main/images/vllm_apertus_1.5_release/Dockerfile",
+  "retrieved_on": "2026-10-11",
+  "recipe_sha256": "5439d5db099e9b8ca20f17eb68a4f14c3ee80781ccf1acc8c206219b41baa0d8",
+  "cuda": "13.0.0",
+  "vllm_commit": "a601a9d998ddeb488f0c17e8512874b116aa7658",
+  "transformers_commit": "3797303dda74844e3d1f8977ff5518bb91f818b4",
+  "runtime_recipe_not_executed": true
+}

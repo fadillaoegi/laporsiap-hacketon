@@ -1,0 +1,116 @@
+{
+  "scenario": "S03",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic": true,
+  "result": "Success",
+  "started_at": "2026-10-10T05:45:36.608Z",
+  "finished_at": "2026-10-10T05:46:28.111Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "5ad3d21223126b3cdbde64a9692cd40314a99aa06ca13848",
+  "summary": {
+    "successful_known_total": 225000,
+    "successful_count": 2,
+    "successful_unknown_amount": 1,
+    "status_counts": {
+      "failed": 0,
+      "pending": 1,
+      "successful": 2,
+      "unknown": 0
+    },
+    "warnings": [
+      "Transfer 1: tanggal transfer belum lengkap.",
+      "Transfer 2: nominal, tanggal transfer belum lengkap.",
+      "Transfer 3: tanggal transfer belum lengkap.",
+      "Total sebagian: ada transfer berhasil dengan nominal belum diketahui."
+    ]
+  },
+  "original_draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Sender claims first IDR 225,000 transfer was successful but states transfer time is unrecorded.",
+        "evidence": "The first IDR 225,000 transfer was successful, but I have not recorded its transfer time."
+      },
+      {
+        "source_id": "M2",
+        "description": "Sender claims second transfer was successful but states amount and transfer time are not found.",
+        "evidence": "My second transfer was successful too. I cannot find its amount or transfer time yet."
+      },
+      {
+        "source_id": "M3",
+        "description": "Sender states third IDR 410,000 transfer is still pending and not completed.",
+        "evidence": "The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T05:45:50Z",
+    "duration_ms": 3664,
+    "usage": {
+      "input_tokens": 473,
+      "output_tokens": 212
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "draft_request_ui_ms": 4005,
+  "manual_entries_authored": 0,
+  "ai_entries_corrected": 0,
+  "uploads": [
+    {
+      "filename": "fictional-transfer-reference.pdf",
+      "size": 2339,
+      "sha256": "fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3",
+      "round_trip_identical": true
+    },
+    {
+      "filename": "S03-conversation-reference.png",
+      "size": 68838,
+      "sha256": "689c9073bbee9ba641a1503b93a773c8f4d1e44ec27923b3326f940d7c5781d3",
+      "round_trip_identical": true
+    },
+    {
+      "filename": "S03-transfer-notes.jpg",
+      "size": 138649,
+      "sha256": "6771e2068ed2ef1b3b22163fb076daaf91b544bcdcb0270353472c1c1bc113ad",
+      "round_trip_identical": true
+    }
+  ],
+  "steps": [
+    {
+      "name": "Import conversation TXT and save transfer inputs",
+      "started_at": "2026-10-10T05:45:38.581Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:45:43.623Z"
+    },
+    {
+      "name": "Upload PDF, PNG and JPEG; link and download each original",
+      "started_at": "2026-10-10T05:45:43.625Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:45:46.786Z"
+    },
+    {
+      "name": "Create draft with consent gates",
+      "started_at": "2026-10-10T05:45:46.786Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:45:51.081Z"
+    },
+    {
+      "name": "Review meaning and confirm current revision",
+      "started_at": "2026-10-10T05:45:51.081Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:46:19.169Z"
+    },
+    {
+      "name": "Export reviewed ZIP and TXT; verify sources, transfers and attachments",
+      "started_at": "2026-10-10T05:46:19.172Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:46:20.884Z"
+    }
+  ],
+  "limitation": "Developer browser automation with assistant source review. Includes deliberate browser delays and review waiting; not human task time or an independent accuracy/speed study."
+}

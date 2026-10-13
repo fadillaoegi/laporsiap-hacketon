@@ -1,0 +1,73 @@
+LaporSiap private deployment / deployment pribadi
+
+STATUS
+The compiled app and PostgreSQL have been exercised locally on port 8877.
+GPU inference is prepared but has not been run. No model weights are included.
+Public AI remains an external provider. Endpoint configurability and Docker
+configuration alone are not evidence of independent model deployment.
+
+LOCAL COMPILED APP
+Prerequisites: Docker/Compose, PostgreSQL 18 image, internet for initial builds.
+  python3 scripts/init-private-deploy.py
+  docker compose --env-file deploy/.env -f deploy/compose.yaml build app
+  docker compose --env-file deploy/.env -f deploy/compose.yaml up -d --wait
+Open http://127.0.0.1:8877. The new database/volume is separate from development.
+The initializer refuses to overwrite deploy/.env; keep its mode 600. Provider
+settings are empty by default, so the manual workflow requires no external AI.
+The app runs as UID 65532 with a read-only root filesystem, dropped capabilities,
+and no-new-privileges. Ports are loopback only. Do not serve the repository.
+  docker compose --env-file deploy/.env -f deploy/compose.yaml stop
+Stop preserves the volume. Database deletion and retention do not erase previous
+backups, physical disk remnants or separately downloaded exports.
+
+REMOTE GPU — OPERATOR ACCESS REQUIRED
+Use the official swiss-ai/Apertus-v1.5-70B checkpoint and its official compatible
+Swiss AI vLLM runtime. This is a gated model: the account owner must read and
+accept the model's access terms. The project does not accept those terms for you.
+The official model card describes BF16 weights and tensor parallelism of four.
+Planning estimate: 72 billion x two bytes is approximately 144 GB for weights
+alone, before KV cache and runtime overhead. This is not a hardware benchmark.
+An 8 GB Mac cannot validate this BF16 setup. Actual GPU capacity and runtime
+compatibility must be checked on the target server before spending on inference.
+
+Add these values to the server's private deploy/.env, never Git or a command log:
+  APERTUS_RUNTIME_IMAGE=<official compatible image>@sha256:<verified digest>
+  APERTUS_WEIGHTS_REVISION=<official checkpoint commit>
+  APERTUS_TENSOR_PARALLEL=4
+  DEPLOY_APERTUS_API_KEY=<random private model-server access key>
+  HF_TOKEN=<owner's authorized read token, if needed for gated download>
+Do not use the all-zero validation placeholders as actual image/revision values.
+Verify the pinned runtime supports all flags in compose.gpu.yaml using its
+serve --help. Prompt/access logging flags and model compatibility have not been
+executed here. Keep request logs disabled. Preserve the digest and revision in
+the eventual deployment evidence; record no secrets, raw prompts or tokens.
+
+  docker compose --env-file deploy/.env -f deploy/compose.yaml -f deploy/compose.gpu.yaml config --quiet
+  docker compose --env-file deploy/.env -f deploy/compose.yaml -f deploy/compose.gpu.yaml up -d --wait
+The app shares the inference network namespace. Inference binds 127.0.0.1:9000;
+only the app port is published on server loopback 8877. Use a private SSH tunnel:
+  ssh -L 8877:127.0.0.1:8877 <operator>@<GPU-host>
+This kit does not add public accounts, TLS termination or victim-data hosting.
+
+EVIDENCE REQUIRED BEFORE CLAIMING SOVEREIGN DEPLOYMENT
+Record runtime digest/checkpoint commit, GPU model/count/VRAM, startup and health,
+GET /v1/models model alias, one fictional request through the app, exact quotes,
+token usage and latency, review/export, GPU utilization and measured hourly cost.
+Check provider outages still leave manual drafting usable. A returned model alias
+is not by itself a weights audit. GPU cost and capacity remain unmeasured.
+
+Sources checked 10 October 2026:
+https://huggingface.co/swiss-ai/Apertus-v1.5-70B
+https://docs.docker.com/compose/how-tos/gpu-support/
+https://docs.docker.com/reference/compose-file/merge/
+https://docs.vllm.ai/en/latest/getting_started/quickstart/
+
+Indonesia: Paket aplikasi lokal telah diuji. Model 70B mandiri belum dijalankan;
+akses server GPU dan persetujuan akses model oleh pemilik masih diperlukan.
+Jangan menyatakan deployment GPU atau manfaat pengguna sudah terbukti.
+
+Pembaruan11Oktober2026: langkah GPU lengkap di deploy/GPU-PROOF.txt. Pin publik
+nyata di gpu-lock.json; preflight/runtimecollector di scripts/gpu. ComposeGPU
+menyetel origin8878 untuk tunnel8878->remote8877. Gunakan project terpisah
+laporsiap-gpu-proof. RuteRunpod harus inference-only, sebab Pod tidak mendukung
+DockerCompose. Persiapan/pin tervalidasi bukan bukti GPU telah dijalankan.

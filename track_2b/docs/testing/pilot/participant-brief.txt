@@ -1,0 +1,79 @@
+LaporSiap — participant brief / panduan peserta
+
+INDONESIA
+
+Kita menguji aplikasi, bukan kemampuan Anda. Semua percakapan, nama, bank,
+rekening, dan transaksi dalam bahan ini fiktif. Anda tidak perlu pernah
+mengalami penipuan. Berperanlah sebagai orang yang menyiapkan bahan laporan
+dari percakapan dan catatan transfer yang diberikan.
+
+Fasilitator memberikan folder kasus serta mode manual atau Apertus. Jangan
+membuka folder fasilitator atau bahan kasus lain sebelum gilirannya. Antarmuka
+utama memakai English; jika bahasa membuat Anda kesulitan, beri tahu
+fasilitator. Pergantian bahasa dicatat, bukan dianggap sebagai kesalahan Anda.
+
+Tujuan: menghasilkan bahan laporan yang telah Anda periksa dan bisa diunduh.
+
+1. Buka aplikasi lokal, mulai kasus baru, dan tandai bahwa bahan ini simulasi.
+2. Impor TXT percakapan dari folder kasus Anda. Isi catatan transfer dari JPG
+   yang diberikan. Gunakan rekening dan status dalam bahan, tanpa menebak
+   nominal atau tanggal yang tidak diketahui.
+3. Simpan, lalu unggah PNG percakapan dan JPG catatan transfer sebagai lampiran.
+   Hubungkan PNG ke pesan pertama; hubungkan JPG ke transfer pertama.
+4. Buat draft dengan mode yang diberikan. Dalam mode manual, tulis sendiri
+   ringkasan setiap pesan. Dalam mode Apertus, baca informasi pengiriman teks
+   dan gunakan pilihan persetujuan dalam aplikasi jika Anda bersedia.
+5. Bandingkan setiap ringkasan dengan sumbernya. Perbaiki bila diperlukan,
+   simpan koreksi, dan selesaikan review hanya setelah Anda memeriksanya.
+6. Unduh ZIP dan TXT. Buka TXT untuk memastikan Anda memahami hasilnya.
+
+Kerjakan dengan cara yang terasa alami. Fasilitator mencatat waktu dan
+pertanyaan Anda. Anda boleh meminta bantuan atau berhenti. Ungkapkan bagian
+yang membingungkan; tidak perlu terus berbicara jika mengganggu pekerjaan.
+Jangan kirim bahan simulasi ke kanal pelaporan resmi.
+
+Setelah selesai, jawab dengan kata-kata Anda sendiri:
+- Apa arti total transfer yang ditampilkan? Apakah seluruh jumlah sudah pasti?
+- Informasi apa yang masih belum diketahui?
+- Bagaimana Anda menemukan sumber untuk satu ringkasan?
+- Apakah unduhan ini berarti laporan sudah terkirim? Apa langkah setelahnya?
+- Seberapa mudah tugas ini, dari 1 (sangat sulit) sampai 7 (sangat mudah)?
+- Bagian apa yang paling perlu diperbaiki?
+
+ENGLISH
+
+We are testing the app, not your ability. All conversations, names, banks,
+accounts, and transactions are fictional. You do not need to have experienced
+a scam. Act as someone preparing reporting materials from the supplied chat
+and transfer notes.
+
+The facilitator gives you a case folder and either manual or Apertus mode.
+Do not open facilitator files or another case until assigned. The main test
+uses the English interface. Tell the facilitator if language gets in the way;
+switching language will be recorded, not treated as your mistake.
+
+Goal: produce reporting materials that you have checked and can download.
+
+1. Open the local app, start a new case, and mark the materials as simulated.
+2. Import your case's conversation TXT. Enter transfers from its JPG notes.
+   Use the supplied accounts and statuses; do not guess unknown amounts or dates.
+3. Save, then upload the conversation PNG and transfer-notes JPG. Link the PNG
+   to the first message and the JPG to the first transfer.
+4. Create a draft using your assigned mode. In manual mode, write a summary of
+   each message yourself. In Apertus mode, read the text-sharing information
+   and use the in-app consent option if you agree.
+5. Compare every summary with its source. Correct it when needed, save your
+   changes, and complete the review only after checking the materials yourself.
+6. Download ZIP and TXT. Open TXT to check that you understand the result.
+
+Work naturally. The facilitator records timing and questions. You may ask for
+help or stop. Mention confusing parts; you need not talk constantly if that
+disrupts your work. Do not send these fictional materials to official channels.
+
+After finishing, answer in your own words:
+- What does the displayed transfer total mean? Is the entire amount certain?
+- What information is still unknown?
+- How would you find the source for one summary?
+- Does downloading mean the report has been sent? What happens next?
+- How easy was the task, from 1 (very difficult) to 7 (very easy)?
+- What most needs improvement?

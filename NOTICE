@@ -1,0 +1,30 @@
+LaporSiap
+Copyright 2026 LaporSiap contributors.
+
+Original application source code and scripts are licensed under the Apache
+License 2.0; see LICENSE.
+
+Original project documentation, designs and presentation assets are licensed
+under Creative Commons Attribution 4.0 International; see LICENSES/CC-BY-4.0.txt.
+Attribution: LaporSiap contributors, LaporSiap project.
+
+Original synthetic input datasets are licensed under Community Data License
+Agreement - Permissive 2.0; see LICENSES/CDLA-Permissive-2.0.txt. This applies
+to the synthetic input TXT and transfer JSON fixtures under track_2b/docs/testing
+and track_2b/docs/evaluation, the original input files under track_2b/output/testing,
+the fictional demo data within demo.ts and recording-english.mjs, and files
+explicitly identified as original synthetic inputs under track_2b/output/simulation.
+The code surrounding those data is licensed under Apache 2.0.
+
+These grants cover original LaporSiap material only. They do not relicense
+third-party dependencies, referenced websites, imported user cases, or
+third-party model outputs. Apertus model weights are not distributed here.
+
+DM Sans and Manrope fonts retain their SIL Open Font License notices in
+track_2b/src/laporsiap_FE/public/fonts/. PDF font copies retain their original OFL notice
+in track_2b/src/laporsiap_BE/internal/infrastructure/reports/fonts/OFL.txt.
+
+Dependencies including React, Vite, pgx and fpdf retain their upstream
+licenses. Their versions are recorded in pnpm-lock.yaml, go.mod and go.sum.
+This notice is not a claim that all event submission requirements or
+third-party asset rights have been independently audited.

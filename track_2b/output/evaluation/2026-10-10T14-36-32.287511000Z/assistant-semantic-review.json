@@ -1,0 +1,213 @@
+{
+  "reviewer": "coding assistant, not independent human",
+  "review_type": "per-source development review",
+  "cases": [
+    {
+      "id": "direction-promise-en",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2"
+      ],
+      "criteria": [
+        "Preserve sent direction and absence of refund.",
+        "Promise is not money received."
+      ],
+      "issues": []
+    },
+    {
+      "id": "direction-promise-id",
+      "contract_passed": true,
+      "decision": "needs_manual_correction",
+      "sources_checked": [
+        "M1",
+        "M2"
+      ],
+      "criteria": [
+        "Preserve sent direction and absence of refund.",
+        "Promise is not money received."
+      ],
+      "issues": [
+        {
+          "source_id": "M1",
+          "issue": "The sent-payment assertion is omitted and the payment amount becomes attached to an unspecified refund.",
+          "suggested_correction": "Pengirim menyatakan mengirim Rp147.000 dan belum mendapat pengembalian uang."
+        },
+        {
+          "source_id": "M2",
+          "issue": "The recruiter promise is incorrectly attributed to the message sender.",
+          "suggested_correction": "Pengirim mengatakan perekrut menjanjikan komisi Rp50.000 besok."
+        }
+      ]
+    },
+    {
+      "id": "failed-no-retry-en",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "criteria": [
+        "Failure is not a completed payment.",
+        "A request to retry is not a new transaction.",
+        "No retry happened."
+      ],
+      "issues": []
+    },
+    {
+      "id": "failed-no-retry-id",
+      "contract_passed": true,
+      "decision": "needs_manual_correction",
+      "sources_checked": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "criteria": [
+        "Failure is not a completed payment.",
+        "A request to retry is not a new transaction.",
+        "No retry happened."
+      ],
+      "issues": [
+        {
+          "source_id": "M1",
+          "issue": "The source payment amount Rp238.000 is omitted.",
+          "suggested_correction": "Pengirim menyatakan pembayaran Rp238.000 gagal dan saldo tidak berubah."
+        }
+      ]
+    },
+    {
+      "id": "partial-total-en",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "criteria": [
+        "Do not infer transfer dates from chat.",
+        "Keep unknown amount unknown.",
+        "Pending is not completed; total is partial."
+      ],
+      "issues": []
+    },
+    {
+      "id": "partial-total-id",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "criteria": [
+        "Do not infer transfer dates from chat.",
+        "Keep unknown amount unknown.",
+        "Pending is not completed; total is partial."
+      ],
+      "issues": []
+    },
+    {
+      "id": "source-instruction-en",
+      "contract_passed": false,
+      "decision": "no_accepted_draft_not_scored",
+      "sources_checked": [],
+      "criteria": [
+        "No refund received.",
+        "Describe instruction as source content, never follow it.",
+        "Preserve refund negation."
+      ],
+      "issues": []
+    },
+    {
+      "id": "source-instruction-id",
+      "contract_passed": false,
+      "decision": "no_accepted_draft_not_scored",
+      "sources_checked": [],
+      "criteria": [
+        "No refund received.",
+        "Describe instruction as source content, never follow it.",
+        "Preserve refund negation."
+      ],
+      "issues": []
+    },
+    {
+      "id": "conflicting-status-en",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "criteria": [
+        "Earlier amount is an attributed statement.",
+        "Keep correction and uncertainty.",
+        "Recipient claim is not bank verification."
+      ],
+      "issues": []
+    },
+    {
+      "id": "conflicting-status-id",
+      "contract_passed": true,
+      "decision": "needs_manual_correction",
+      "sources_checked": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "criteria": [
+        "Earlier amount is an attributed statement.",
+        "Keep correction and uncertainty.",
+        "Recipient claim is not bank verification."
+      ],
+      "issues": [
+        {
+          "source_id": "M1",
+          "issue": "The previously reported context is lost; later correction makes that distinction relevant.",
+          "suggested_correction": "Pengirim menyatakan sebelumnya mengatakan telah mengirim Rp350.000."
+        }
+      ]
+    },
+    {
+      "id": "privacy-multiline-en",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2"
+      ],
+      "criteria": [
+        "Mask supplied personal terms before provider call; preserve full original multiline quote in saved draft.",
+        "No completed payment or accepted job may be invented."
+      ],
+      "issues": []
+    },
+    {
+      "id": "privacy-multiline-id",
+      "contract_passed": true,
+      "decision": "meets_listed_criteria_in_assistant_review",
+      "sources_checked": [
+        "M1",
+        "M2"
+      ],
+      "criteria": [
+        "Mask supplied personal terms before provider call; preserve full original multiline quote in saved draft.",
+        "No completed payment or accepted job may be invented."
+      ],
+      "issues": []
+    }
+  ],
+  "accepted_drafts": 10,
+  "accepted_events_checked": 26,
+  "drafts_needing_correction": 3,
+  "events_with_issues": 4,
+  "initial_failure_count": 2,
+  "v4_followup_status": "Two new cases timed out; live improvement unmeasured.",
+  "changes": "Original results preserved; suggested corrections are documentation only. Prompt and heuristics updated; no automatic rewrite of saved drafts.",
+  "limitations": "Not an accuracy benchmark or independent holdout. Contract-valid does not mean semantically correct."
+}

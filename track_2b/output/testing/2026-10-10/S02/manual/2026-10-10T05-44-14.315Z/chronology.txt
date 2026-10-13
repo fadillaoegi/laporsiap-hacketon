@@ -1,0 +1,43 @@
+LAPORSIAP — SUPPORTING REPORT MATERIALS
+Failed job registration deposit
+Revision: 10 | Reviewed: 2026-10-10T05:44:22Z
+SIMULATED DATA — NOT A REAL CASE OR TRANSACTION
+
+This document is not an IASC ticket, proof of report acceptance, or verification of transaction authenticity. There is no automatic submission. Use the official channel https://iasc.ojk.go.id/.
+
+CHRONOLOGY REVIEWED BY THE USER
+Draft origin: manual | Model (API metadata): Unknown | Language when generated: en
+
+1. [M1] Nadia requests a registration deposit of IDR 275,000 to ****4821.
+Sender: Nadia | Message time: 10/10/2026, 09:00:00 (not transfer time)
+Original source: Please pay a registration deposit of IDR 275,000 to ****4821.
+
+2. [M2] Raka says the IDR 275,000 transfer failed and the bank application shows failed.
+Sender: Raka | Message time: 10/10/2026, 09:01:00 (not transfer time)
+Original source: My IDR 275,000 transfer failed. The bank application shows failed.
+
+3. [M3] Nadia asks Raka to try again after checking his balance.
+Sender: Nadia | Message time: 10/10/2026, 09:02:00 (not transfer time)
+Original source: Please try again after checking your balance.
+
+
+TRANSFER DETAILS FROM USER INPUT
+Successful transfer amount reported by the user (known amounts): Unknown rupiah
+Successful transfers with unknown amounts: 0
+This total is not net losses or a bank-verified amount. Pending/failed/unconfirmed transfers are excluded.
+
+Account pair: Bank Aruna / ****7392 → Bank Lestari / ****4821
+- ae51c76b-f7b8-4c7b-9910-f98b5ccc89a4 | 275000 rupiah | Transfer date: Unknown | Failed | Note: Fictional user-entered record; transfer time unknown.
+
+DETAILS STILL TO COMPLETE / REVIEW
+- Transfer 1: missing transfer date.
+
+REFERENCE ATTACHMENTS (NO OCR / AUTHENTICITY VERIFICATION)
+- 5300a2ddfcbd3799b7471b602cf4c5cfc425705f9dab326d | fictional-transfer-reference.pdf | 2339 byte | SHA-256: fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3
+  User-selected links — messages: M1 | transfers: ae51c76b-f7b8-4c7b-9910-f98b5ccc89a4
+- 68b1447ae7096cca34d2f72511bfc04b4e688071237ec6cd | S02-conversation-reference.png | 63884 byte | SHA-256: 0d1ecc7d97e3938e3b8ccae39c078d0173f11a019df35bb2ffdf9d098710f69d
+  User-selected links — messages: M1 | transfers: Unknown
+- 22187e845839ac9bdbd4b20cd51bdc5d762f0f636f220ca0 | S02-transfer-notes.jpg | 106708 byte | SHA-256: 78fa46b99a0fbc2d60b5db3938592e52fa62b651c9f358300fe2f35de8114e0d
+  User-selected links — messages: M1 | transfers: ae51c76b-f7b8-4c7b-9910-f98b5ccc89a4
+
+Prepared with human review. Heuristic checks do not guarantee accuracy.

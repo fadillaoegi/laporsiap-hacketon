@@ -1,0 +1,60 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": true,
+  "draft_metadata": {
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "language": "en",
+    "generated_at": "2026-10-09T23:38:24Z",
+    "duration_ms": 9060,
+    "usage": {
+      "input_tokens": 545,
+      "output_tokens": 366
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "provider_diagnostic": null,
+  "started_at": "2026-10-09T23:37:27.284Z",
+  "finished_at": "2026-10-09T23:38:58.544Z",
+  "recording": "LaporSiap_Failed_4.mp4",
+  "stopped_at": "05 — Compare sources and edit all five entries",
+  "error": "Scenario meaning or English language needs review at M4",
+  "case_id": "9acf29b5648d78129cb06cf63a3dd6df42d8ce870faee09a",
+  "revision": 4,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-09T23:37:29.031Z",
+      "finished_at": "2026-10-09T23:37:45.891Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-09T23:37:45.893Z",
+      "finished_at": "2026-10-09T23:37:54.004Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-09T23:37:54.004Z",
+      "finished_at": "2026-10-09T23:38:08.866Z"
+    },
+    {
+      "name": "04 — Live Apertus draft",
+      "status": "passed",
+      "started_at": "2026-10-09T23:38:08.867Z",
+      "finished_at": "2026-10-09T23:38:28.938Z"
+    },
+    {
+      "name": "05 — Compare sources and edit all five entries",
+      "status": "failed",
+      "started_at": "2026-10-09T23:38:28.939Z",
+      "error": "Scenario meaning or English language needs review at M4"
+    }
+  ]
+}

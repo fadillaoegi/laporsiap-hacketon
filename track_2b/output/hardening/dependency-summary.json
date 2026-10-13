@@ -1,0 +1,73 @@
+{
+  "initial_go_scanner": "govulncheck v1.8.0",
+  "initial_go_version": "1.26.3",
+  "initial_findings_by_module": {
+    "golang.org/x/text": {
+      "versions": [
+        "v0.29.0"
+      ],
+      "vulnerability_ids": [
+        "GO-2026-5970",
+        "GO-2026-6629"
+      ],
+      "fixed_versions": [
+        "v0.39.0",
+        "v0.41.0"
+      ],
+      "symbol_finding_count": 4
+    },
+    "stdlib": {
+      "versions": [
+        "v1.26.3"
+      ],
+      "vulnerability_ids": [
+        "GO-2026-4970",
+        "GO-2026-5026",
+        "GO-2026-5037",
+        "GO-2026-5038",
+        "GO-2026-5039",
+        "GO-2026-5856",
+        "GO-2026-5942",
+        "GO-2026-5972",
+        "GO-2026-6088",
+        "GO-2026-6089",
+        "GO-2026-6090",
+        "GO-2026-6091",
+        "GO-2026-6218",
+        "GO-2026-6599",
+        "GO-2026-6600",
+        "GO-2026-6603",
+        "GO-2026-6604",
+        "GO-2026-6605",
+        "GO-2026-6607",
+        "GO-2026-6608",
+        "GO-2026-6609",
+        "GO-2026-6610",
+        "GO-2026-6611",
+        "GO-2026-6612",
+        "GO-2026-6613",
+        "GO-2026-6617"
+      ],
+      "fixed_versions": [
+        "v1.26.4",
+        "v1.26.5",
+        "v1.26.6",
+        "v1.26.9"
+      ],
+      "symbol_finding_count": 550
+    }
+  },
+  "json_mode_exit_note": "Exit 0 reports a completed scan, not absence of findings.",
+  "npm_production_audit": {
+    "exit_code": 0,
+    "vulnerabilities": 0,
+    "dependency_count": 3
+  },
+  "limitations": "Known vulnerability checks only, not an independent security audit, image scan or complete dev-dependency audit.",
+  "final_go_version": "1.26.9",
+  "final_x_text": "v0.41.0",
+  "final_x_sync": "v0.22.0",
+  "final_go_finding_count": 0,
+  "final_scanner": "govulncheck v1.8.0",
+  "final_database_date": "2026-10-08T22:31:09Z"
+}

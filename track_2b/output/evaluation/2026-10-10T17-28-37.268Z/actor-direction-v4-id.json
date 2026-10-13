@@ -1,0 +1,60 @@
+{
+  "id": "actor-direction-v4-id",
+  "language": "id",
+  "category": "targeted_actor_direction_regression",
+  "started_at": "2026-10-10T17:28:58.198Z",
+  "status": "failed_or_rejected",
+  "api_status": 502,
+  "contract_passed": false,
+  "state_verified": true,
+  "transfers_unchanged": true,
+  "original_sources_unchanged": true,
+  "failed_draft_not_saved": true,
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Preserve sending IDR 264000 and no refund as two assertions.",
+    "Do not assign the payment amount to an unspecified refund.",
+    "Recruiter is the promisor, not the message sender.",
+    "IDR 63000 commission is promised next week and not paid."
+  ],
+  "provider_attempts": 1,
+  "case_id": "b94e7910e2c15f9b3b69eaff78a99f5664516eceb1e9fe18",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 12:00"
+    },
+    {
+      "id": "M2",
+      "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 12:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "id",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima."
+      },
+      {
+        "id": "M2",
+        "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "077ac1f222f1a77cc0260f1166772cb017fd93b5027510da723b6ee896e61637"
+  },
+  "draft_request_seconds": 6.713604625,
+  "error": "Identitas model respons bukan Apertus yang diminta. Draft ditolak; tidak ada fallback otomatis.",
+  "provider_diagnostic": {
+    "requested_model": "swiss-ai/apertus-v1.5-70b",
+    "response_model": "aisingapore/Qwen-SEA-LION-v4-32B-IT"
+  },
+  "recording": "actor-direction-v4-id/LaporSiap_Failed_1.mp4"
+}

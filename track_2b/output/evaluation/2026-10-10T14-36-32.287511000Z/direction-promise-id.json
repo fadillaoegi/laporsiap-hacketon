@@ -1,0 +1,74 @@
+{
+  "id": "direction-promise-id",
+  "language": "id",
+  "category": "direction-promise",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "started_at": "2026-10-10T14:36:36Z",
+  "case_id": "46ef8df695c39354b1bca511ad5ece85cbdb4289dd9f303b",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Saya mengirim Rp147.000. Belum ada pengembalian uang.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Perekrut menjanjikan komisi Rp50.000 besok.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "id",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "Saya mengirim Rp147.000. Belum ada pengembalian uang."
+      },
+      {
+        "id": "M2",
+        "text": "Perekrut menjanjikan komisi Rp50.000 besok.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "d0e1f79b66987815469b2d3d9ac69df3fd20f4ee2b8fcf0327acc2737f2aeed4"
+  },
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Pengirim menyatakan belum ada pengembalian uang sebesar Rp147.000.",
+        "evidence": "Saya mengirim Rp147.000. Belum ada pengembalian uang."
+      },
+      {
+        "source_id": "M2",
+        "description": "Pengirim menjanjikan komisi Rp50.000 besok.",
+        "evidence": "Perekrut menjanjikan komisi Rp50.000 besok.\n"
+      }
+    ],
+    "checks": [],
+    "language": "id",
+    "generated_at": "2026-10-10T14:36:39Z",
+    "duration_ms": 2887,
+    "usage": {
+      "input_tokens": 435,
+      "output_tokens": 144
+    },
+    "prompt_version": "bilingual-v3",
+    "privacy_mode": "redacted"
+  },
+  "contract_passed": true,
+  "transfers_unchanged": true,
+  "draft_request_seconds": 2.919297042,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Preserve sent direction and absence of refund.",
+    "Promise is not money received."
+  ]
+}

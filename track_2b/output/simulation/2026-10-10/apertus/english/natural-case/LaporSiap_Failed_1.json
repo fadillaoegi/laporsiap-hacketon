@@ -1,0 +1,27 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "scenario": "natural-fictional-case-v1",
+  "live_ai_called": false,
+  "draft_metadata": null,
+  "provider_diagnostic": null,
+  "started_at": "2026-10-10T00:59:06.323Z",
+  "finished_at": "2026-10-10T00:59:12.517Z",
+  "recording": "LaporSiap_Failed_1.mp4",
+  "stopped_at": "01 — Open the app and import the English fictional case",
+  "error": "Kesalahan aplikasi: Failed to read the 'localStorage' property from 'Window': Access is denied for this document.",
+  "case_id": null,
+  "revision": null,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "failed",
+      "started_at": "2026-10-10T00:59:10.438Z",
+      "error": "Kesalahan aplikasi: Failed to read the 'localStorage' property from 'Window': Access is denied for this document."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "swiss-ai/Apertus-v1.5-70B",
+  "sha": "59e744e313e967811aefabde3732609b64201acc",
+  "gated": "auto",
+  "safetensors": {
+    "parameters": {
+      "BF16": 71711355040,
+      "F32": 294464099
+    },
+    "total": 72005819139
+  },
+  "lastModified": "2026-09-17T21:37:50.000Z"
+}

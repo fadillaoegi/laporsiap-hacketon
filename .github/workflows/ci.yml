@@ -1,0 +1,136 @@
+name: LaporSiap checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: track_2b
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:18-alpine@sha256:1b1689b20d16a014a3d195653381cf2caa75a41a92d93b255a9d6ea29fd353aa
+        env:
+          POSTGRES_USER: laporsiap
+          POSTGRES_PASSWORD: ci-only-fictional-password
+          POSTGRES_DB: laporsiap_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U laporsiap -d laporsiap_test"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      TEST_DATABASE_URL: postgres://laporsiap:ci-only-fictional-password@127.0.0.1:5432/laporsiap_test?sslmode=disable
+      APERTUS_API_KEY: ''
+      APERTUS_API_BASE_URL: ''
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: track_2b/src/laporsiap_BE/go.mod
+          cache-dependency-path: track_2b/src/laporsiap_BE/go.sum
+      - name: Domain, use cases, architecture and PostgreSQL regression with race detection
+        working-directory: track_2b/src/laporsiap_BE
+        run: |
+          test -n "$TEST_DATABASE_URL"
+          go test -race -count=1 ./...
+          go build ./cmd/api ./cmd/maintenance ./cmd/evaluate ./cmd/providercheck
+      - name: GPU preparation safety checks (offline, no GPU rental or inference)
+        run: python3 -m unittest discover -s scripts/gpu -p 'test_*.py'
+
+  frontend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.15.0'
+          package-manager-cache: false
+      - name: Install pinned dependencies
+        run: |
+          npm install --global pnpm@11.1.3
+          pnpm --dir src/laporsiap_FE install --frozen-lockfile
+      - name: Architecture, Redux/use-case regression and production build
+        run: |
+          pnpm --dir src/laporsiap_FE check:architecture
+          pnpm --dir src/laporsiap_FE test:unit
+          pnpm --dir src/laporsiap_FE build
+
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    needs: [backend, frontend]
+    services:
+      postgres:
+        image: postgres:18-alpine@sha256:1b1689b20d16a014a3d195653381cf2caa75a41a92d93b255a9d6ea29fd353aa
+        env:
+          POSTGRES_USER: laporsiap
+          POSTGRES_PASSWORD: ci-only-fictional-password
+          POSTGRES_DB: laporsiap_browser
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U laporsiap -d laporsiap_browser"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://laporsiap:ci-only-fictional-password@127.0.0.1:5432/laporsiap_browser?sslmode=disable
+      LISTEN_ADDR: 127.0.0.1:8787
+      APERTUS_API_KEY: ''
+      APERTUS_API_BASE_URL: ''
+      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/track_2b/tmp/playwright
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: track_2b/src/laporsiap_BE/go.mod
+          cache-dependency-path: track_2b/src/laporsiap_BE/go.sum
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.15.0'
+          package-manager-cache: false
+      - name: Install browser tools
+        run: |
+          npm install --global pnpm@11.1.3
+          pnpm --dir src/laporsiap_FE install --frozen-lockfile
+          pnpm --dir src/laporsiap_FE exec playwright install --with-deps chrome ffmpeg
+      - name: Start local application with an isolated database and no AI credential
+        run: |
+          mkdir -p tmp/ci
+          cd src/laporsiap_BE
+          go build -o ../../tmp/ci/api ./cmd/api
+          cd ../..
+          ./tmp/ci/api >tmp/ci/backend.log 2>&1 &
+          pnpm --dir src/laporsiap_FE dev >tmp/ci/frontend.log 2>&1 &
+          node scripts/ci/wait-for-services.mjs
+      - name: Bilingual browser regression (controlled AI responses)
+        run: pnpm --dir src/laporsiap_FE test:ui --output=../../output/ci/browser
+      - name: Preserve fictional browser results and startup logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: browser-results
+          path: |
+            track_2b/output/ci/browser
+            track_2b/tmp/ci/*.log
+          retention-days: 7
+          if-no-files-found: ignore

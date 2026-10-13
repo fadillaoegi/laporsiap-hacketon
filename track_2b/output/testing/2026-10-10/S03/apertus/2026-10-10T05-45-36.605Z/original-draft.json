@@ -1,0 +1,53 @@
+{
+  "synthetic": true,
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Sender claims first IDR 225,000 transfer was successful but states transfer time is unrecorded.",
+        "evidence": "The first IDR 225,000 transfer was successful, but I have not recorded its transfer time."
+      },
+      {
+        "source_id": "M2",
+        "description": "Sender claims second transfer was successful but states amount and transfer time are not found.",
+        "evidence": "My second transfer was successful too. I cannot find its amount or transfer time yet."
+      },
+      {
+        "source_id": "M3",
+        "description": "Sender states third IDR 410,000 transfer is still pending and not completed.",
+        "evidence": "The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T05:45:50Z",
+    "duration_ms": 3664,
+    "usage": {
+      "input_tokens": 473,
+      "output_tokens": 212
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "messages": [
+    {
+      "id": "M1",
+      "text": "The first IDR 225,000 transfer was successful, but I have not recorded its transfer time.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:00:00"
+    },
+    {
+      "id": "M2",
+      "text": "My second transfer was successful too. I cannot find its amount or transfer time yet.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:01:00"
+    },
+    {
+      "id": "M3",
+      "text": "The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:02:00"
+    }
+  ]
+}

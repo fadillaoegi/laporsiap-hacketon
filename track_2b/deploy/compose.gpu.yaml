@@ -1,0 +1,70 @@
+# GPU server only. Uses the approved official runtime digest and checkpoint.
+# App and inference share a network namespace: inference stays on loopback.
+services:
+  inference:
+    image: ${APERTUS_RUNTIME_IMAGE:?Pin an official swiss-ai runtime image digest}
+    entrypoint: [vllm, serve]
+    command:
+      - swiss-ai/Apertus-v1.5-70B
+      - --revision
+      - ${APERTUS_WEIGHTS_REVISION:?Pin the official model revision}
+      - --served-model-name
+      - swiss-ai/apertus-v1.5-70b
+      - --host
+      - '127.0.0.1'
+      - --port
+      - '9000'
+      - --chat-template-content-format
+      - string
+      - --dtype
+      - bfloat16
+      - --tensor-parallel-size
+      - '${APERTUS_TENSOR_PARALLEL:-4}'
+      - --gpu-memory-utilization
+      - '0.8'
+      - --max-model-len
+      - '8192'
+      - --max-num-seqs
+      - '2'
+      - --disable-log-requests
+      - --disable-uvicorn-access-log
+    environment:
+      HF_TOKEN: ${HF_TOKEN:-}
+      VLLM_API_KEY: ${DEPLOY_APERTUS_API_KEY:?Set a private inference access key}
+      VLLM_NO_USAGE_STATS: '1'
+      DO_NOT_TRACK: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    volumes:
+      - model_cache:/root/.cache/huggingface
+      - ../scripts/gpu:/opt/laporsiap-gpu:ro
+      - ./gpu-lock.json:/opt/gpu-lock.json:ro
+    ports:
+      - '127.0.0.1:8877:8787'
+    shm_size: 8gb
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: [CMD, python3, -c, 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:9000/health", timeout=5)']
+      interval: 20s
+      timeout: 10s
+      start_period: 20m
+      retries: 10
+  app:
+    ports: !reset []
+    network_mode: service:inference
+    depends_on:
+      inference:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    environment:
+      APP_ORIGIN: ${GPU_APP_ORIGIN:-http://127.0.0.1:8878}
+      APERTUS_API_BASE_URL: http://127.0.0.1:9000
+      APERTUS_API_KEY: ${DEPLOY_APERTUS_API_KEY:?Set a private inference access key}
+volumes:
+  model_cache:

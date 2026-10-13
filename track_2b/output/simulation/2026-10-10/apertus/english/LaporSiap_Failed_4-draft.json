@@ -1,0 +1,76 @@
+{
+  "synthetic": true,
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender promises a commission of IDR 50,000 per day for liking posts.",
+        "evidence": "We offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender requests a deposit of IDR 180,000 to DEMO-ACCOUNT-001 to continue tasks.",
+        "evidence": "To continue the tasks, please pay a deposit of IDR 180,000 to DEMO-ACCOUNT-001."
+      },
+      {
+        "source_id": "M3",
+        "description": "The sender claims to have sent IDR 180,000 but has not recorded the transfer time.",
+        "evidence": "I have just sent IDR 180,000. I have not recorded the transfer time yet."
+      },
+      {
+        "source_id": "M4",
+        "description": "The sender demands an additional deposit of IDR 420,000 to enable withdrawal.",
+        "evidence": "Now add a deposit of IDR 420,000 so the balance can be withdrawn."
+      },
+      {
+        "source_id": "M5",
+        "description": "The sender states the additional deposit is still pending and not yet visible on their bank statement.",
+        "evidence": "The additional deposit is still pending. I have not seen the transaction on my bank statement.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-09T23:38:24Z",
+    "duration_ms": 9060,
+    "usage": {
+      "input_tokens": 545,
+      "output_tokens": 366
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "messages": [
+    {
+      "id": "M1",
+      "text": "We offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day.",
+      "sender": "Demo Admin",
+      "sent_at": "08/10/2026, 09:10"
+    },
+    {
+      "id": "M2",
+      "text": "To continue the tasks, please pay a deposit of IDR 180,000 to DEMO-ACCOUNT-001.",
+      "sender": "Demo Admin",
+      "sent_at": "08/10/2026, 09:14"
+    },
+    {
+      "id": "M3",
+      "text": "I have just sent IDR 180,000. I have not recorded the transfer time yet.",
+      "sender": "Demo User",
+      "sent_at": "08/10/2026, 09:28"
+    },
+    {
+      "id": "M4",
+      "text": "Now add a deposit of IDR 420,000 so the balance can be withdrawn.",
+      "sender": "Demo Admin",
+      "sent_at": "08/10/2026, 09:35"
+    },
+    {
+      "id": "M5",
+      "text": "The additional deposit is still pending. I have not seen the transaction on my bank statement.\n",
+      "sender": "Demo User",
+      "sent_at": "08/10/2026, 09:40"
+    }
+  ],
+  "note": "One live application request. Model identity is API metadata. Automated scenario assertions and assistant review are not an independent user evaluation."
+}

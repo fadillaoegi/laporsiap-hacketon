@@ -1,0 +1,43 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": true,
+  "draft_metadata": null,
+  "started_at": "2026-10-09T19:44:10.237Z",
+  "finished_at": "2026-10-09T19:45:16.654Z",
+  "recording": "LaporSiap_Failed_2.mp4",
+  "stopped_at": "04 — Live Apertus draft",
+  "error": "Pesan error aplikasi: The response model is not the requested Apertus model. The draft was rejected; there is no automatic fallback.Reload saved case",
+  "case_id": "8101e1837e673c390f5f3c89df05daa5bf7b43c4758d3c24",
+  "revision": 3,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-09T19:44:11.900Z",
+      "finished_at": "2026-10-09T19:44:28.478Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-09T19:44:28.480Z",
+      "finished_at": "2026-10-09T19:44:37.048Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-09T19:44:37.049Z",
+      "finished_at": "2026-10-09T19:44:51.926Z"
+    },
+    {
+      "name": "04 — Live Apertus draft",
+      "status": "failed",
+      "started_at": "2026-10-09T19:44:51.926Z",
+      "error": "Pesan error aplikasi: The response model is not the requested Apertus model. The draft was rejected; there is no automatic fallback.Reload saved case"
+    }
+  ]
+}

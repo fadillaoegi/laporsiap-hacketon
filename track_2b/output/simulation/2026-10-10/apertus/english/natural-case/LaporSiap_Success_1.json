@@ -1,0 +1,79 @@
+{
+  "app": "LaporSiap",
+  "result": "Success",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "scenario": "natural-fictional-case-v1",
+  "live_ai_called": true,
+  "draft_metadata": {
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "language": "en",
+    "generated_at": "2026-10-10T01:21:03Z",
+    "duration_ms": 8984,
+    "usage": {
+      "input_tokens": 546,
+      "output_tokens": 357
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "provider_diagnostic": null,
+  "started_at": "2026-10-10T01:20:06.418Z",
+  "finished_at": "2026-10-10T01:22:55.220Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "449087b2e0bf99089db40392d0a76ec3f0eaacf70442e595",
+  "revision": 5,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-10T01:20:08.148Z",
+      "finished_at": "2026-10-10T01:20:25.024Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-10T01:20:25.027Z",
+      "finished_at": "2026-10-10T01:20:33.184Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-10T01:20:33.184Z",
+      "finished_at": "2026-10-10T01:20:47.671Z"
+    },
+    {
+      "name": "04 — Live Apertus draft",
+      "status": "passed",
+      "started_at": "2026-10-10T01:20:47.672Z",
+      "finished_at": "2026-10-10T01:21:09.418Z"
+    },
+    {
+      "name": "05 — Compare sources and edit all five entries",
+      "status": "passed",
+      "started_at": "2026-10-10T01:21:09.421Z",
+      "finished_at": "2026-10-10T01:21:27.228Z"
+    },
+    {
+      "name": "06 — Review sources, transfers and unknown details",
+      "status": "passed",
+      "started_at": "2026-10-10T01:21:27.229Z",
+      "finished_at": "2026-10-10T01:21:59.761Z"
+    },
+    {
+      "name": "07 — Download ZIP and chronology TXT",
+      "status": "passed",
+      "started_at": "2026-10-10T01:21:59.765Z",
+      "finished_at": "2026-10-10T01:22:11.758Z"
+    },
+    {
+      "name": "08 — Check revision history and the final result",
+      "status": "passed",
+      "started_at": "2026-10-10T01:22:11.758Z",
+      "finished_at": "2026-10-10T01:22:17.023Z"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+LAPORSIAP — SUPPORTING REPORT MATERIALS
+Failed job registration deposit
+Revision: 9 | Reviewed: 2026-10-10T05:45:37Z
+SIMULATED DATA — NOT A REAL CASE OR TRANSACTION
+
+This document is not an IASC ticket, proof of report acceptance, or verification of transaction authenticity. There is no automatic submission. Use the official channel https://iasc.ojk.go.id/.
+
+CHRONOLOGY REVIEWED BY THE USER
+Draft origin: apertus | Model (API metadata): swiss-ai/apertus-v1.5-70b | Language when generated: en
+
+1. [M1] The sender requests the user to pay a registration deposit of IDR 275,000 to account ending in 4821.
+Sender: Nadia | Message time: 10/10/2026, 09:00:00 (not transfer time)
+Original source: Please pay a registration deposit of IDR 275,000 to ****4821.
+
+2. [M2] The sender claims their IDR 275,000 transfer failed, citing the bank application.
+Sender: Raka | Message time: 10/10/2026, 09:01:00 (not transfer time)
+Original source: My IDR 275,000 transfer failed. The bank application shows failed.
+
+3. [M3] The sender asks the user to try again after checking their balance.
+Sender: Nadia | Message time: 10/10/2026, 09:02:00 (not transfer time)
+Original source: Please try again after checking your balance.
+
+
+TRANSFER DETAILS FROM USER INPUT
+Successful transfer amount reported by the user (known amounts): Unknown rupiah
+Successful transfers with unknown amounts: 0
+This total is not net losses or a bank-verified amount. Pending/failed/unconfirmed transfers are excluded.
+
+Account pair: Bank Aruna / ****7392 → Bank Lestari / ****4821
+- 671bd0e1-db90-4476-88dc-0bd406082a41 | 275000 rupiah | Transfer date: Unknown | Failed | Note: Fictional user-entered record; transfer time unknown.
+
+DETAILS STILL TO COMPLETE / REVIEW
+- Transfer 1: missing transfer date.
+
+REFERENCE ATTACHMENTS (NO OCR / AUTHENTICITY VERIFICATION)
+- a48e5c5188d42cb5deb9d3ec775e6721cde2475781606f18 | fictional-transfer-reference.pdf | 2339 byte | SHA-256: fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3
+  User-selected links — messages: M1 | transfers: 671bd0e1-db90-4476-88dc-0bd406082a41
+- 83bb0e3c90d0401fb2aeb588c0fe3ee84a4c274b2155e949 | S02-conversation-reference.png | 63884 byte | SHA-256: 0d1ecc7d97e3938e3b8ccae39c078d0173f11a019df35bb2ffdf9d098710f69d
+  User-selected links — messages: M1 | transfers: Unknown
+- b69b4e0cb8e0c8ad9be56f1367d19f285e8ff6cff5de4f4f | S02-transfer-notes.jpg | 106708 byte | SHA-256: 78fa46b99a0fbc2d60b5db3938592e52fa62b651c9f358300fe2f35de8114e0d
+  User-selected links — messages: M1 | transfers: 671bd0e1-db90-4476-88dc-0bd406082a41
+
+Prepared with human review. Heuristic checks do not guarantee accuracy.

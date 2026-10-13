@@ -1,0 +1,57 @@
+{
+  "verified_date_local": "2026-10-10",
+  "checks": [
+    {
+      "command": "sh scripts/test-backend.sh",
+      "status": "passed",
+      "scope": "Go tests with PostgreSQL TEST_DATABASE_URL and race detector, including final prompt/diagnostic changes"
+    },
+    {
+      "command": "pnpm build",
+      "working_directory": "laporsiap_FE",
+      "status": "passed",
+      "scope": "TypeScript and Vite"
+    },
+    {
+      "command": "pnpm test:ui",
+      "working_directory": "laporsiap_FE",
+      "status": "passed",
+      "tests": 9,
+      "scope": "Real local API/manual path plus mocked AI browser regression; no live calls in the suite"
+    },
+    {
+      "command": "node scripts/demo/record-simulation.mjs --apertus --english",
+      "status": "passed",
+      "steps": 8,
+      "live_ai_called": true,
+      "synthetic": true,
+      "recording_report": "output/simulation/2026-10-10/apertus/english/LaporSiap_Success_1.json"
+    },
+    {
+      "scope": "PDF layout",
+      "status": "passed",
+      "details": "Manual English/Indonesia samples and live English report rendered to page PNGs and inspected; 3 pages each. PDF texts and ZIP contents checked."
+    },
+    {
+      "scope": "API health",
+      "status": "passed",
+      "response": {
+        "status": "ok",
+        "database": "postgresql"
+      }
+    }
+  ],
+  "failed_recordings_preserved": [
+    "output/simulation/2026-10-10/apertus/english/LaporSiap_Failed_1.mp4",
+    "output/simulation/2026-10-10/apertus/english/LaporSiap_Failed_2.mp4",
+    "output/simulation/2026-10-10/apertus/english/LaporSiap_Failed_3.mp4",
+    "output/simulation/2026-10-10/apertus/english/LaporSiap_Failed_4.mp4"
+  ],
+  "limitations": [
+    "Heuristic guards do not prove entailment or general accuracy.",
+    "Model identity follows provider response metadata, not an independent weights audit.",
+    "No independent user benefit, review-time, operating-cost or scale study.",
+    "No self-hosted Apertus deployment or public publication/submission.",
+    "Official Getting Started Guide could not be verified; full competition compliance is not established."
+  ]
+}

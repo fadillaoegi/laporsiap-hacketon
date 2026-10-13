@@ -1,0 +1,196 @@
+{
+  "date": "2026-10-10",
+  "language": "en",
+  "synthetic": true,
+  "scenarios": 3,
+  "run_count": 6,
+  "passed": 6,
+  "failed": 0,
+  "attachment_uploads": 18,
+  "txt_imports": 6,
+  "live_apertus_calls": 3,
+  "live_apertus_model": "swiss-ai/apertus-v1.5-70b",
+  "provider_latency_range_ms": [
+    3380,
+    5775
+  ],
+  "checks": [
+    "Actual UI TXT import and PDF/PNG/JPEG upload",
+    "Attachment downloads and ZIP contents identical to original bytes",
+    "Source quote/order preserved",
+    "Financial input fields unchanged",
+    "Unknown/partial successful totals retained",
+    "Explicit AI consent and source review gates",
+    "Exported revision reviewed; evidence links retained",
+    "Six MP4 recordings checked as 1920x1080 H.264",
+    "All 18 exported PDF pages and one input PDF page visually reviewed"
+  ],
+  "input_files": [
+    {
+      "filename": "S01-conversation-reference.png",
+      "bytes": 92642,
+      "sha256": "37589369bc1181e335a78e42b16a5118ceda94dbe346baed4671ac18209cc49f"
+    },
+    {
+      "filename": "S01-conversation.txt",
+      "bytes": 527,
+      "sha256": "f5f76e8f1067bc0652bfd82207adb192c77db712e004bcdc22a50cd05fb37f73"
+    },
+    {
+      "filename": "S01-transfer-notes.jpg",
+      "bytes": 123420,
+      "sha256": "209cdd740fd6cfd6a714160aeba5dd3a3c7e8b5da7b5bb8058040b08b4100ff1"
+    },
+    {
+      "filename": "S02-conversation-reference.png",
+      "bytes": 63884,
+      "sha256": "0d1ecc7d97e3938e3b8ccae39c078d0173f11a019df35bb2ffdf9d098710f69d"
+    },
+    {
+      "filename": "S02-conversation.txt",
+      "bytes": 264,
+      "sha256": "7824955d05b555f1987dcbfbd4e5bab726453f8b4987789a9991f9fa035bd98b"
+    },
+    {
+      "filename": "S02-transfer-notes.jpg",
+      "bytes": 106708,
+      "sha256": "78fa46b99a0fbc2d60b5db3938592e52fa62b651c9f358300fe2f35de8114e0d"
+    },
+    {
+      "filename": "S03-conversation-reference.png",
+      "bytes": 68838,
+      "sha256": "689c9073bbee9ba641a1503b93a773c8f4d1e44ec27923b3326f940d7c5781d3"
+    },
+    {
+      "filename": "S03-conversation.txt",
+      "bytes": 343,
+      "sha256": "da99a4b9be2ada5ee541b74cbba311763e14d27683b3b8af9eec81bae6bbd414"
+    },
+    {
+      "filename": "S03-transfer-notes.jpg",
+      "bytes": 138649,
+      "sha256": "6771e2068ed2ef1b3b22163fb076daaf91b544bcdcb0270353472c1c1bc113ad"
+    },
+    {
+      "filename": "cases.json",
+      "bytes": 5053,
+      "sha256": "796d09e9028841850fe519cf290ae57fae12a97d332f91bdd0ba5e832359b349"
+    },
+    {
+      "filename": "fictional-transfer-reference.pdf",
+      "bytes": 2339,
+      "sha256": "fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3"
+    }
+  ],
+  "runs": [
+    {
+      "scenario": "S01",
+      "mode": "apertus",
+      "result": "Success",
+      "successful_known_total": 180000,
+      "successful_unknown_amount": 0,
+      "event_count": 5,
+      "manual_entries_authored": 0,
+      "ai_entries_corrected": 0,
+      "draft_request_ui_ms": 6018,
+      "provider_duration_ms": 5775,
+      "input_tokens": 542,
+      "output_tokens": 354,
+      "recording_seconds": 38.0,
+      "recording": "output/testing/2026-10-10/S01/apertus/2026-10-10T05-44-22.926Z/LaporSiap_Success_1.mp4",
+      "result_file": "output/testing/2026-10-10/S01/apertus/2026-10-10T05-44-22.926Z/result.json"
+    },
+    {
+      "scenario": "S01",
+      "mode": "manual",
+      "result": "Success",
+      "successful_known_total": 180000,
+      "successful_unknown_amount": 0,
+      "event_count": 5,
+      "manual_entries_authored": 5,
+      "ai_entries_corrected": null,
+      "draft_request_ui_ms": 143,
+      "provider_duration_ms": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "recording_seconds": 10.466667,
+      "recording": "output/testing/2026-10-10/S01/manual/2026-10-10T05-43-55.142Z/LaporSiap_Success_1.mp4",
+      "result_file": "output/testing/2026-10-10/S01/manual/2026-10-10T05-43-55.142Z/result.json"
+    },
+    {
+      "scenario": "S02",
+      "mode": "apertus",
+      "result": "Success",
+      "successful_known_total": null,
+      "successful_unknown_amount": 0,
+      "event_count": 3,
+      "manual_entries_authored": 0,
+      "ai_entries_corrected": 0,
+      "draft_request_ui_ms": 3558,
+      "provider_duration_ms": 3380,
+      "input_tokens": 459,
+      "output_tokens": 202,
+      "recording_seconds": 36.533333,
+      "recording": "output/testing/2026-10-10/S02/apertus/2026-10-10T05-45-01.254Z/LaporSiap_Success_1.mp4",
+      "result_file": "output/testing/2026-10-10/S02/apertus/2026-10-10T05-45-01.254Z/result.json"
+    },
+    {
+      "scenario": "S02",
+      "mode": "manual",
+      "result": "Success",
+      "successful_known_total": null,
+      "successful_unknown_amount": 0,
+      "event_count": 3,
+      "manual_entries_authored": 3,
+      "ai_entries_corrected": null,
+      "draft_request_ui_ms": 133,
+      "provider_duration_ms": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "recording_seconds": 8.833008,
+      "recording": "output/testing/2026-10-10/S02/manual/2026-10-10T05-44-14.315Z/LaporSiap_Success_1.mp4",
+      "result_file": "output/testing/2026-10-10/S02/manual/2026-10-10T05-44-14.315Z/result.json"
+    },
+    {
+      "scenario": "S03",
+      "mode": "apertus",
+      "result": "Success",
+      "successful_known_total": 225000,
+      "successful_unknown_amount": 1,
+      "event_count": 3,
+      "manual_entries_authored": 0,
+      "ai_entries_corrected": 0,
+      "draft_request_ui_ms": 4005,
+      "provider_duration_ms": 3664,
+      "input_tokens": 473,
+      "output_tokens": 212,
+      "recording_seconds": 42.333333,
+      "recording": "output/testing/2026-10-10/S03/apertus/2026-10-10T05-45-36.605Z/LaporSiap_Success_1.mp4",
+      "result_file": "output/testing/2026-10-10/S03/apertus/2026-10-10T05-45-36.605Z/result.json"
+    },
+    {
+      "scenario": "S03",
+      "mode": "manual",
+      "result": "Success",
+      "successful_known_total": 225000,
+      "successful_unknown_amount": 1,
+      "event_count": 3,
+      "manual_entries_authored": 3,
+      "ai_entries_corrected": null,
+      "draft_request_ui_ms": 131,
+      "provider_duration_ms": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "recording_seconds": 10.6,
+      "recording": "output/testing/2026-10-10/S03/manual/2026-10-10T05-44-32.037Z/LaporSiap_Success_1.mp4",
+      "result_file": "output/testing/2026-10-10/S03/manual/2026-10-10T05-44-32.037Z/result.json"
+    }
+  ],
+  "limitations": [
+    "Developer automation and Codex assistant source review, not independent human testing.",
+    "UI request time for manual mode covers quote draft creation only, excluding summary authoring.",
+    "Video duration includes browser slowMo, deliberate pauses and assistant review waiting; no human time/speed benefit inferred.",
+    "Three live calls only; no population-level accuracy or provider reliability conclusion.",
+    "PNG/PDF/JPEG are reference attachments with no OCR; no bank validation or official report submission."
+  ]
+}

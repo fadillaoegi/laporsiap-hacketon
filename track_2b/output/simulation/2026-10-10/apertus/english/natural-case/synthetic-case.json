@@ -1,0 +1,65 @@
+{
+  "title": "Online task offer and deposit requests",
+  "rawChat": "[08/10/2026, 09:10] Nadia: Hi Raka, we offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day.\n[08/10/2026, 09:14] Nadia: To continue the tasks, please pay a deposit of IDR 180,000 to ****4821.\n[08/10/2026, 09:28] Raka: I have just sent IDR 180,000. I have not recorded the transfer time yet.\n[08/10/2026, 09:35] Nadia: Now add a deposit of IDR 420,000 so the balance can be withdrawn.\n[08/10/2026, 09:40] Raka: The additional deposit is still pending. I have not seen the transaction on my bank statement.",
+  "transfers": [
+    {
+      "fromBank": "Bank Aruna",
+      "fromAccount": "****7392",
+      "toBank": "Bank Lestari",
+      "toAccount": "****4821",
+      "amount": "180000",
+      "status": "successful",
+      "note": "Transfer date not recorded; do not use the message timestamp."
+    },
+    {
+      "fromBank": "Bank Aruna",
+      "fromAccount": "****7392",
+      "toBank": "Bank Lestari",
+      "toAccount": "****4821",
+      "amount": "420000",
+      "status": "pending",
+      "note": "Not yet confirmed as successful."
+    }
+  ],
+  "descriptions": [
+    "Nadia offers tasks involving liking posts, with a promised commission of IDR 50,000 per day.",
+    "Nadia requests a deposit of IDR 180,000 to ****4821 to continue the tasks.",
+    "Raka states that they have just sent IDR 180,000 and have not recorded the transfer time.",
+    "Nadia requests an additional deposit of IDR 420,000 so the balance can be withdrawn.",
+    "Raka states that the additional deposit is still pending and is not yet visible on their bank statement."
+  ],
+  "pdfLines": [
+    [
+      22,
+      "LaporSiap - SIMULATED DATA"
+    ],
+    [
+      12,
+      "Fictional reference attachment. Not a bank receipt."
+    ],
+    [
+      12,
+      "Bank Aruna / ****7392"
+    ],
+    [
+      12,
+      "Destination: Bank Lestari / ****4821"
+    ],
+    [
+      12,
+      "User record: IDR 180,000 marked successful."
+    ],
+    [
+      12,
+      "Additional record: IDR 420,000 still pending."
+    ],
+    [
+      12,
+      "Transfer date unknown; message time is not transfer time."
+    ],
+    [
+      12,
+      "All names, accounts and transactions are fictional."
+    ]
+  ]
+}

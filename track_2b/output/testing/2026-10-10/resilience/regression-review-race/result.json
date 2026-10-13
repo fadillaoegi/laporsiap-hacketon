@@ -1,0 +1,7 @@
+{
+  "scenario": "regression review synchronization",
+  "result": "Failed",
+  "recording": "LaporSiap_Failed_2.mp4",
+  "live_apertus_calls": 0,
+  "error": "Test enumerated source checkboxes before the manual draft finished loading. Confirmation correctly stayed disabled. Test now waits for the draft label and expected source count."
+}

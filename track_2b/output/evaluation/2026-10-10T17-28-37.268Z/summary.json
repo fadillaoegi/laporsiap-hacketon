@@ -1,0 +1,143 @@
+{
+  "version": "actor-direction-v4",
+  "fixture_sha256": "3a6cd10f57c5d31538f6d8ef2e62b1b5a221e5da49bf7d854eb9303b678789d7",
+  "prompt_version": "bilingual-v4",
+  "prompt_sha256": "806c3408339a5800ee19bd991ff8716405b8b9def93a7df71db67872ff2da0e0",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "cases": 2,
+  "contract_passed": 0,
+  "results": [
+    {
+      "id": "actor-direction-v4-en",
+      "language": "en",
+      "category": "targeted_actor_direction_regression",
+      "started_at": "2026-10-10T17:28:38.379Z",
+      "status": "failed_or_rejected",
+      "api_status": 502,
+      "contract_passed": false,
+      "state_verified": true,
+      "transfers_unchanged": true,
+      "original_sources_unchanged": true,
+      "failed_draft_not_saved": true,
+      "semantic_review_status": "not_scored",
+      "semantic_review_criteria": [
+        "Preserve sending IDR 264000 and no refund as two assertions.",
+        "Do not assign the payment amount to an unspecified refund.",
+        "Recruiter is the promisor, not the message sender.",
+        "IDR 63000 commission is promised next week and not paid."
+      ],
+      "provider_attempts": 1,
+      "case_id": "4f09bb1f0cefd2fd4cb1bc7049be33af6e94ab4ff941908d",
+      "original_sources": [
+        {
+          "id": "M1",
+          "text": "I sent IDR 264,000. No refund has reached me.",
+          "sender": "Raka",
+          "sent_at": "10/10/2026, 12:00"
+        },
+        {
+          "id": "M2",
+          "text": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n",
+          "sender": "Nadia",
+          "sent_at": "10/10/2026, 12:01"
+        }
+      ],
+      "preview": {
+        "revision": 1,
+        "language": "en",
+        "mode": "redacted",
+        "sources": [
+          {
+            "id": "M1",
+            "text": "I sent IDR 264,000. No refund has reached me."
+          },
+          {
+            "id": "M2",
+            "text": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n"
+          }
+        ],
+        "redactions": 0,
+        "hash": "a3cede3ae5781341af629c1dc7acbb661cc19a179dfc0327bac775de44d38f6a"
+      },
+      "draft_request_seconds": 8.053077709,
+      "error": "Draft AI tidak memenuhi schema atau kutipan sumber. Draft ditolak; data asli tetap tersedia.",
+      "provider_diagnostic": {
+        "response_model": "swiss-ai/apertus-v1.5-70b",
+        "validation_rule": "chronology quote differs from original source"
+      },
+      "recording": "actor-direction-v4-en/LaporSiap_Failed_1.mp4"
+    },
+    {
+      "id": "actor-direction-v4-id",
+      "language": "id",
+      "category": "targeted_actor_direction_regression",
+      "started_at": "2026-10-10T17:28:58.198Z",
+      "status": "failed_or_rejected",
+      "api_status": 502,
+      "contract_passed": false,
+      "state_verified": true,
+      "transfers_unchanged": true,
+      "original_sources_unchanged": true,
+      "failed_draft_not_saved": true,
+      "semantic_review_status": "not_scored",
+      "semantic_review_criteria": [
+        "Preserve sending IDR 264000 and no refund as two assertions.",
+        "Do not assign the payment amount to an unspecified refund.",
+        "Recruiter is the promisor, not the message sender.",
+        "IDR 63000 commission is promised next week and not paid."
+      ],
+      "provider_attempts": 1,
+      "case_id": "b94e7910e2c15f9b3b69eaff78a99f5664516eceb1e9fe18",
+      "original_sources": [
+        {
+          "id": "M1",
+          "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima.",
+          "sender": "Raka",
+          "sent_at": "10/10/2026, 12:00"
+        },
+        {
+          "id": "M2",
+          "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+          "sender": "Nadia",
+          "sent_at": "10/10/2026, 12:01"
+        }
+      ],
+      "preview": {
+        "revision": 1,
+        "language": "id",
+        "mode": "redacted",
+        "sources": [
+          {
+            "id": "M1",
+            "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima."
+          },
+          {
+            "id": "M2",
+            "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n"
+          }
+        ],
+        "redactions": 0,
+        "hash": "077ac1f222f1a77cc0260f1166772cb017fd93b5027510da723b6ee896e61637"
+      },
+      "draft_request_seconds": 6.713604625,
+      "error": "Identitas model respons bukan Apertus yang diminta. Draft ditolak; tidak ada fallback otomatis.",
+      "provider_diagnostic": {
+        "requested_model": "swiss-ai/apertus-v1.5-70b",
+        "response_model": "aisingapore/Qwen-SEA-LION-v4-32B-IT"
+      },
+      "recording": "actor-direction-v4-id/LaporSiap_Failed_1.mp4"
+    }
+  ],
+  "retry_count": 0,
+  "fallback_count": 0,
+  "independent_human_sessions": 0,
+  "recorded_sessions": 2,
+  "provider_attempts": 2,
+  "limitations": [
+    "Same development examples rechecked; not independent holdout.",
+    "Fictional fixture creation used the local API; consent and live calls are recorded in the UI.",
+    "API model identity is metadata, not a weights audit.",
+    "Per-source semantic review required; contract acceptance is not accuracy.",
+    "Failure videos stop before read-only state verification."
+  ]
+}

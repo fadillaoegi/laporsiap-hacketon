@@ -1,0 +1,7 @@
+{
+  "approved": true,
+  "reviewer": "Codex assistant",
+  "independent_human_evaluation": false,
+  "entries_corrected": 0,
+  "reason": "Compared all three summaries with the sources. M1 preserves reported success and unknown time for IDR 225,000. M2 preserves reported success while leaving amount and time unknown. M3 preserves pending/not completed for IDR 410,000; 'third' follows the explicit first and second transfers. No value or date is invented for the second transfer. Exact sources, quote whitespace and event order were checked separately. The total is partial, with one successful transfer of unknown amount."
+}

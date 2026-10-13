@@ -1,0 +1,121 @@
+[
+  {
+    "id": "S01",
+    "title": "Online task offer and deposit requests",
+    "descriptions": [
+      "Nadia offers tasks liking posts and promises a commission of IDR 50,000 per day.",
+      "Nadia requests a deposit of IDR 180,000 to ****4821 to continue the tasks.",
+      "Raka says he sent IDR 180,000 and has not recorded the transfer time.",
+      "Nadia requests an additional deposit of IDR 420,000 so the balance can be withdrawn.",
+      "Raka says the additional deposit is pending and has not appeared in his bank statement."
+    ],
+    "transfers": [
+      {
+        "from_bank": "Bank Aruna",
+        "from_account": "****7392",
+        "to_bank": "Bank Lestari",
+        "to_account": "****4821",
+        "amount": 180000,
+        "occurred_at": "",
+        "status": "successful",
+        "note": "Fictional user-entered record; transfer time unknown."
+      },
+      {
+        "from_bank": "Bank Aruna",
+        "from_account": "****7392",
+        "to_bank": "Bank Lestari",
+        "to_account": "****4821",
+        "amount": 420000,
+        "occurred_at": "",
+        "status": "pending",
+        "note": "Fictional user-entered record; transfer time unknown."
+      }
+    ],
+    "expected_total": 180000,
+    "expected_unknown_success": 0,
+    "raw_chat": "[10/10/2026, 09:00:00] Nadia: Hi Raka, we offer tasks liking posts and promise a commission of IDR 50,000 per day.\n[10/10/2026, 09:01:00] Nadia: To continue the tasks, please pay a deposit of IDR 180,000 to ****4821.\n[10/10/2026, 09:02:00] Raka: I have just sent IDR 180,000. I have not recorded the transfer time yet.\n[10/10/2026, 09:03:00] Nadia: Now add a deposit of IDR 420,000 so your balance can be withdrawn.\n[10/10/2026, 09:04:00] Raka: The additional deposit is still pending. I have not seen it in my bank statement.\n",
+    "attachments": [
+      "fictional-transfer-reference.pdf",
+      "S01-conversation-reference.png",
+      "S01-transfer-notes.jpg"
+    ]
+  },
+  {
+    "id": "S02",
+    "title": "Failed job registration deposit",
+    "descriptions": [
+      "Nadia requests a registration deposit of IDR 275,000 to ****4821.",
+      "Raka says the IDR 275,000 transfer failed and the bank application shows failed.",
+      "Nadia asks Raka to try again after checking his balance."
+    ],
+    "transfers": [
+      {
+        "from_bank": "Bank Aruna",
+        "from_account": "****7392",
+        "to_bank": "Bank Lestari",
+        "to_account": "****4821",
+        "amount": 275000,
+        "occurred_at": "",
+        "status": "failed",
+        "note": "Fictional user-entered record; transfer time unknown."
+      }
+    ],
+    "expected_total": null,
+    "expected_unknown_success": 0,
+    "raw_chat": "[10/10/2026, 09:00:00] Nadia: Please pay a registration deposit of IDR 275,000 to ****4821.\n[10/10/2026, 09:01:00] Raka: My IDR 275,000 transfer failed. The bank application shows failed.\n[10/10/2026, 09:02:00] Nadia: Please try again after checking your balance.\n",
+    "attachments": [
+      "fictional-transfer-reference.pdf",
+      "S02-conversation-reference.png",
+      "S02-transfer-notes.jpg"
+    ]
+  },
+  {
+    "id": "S03",
+    "title": "Two sent deposits with one unknown amount",
+    "descriptions": [
+      "Raka says the first IDR 225,000 transfer was successful but its transfer time has not been recorded.",
+      "Raka says the second transfer was successful but its amount and transfer time are unknown.",
+      "Raka says the IDR 410,000 transfer is pending and has not completed."
+    ],
+    "transfers": [
+      {
+        "from_bank": "Bank Aruna",
+        "from_account": "****7392",
+        "to_bank": "Bank Lestari",
+        "to_account": "****4821",
+        "amount": 225000,
+        "occurred_at": "",
+        "status": "successful",
+        "note": "Fictional user-entered record; transfer time unknown."
+      },
+      {
+        "from_bank": "Bank Aruna",
+        "from_account": "****7392",
+        "to_bank": "Bank Lestari",
+        "to_account": "****4821",
+        "amount": null,
+        "occurred_at": "",
+        "status": "successful",
+        "note": "Fictional user-entered record; transfer time unknown."
+      },
+      {
+        "from_bank": "Bank Aruna",
+        "from_account": "****7392",
+        "to_bank": "Bank Lestari",
+        "to_account": "****4821",
+        "amount": 410000,
+        "occurred_at": "",
+        "status": "pending",
+        "note": "Fictional user-entered record; transfer time unknown."
+      }
+    ],
+    "expected_total": 225000,
+    "expected_unknown_success": 1,
+    "raw_chat": "[10/10/2026, 09:00:00] Raka: The first IDR 225,000 transfer was successful, but I have not recorded its transfer time.\n[10/10/2026, 09:01:00] Raka: My second transfer was successful too. I cannot find its amount or transfer time yet.\n[10/10/2026, 09:02:00] Raka: The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n",
+    "attachments": [
+      "fictional-transfer-reference.pdf",
+      "S03-conversation-reference.png",
+      "S03-transfer-notes.jpg"
+    ]
+  }
+]

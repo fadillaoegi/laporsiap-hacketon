@@ -1,0 +1,92 @@
+{
+  "reviewer": "Codex assistant",
+  "independent_human_review": false,
+  "original_outputs_modified": false,
+  "events_reviewed": 4,
+  "issues_for_stated_criteria": 0,
+  "cases": [
+    {
+      "id": "actor-direction-v6-time-preserved-en",
+      "language": "en",
+      "criteria": [
+        {
+          "criterion": "Preserve sending IDR 264000 and no refund as two assertions.",
+          "decision": "preserved"
+        },
+        {
+          "criterion": "Do not assign the payment amount to an unspecified refund.",
+          "decision": "preserved"
+        },
+        {
+          "criterion": "Recruiter is the promisor, not the message sender.",
+          "decision": "preserved"
+        },
+        {
+          "criterion": "IDR 63000 commission is promised next week and not paid.",
+          "decision": "preserved"
+        }
+      ],
+      "events": [
+        {
+          "source_id": "M1",
+          "source": "I sent IDR 264,000. No refund has reached me.",
+          "description": "The sender states they sent IDR 264,000 and no refund has been received.",
+          "decision": "preserved_for_stated_criteria"
+        },
+        {
+          "source_id": "M2",
+          "source": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n",
+          "description": "The sender reports the recruiter promises IDR 63,000 commission next week; it has not been paid.",
+          "decision": "preserved_for_stated_criteria"
+        }
+      ],
+      "explicit_relative_time": "next week",
+      "time_preserved": true,
+      "checks": []
+    },
+    {
+      "id": "actor-direction-v6-time-preserved-id",
+      "language": "id",
+      "criteria": [
+        {
+          "criterion": "Preserve sending IDR 264000 and no refund as two assertions.",
+          "decision": "preserved"
+        },
+        {
+          "criterion": "Do not assign the payment amount to an unspecified refund.",
+          "decision": "preserved"
+        },
+        {
+          "criterion": "Recruiter is the promisor, not the message sender.",
+          "decision": "preserved"
+        },
+        {
+          "criterion": "IDR 63000 commission is promised next week and not paid.",
+          "decision": "preserved"
+        }
+      ],
+      "events": [
+        {
+          "source_id": "M1",
+          "source": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima.",
+          "description": "Pengirim menyatakan telah mengirim Rp264.000 dan menyatakan uang pengembalian belum diterima.",
+          "decision": "preserved_for_stated_criteria"
+        },
+        {
+          "source_id": "M2",
+          "source": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+          "description": "Pengirim mengatakan perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.",
+          "decision": "preserved_for_stated_criteria"
+        }
+      ],
+      "explicit_relative_time": "pekan depan",
+      "time_preserved": true,
+      "checks": []
+    }
+  ],
+  "limitations": [
+    "Same development inputs as v4/v5, not holdout.",
+    "Passing stated criteria is not a general semantic accuracy guarantee.",
+    "Four recent accepted calls across v5/v6 do not prove provider reliability or actual GPU deployment."
+  ]
+}

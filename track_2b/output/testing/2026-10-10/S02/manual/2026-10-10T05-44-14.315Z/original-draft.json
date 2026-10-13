@@ -1,0 +1,55 @@
+{
+  "synthetic": true,
+  "draft": {
+    "origin": "manual",
+    "model": "",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Message quote: Please pay a registration deposit of IDR 275,000 to ****4821.",
+        "evidence": "Please pay a registration deposit of IDR 275,000 to ****4821."
+      },
+      {
+        "source_id": "M2",
+        "description": "Message quote: My IDR 275,000 transfer failed. The bank application shows failed.",
+        "evidence": "My IDR 275,000 transfer failed. The bank application shows failed."
+      },
+      {
+        "source_id": "M3",
+        "description": "Message quote: Please try again after checking your balance.\n",
+        "evidence": "Please try again after checking your balance.\n"
+      }
+    ],
+    "checks": [
+      {
+        "event_index": 0,
+        "source_id": "M1",
+        "flags": [
+          "claim_as_fact_requires_review"
+        ]
+      }
+    ],
+    "language": "en",
+    "generated_at": "2026-10-10T05:44:20Z"
+  },
+  "messages": [
+    {
+      "id": "M1",
+      "text": "Please pay a registration deposit of IDR 275,000 to ****4821.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:00:00"
+    },
+    {
+      "id": "M2",
+      "text": "My IDR 275,000 transfer failed. The bank application shows failed.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:01:00"
+    },
+    {
+      "id": "M3",
+      "text": "Please try again after checking your balance.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:02:00"
+    }
+  ]
+}

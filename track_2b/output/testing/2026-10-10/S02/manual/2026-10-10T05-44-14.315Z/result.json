@@ -1,0 +1,115 @@
+{
+  "scenario": "S02",
+  "mode": "manual",
+  "language": "en",
+  "synthetic": true,
+  "result": "Success",
+  "started_at": "2026-10-10T05:44:14.318Z",
+  "finished_at": "2026-10-10T05:44:27.396Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "7f6568faec9da281189a07c937d572bacd184f072dc63c3c",
+  "summary": {
+    "successful_known_total": null,
+    "successful_count": 0,
+    "successful_unknown_amount": 0,
+    "status_counts": {
+      "failed": 1,
+      "pending": 0,
+      "successful": 0,
+      "unknown": 0
+    },
+    "warnings": [
+      "Transfer 1: tanggal transfer belum lengkap."
+    ]
+  },
+  "original_draft": {
+    "origin": "manual",
+    "model": "",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Message quote: Please pay a registration deposit of IDR 275,000 to ****4821.",
+        "evidence": "Please pay a registration deposit of IDR 275,000 to ****4821."
+      },
+      {
+        "source_id": "M2",
+        "description": "Message quote: My IDR 275,000 transfer failed. The bank application shows failed.",
+        "evidence": "My IDR 275,000 transfer failed. The bank application shows failed."
+      },
+      {
+        "source_id": "M3",
+        "description": "Message quote: Please try again after checking your balance.\n",
+        "evidence": "Please try again after checking your balance.\n"
+      }
+    ],
+    "checks": [
+      {
+        "event_index": 0,
+        "source_id": "M1",
+        "flags": [
+          "claim_as_fact_requires_review"
+        ]
+      }
+    ],
+    "language": "en",
+    "generated_at": "2026-10-10T05:44:20Z"
+  },
+  "draft_request_ui_ms": 133,
+  "manual_entries_authored": 3,
+  "ai_entries_corrected": null,
+  "uploads": [
+    {
+      "filename": "fictional-transfer-reference.pdf",
+      "size": 2339,
+      "sha256": "fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3",
+      "round_trip_identical": true
+    },
+    {
+      "filename": "S02-conversation-reference.png",
+      "size": 63884,
+      "sha256": "0d1ecc7d97e3938e3b8ccae39c078d0173f11a019df35bb2ffdf9d098710f69d",
+      "round_trip_identical": true
+    },
+    {
+      "filename": "S02-transfer-notes.jpg",
+      "size": 106708,
+      "sha256": "78fa46b99a0fbc2d60b5db3938592e52fa62b651c9f358300fe2f35de8114e0d",
+      "round_trip_identical": true
+    }
+  ],
+  "steps": [
+    {
+      "name": "Import conversation TXT and save transfer inputs",
+      "started_at": "2026-10-10T05:44:15.482Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:18.133Z"
+    },
+    {
+      "name": "Upload PDF, PNG and JPEG; link and download each original",
+      "started_at": "2026-10-10T05:44:18.133Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:20.772Z"
+    },
+    {
+      "name": "Create draft with consent gates",
+      "started_at": "2026-10-10T05:44:20.772Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:20.909Z"
+    },
+    {
+      "name": "Review meaning and confirm current revision",
+      "started_at": "2026-10-10T05:44:20.909Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:22.284Z"
+    },
+    {
+      "name": "Export reviewed ZIP and TXT; verify sources, transfers and attachments",
+      "started_at": "2026-10-10T05:44:22.284Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:24.369Z"
+    }
+  ],
+  "limitation": "Developer browser automation with assistant source review. Includes deliberate browser delays and review waiting; not human task time or an independent accuracy/speed study."
+}

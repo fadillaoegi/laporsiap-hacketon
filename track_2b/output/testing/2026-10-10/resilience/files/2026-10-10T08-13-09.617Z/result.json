@@ -1,0 +1,90 @@
+{
+  "scenario": "files",
+  "result": "Failed",
+  "synthetic": true,
+  "language": "en",
+  "started_at": "2026-10-10T08:13:09.623Z",
+  "finished_at": "2026-10-10T08:13:27.805Z",
+  "recording": "LaporSiap_Failed_1.mp4",
+  "stopped_at": "Reject unsupported, empty and truncated files without changing the case",
+  "error": "Invalid attachment accepted: truncated.png (HTTP 200)",
+  "case_id": "6f84807ef395cf0f71a68d10833c6dab79d7bf58645f8ae2",
+  "live_apertus_calls": 0,
+  "draft_requests": 1,
+  "attachment_requests": 4,
+  "checks": [
+    {
+      "check": "unsupported-evidence.txt",
+      "status": "passed",
+      "http_status": 400,
+      "persisted_case_unchanged": true
+    },
+    {
+      "check": "empty.png",
+      "status": "passed",
+      "http_status": 400,
+      "persisted_case_unchanged": true
+    }
+  ],
+  "steps": [
+    {
+      "name": "Open English app and prepare saved fictional baseline",
+      "started_at": "2026-10-10T08:13:12.493Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T08:13:19.963Z"
+    },
+    {
+      "name": "Reject unsupported, empty and truncated files without changing the case",
+      "started_at": "2026-10-10T08:13:19.963Z",
+      "status": "failed",
+      "error": "Invalid attachment accepted: truncated.png (HTTP 200)"
+    }
+  ],
+  "input_hashes": [
+    {
+      "name": "unsupported-evidence.txt",
+      "bytes": 66,
+      "sha256": "259f4f5fd2eb5cac42e7f9685ad955f8f3565e063c8d72f982209ebceef77096"
+    },
+    {
+      "name": "empty.png",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "truncated.png",
+      "bytes": 32,
+      "sha256": "a493d0d4f424fe3b4b3e65d482c5c410a5d13cf49ffaff69b47090059fa8e559"
+    },
+    {
+      "name": "truncated.jpg",
+      "bytes": 16,
+      "sha256": "a9daccaecd68e446d76070cc759afcfb3b85f593361f2ab8daf19004e2c687b9"
+    },
+    {
+      "name": "truncated.pdf",
+      "bytes": 80,
+      "sha256": "57996b70653e252e08c13e7f232c6a133ddd12c467a2ed66ce91f53aad07152f"
+    },
+    {
+      "name": "oversize.png",
+      "bytes": 5242881,
+      "sha256": "71d9c35aa9f33fa20e0f9478e0c6bcab21a9fb50d32fece90ad7bbab955a0a6d"
+    },
+    {
+      "name": "invalid-date.txt",
+      "bytes": 78,
+      "sha256": "8e5ad3d4c8773d6a4a0f7be5dc36630d9e4b354c8f59ca640f175574b93988f5"
+    },
+    {
+      "name": "instruction-in-source.txt",
+      "bytes": 281,
+      "sha256": "3e9729e016ff0c3b795c365ea9557a3e5175fe9c5e9a00e7b167852fd84f8a11"
+    }
+  ],
+  "limitations": [
+    "Controlled browser network/provider faults are simulated, not real provider incidents.",
+    "Live source-injection run is one fictional example with assistant review, not independent human accuracy evaluation.",
+    "Negative inputs are deliberately invalid test files; no real victim data or bank evidence."
+  ]
+}

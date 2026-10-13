@@ -1,0 +1,7 @@
+{
+  "passed": 13,
+  "failed": 0,
+  "seconds": 58.0,
+  "live_ai_calls": 0,
+  "note": "UI manual and controlled provider stubs. Default suite excludes separate deployment tests."
+}

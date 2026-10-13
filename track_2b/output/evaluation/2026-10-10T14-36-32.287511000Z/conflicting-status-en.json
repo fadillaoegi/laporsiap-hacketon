@@ -1,0 +1,90 @@
+{
+  "id": "conflicting-status-en",
+  "language": "en",
+  "category": "conflicting-status",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "started_at": "2026-10-10T14:37:38Z",
+  "case_id": "98fb331f05b602a5a1718b1cbd98a61315834d5b755cf57a",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I previously said I had sent IDR 350,000.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Correction: the amount is IDR 340,000; I cannot confirm whether it completed.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "The recipient claims the money arrived, but I cannot see it on my bank statement.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "en",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "I previously said I had sent IDR 350,000."
+      },
+      {
+        "id": "M2",
+        "text": "Correction: the amount is IDR 340,000; I cannot confirm whether it completed."
+      },
+      {
+        "id": "M3",
+        "text": "The recipient claims the money arrived, but I cannot see it on my bank statement.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "4b896d96a2370635f259ce62aacc3edeb192edef006b398221087074d77b7ec8"
+  },
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender claims they previously stated they sent IDR 350,000.",
+        "evidence": "I previously said I had sent IDR 350,000."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender corrects the amount to IDR 340,000 and states they cannot confirm if the transfer completed.",
+        "evidence": "Correction: the amount is IDR 340,000; I cannot confirm whether it completed."
+      },
+      {
+        "source_id": "M3",
+        "description": "The sender says the recipient claims the money arrived, but the sender cannot see it on their bank statement.",
+        "evidence": "The recipient claims the money arrived, but I cannot see it on my bank statement.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T14:37:42Z",
+    "duration_ms": 3914,
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 209
+    },
+    "prompt_version": "bilingual-v3",
+    "privacy_mode": "redacted"
+  },
+  "contract_passed": true,
+  "transfers_unchanged": true,
+  "draft_request_seconds": 4.0775950420000004,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Earlier amount is an attributed statement.",
+    "Keep correction and uncertainty.",
+    "Recipient claim is not bank verification."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "observed_tasks": 0,
+  "completed_with_review": 0,
+  "independent_participants_with_review": 0,
+  "role_rule": "Only the explicitly verified role independent counts. Planned participant IDs do not establish independence.",
+  "issues": [],
+  "modes": {
+    "manual": {
+      "reviewed_tasks": 0,
+      "median_task_seconds": null
+    },
+    "apertus": {
+      "reviewed_tasks": 0,
+      "median_task_seconds": null
+    }
+  },
+  "limitations": [
+    "Small exploratory pilot, no population accuracy or time-saving claim.",
+    "Null means unobserved, not zero.",
+    "Role verification remains the facilitator's responsibility."
+  ]
+}

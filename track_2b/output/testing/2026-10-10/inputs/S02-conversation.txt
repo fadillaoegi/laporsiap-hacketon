@@ -1,0 +1,3 @@
+[10/10/2026, 09:00:00] Nadia: Please pay a registration deposit of IDR 275,000 to ****4821.
+[10/10/2026, 09:01:00] Raka: My IDR 275,000 transfer failed. The bank application shows failed.
+[10/10/2026, 09:02:00] Nadia: Please try again after checking your balance.

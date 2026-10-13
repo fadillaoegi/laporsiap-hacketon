@@ -1,0 +1,47 @@
+{
+  "synthetic": true,
+  "draft": {
+    "origin": "manual",
+    "model": "",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Message quote: The first IDR 225,000 transfer was successful, but I have not recorded its transfer time.",
+        "evidence": "The first IDR 225,000 transfer was successful, but I have not recorded its transfer time."
+      },
+      {
+        "source_id": "M2",
+        "description": "Message quote: My second transfer was successful too. I cannot find its amount or transfer time yet.",
+        "evidence": "My second transfer was successful too. I cannot find its amount or transfer time yet."
+      },
+      {
+        "source_id": "M3",
+        "description": "Message quote: The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n",
+        "evidence": "The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T05:44:41Z"
+  },
+  "messages": [
+    {
+      "id": "M1",
+      "text": "The first IDR 225,000 transfer was successful, but I have not recorded its transfer time.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:00:00"
+    },
+    {
+      "id": "M2",
+      "text": "My second transfer was successful too. I cannot find its amount or transfer time yet.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:01:00"
+    },
+    {
+      "id": "M3",
+      "text": "The next IDR 410,000 transfer is still pending. It is not a completed transfer.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:02:00"
+    }
+  ]
+}

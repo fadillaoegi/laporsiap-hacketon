@@ -1,0 +1,24 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "manual",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": false,
+  "started_at": "2026-10-09T18:27:30.462Z",
+  "finished_at": "2026-10-09T18:28:02.929Z",
+  "recording": "LaporSiap_Failed_1.mp4",
+  "stopped_at": "01 — Open the app and import the English fictional case",
+  "error": "locator.selectOption: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Transfer status', { exact: true }).first()\u001b[22m\n",
+  "case_id": null,
+  "revision": null,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "failed",
+      "started_at": "2026-10-09T18:27:32.776Z",
+      "error": "locator.selectOption: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Transfer status', { exact: true }).first()\u001b[22m\n"
+    }
+  ]
+}

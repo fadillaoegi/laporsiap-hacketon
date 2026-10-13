@@ -1,0 +1,93 @@
+{
+  "verified_date_local": "2026-10-10",
+  "scenario": "natural-fictional-case-v1",
+  "synthetic": true,
+  "changes": [
+    "UI and TXT/PDF export labels say Data simulasi / Simulated data; demo removed from application-owned visible labels.",
+    "New sample identities Nadia/Raka, fictional banks, masked accounts, and natural greetings.",
+    "Historical cases, raw sources, and recordings preserved."
+  ],
+  "checks": [
+    {
+      "command": "sh scripts/test-backend.sh",
+      "status": "passed",
+      "scope": "Go tests with PostgreSQL and race detector"
+    },
+    {
+      "command": "pnpm build",
+      "status": "passed"
+    },
+    {
+      "command": "pnpm test:ui",
+      "status": "passed",
+      "tests": 9,
+      "duration_seconds": 31.5,
+      "scope": "Both UI languages, truthful simulation label, stored synthetic flag, preview, review, evidence links, exports and mobile widths."
+    },
+    {
+      "command": "node scripts/demo/record-simulation.mjs --apertus --english --natural",
+      "status": "passed",
+      "steps": 8,
+      "report": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap_Success_1.json"
+    },
+    {
+      "scope": "PDF and ZIP verification",
+      "status": "passed",
+      "details": "EN/ID sample PDFs and live EN PDF rendered and inspected (3 pages each); ZIP reviewed snapshot, account masks, amounts/statuses, evidence links and matching PDF text checked."
+    }
+  ],
+  "live_draft_metadata": {
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "language": "en",
+    "generated_at": "2026-10-10T01:21:03Z",
+    "duration_ms": 8984,
+    "usage": {
+      "input_tokens": 546,
+      "output_tokens": 357
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "assistant_review": "All five generated descriptions compared with unchanged fictional quotes. Requests/promises remain attributed; sent funds stay sent; additional deposit remains pending; transfer dates remain unknown. No independent human study.",
+  "model_identity_limit": "Response model metadata verified; physical provider weights not audited.",
+  "failed_recordings": [
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap_Failed_1.mp4",
+      "stage": "before application opened",
+      "live_ai_called": false,
+      "cause": "Frontend was not serving port 5175; preserved and stopped immediately."
+    },
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap_Failed_2.mp4",
+      "stage": "before application opened",
+      "live_ai_called": false,
+      "cause": "Frontend was not serving port 5175; preserved and stopped immediately."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap_Success_1.mp4",
+      "bytes": 16906990,
+      "sha256": "77976a5048162ee2c66ed256ae953e88c806091ab803fa8aac6a338f7accea53"
+    },
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap_Success_1.json",
+      "bytes": 2368,
+      "sha256": "70e004d4e5df46fb1229be247fc76c93b1e7e28522f1da37dc0374b970ba1708"
+    },
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap-report.pdf",
+      "bytes": 18516,
+      "sha256": "8b2a2a4137aea3040e0ec0bcb929a5e485e3c0760545de1af0c4618f7f539150"
+    },
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap-simulation.zip",
+      "bytes": 20419,
+      "sha256": "02a6be971e5daf52b71cdc2891daabfee4960f361335e63d6abf77f6b79f70a0"
+    },
+    {
+      "path": "output/simulation/2026-10-10/apertus/english/natural-case/LaporSiap-chronology.txt",
+      "bytes": 2923,
+      "sha256": "1cf32bb0f2b5880a70973acf7dd3f60a9e74cbdb4e407462074f7e2c4ca12f76"
+    }
+  ]
+}

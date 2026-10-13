@@ -1,0 +1,29 @@
+{
+  "synthetic": true,
+  "probe": "One Go request through local application API; no retry or research batch",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "revision": 2,
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Pengirim menyatakan transfer gagal dan saldo tidak berkurang.",
+        "evidence": "Transfer Rp275.000 saya gagal. Saldo tidak berkurang."
+      },
+      {
+        "source_id": "M2",
+        "description": "Pengirim meminta untuk mengirim ulang ke rekening DEMO-REK-H03.",
+        "evidence": "Coba kirim lagi ke DEMO-REK-H03."
+      },
+      {
+        "source_id": "M3",
+        "description": "Pengirim menyatakan tidak mencoba lagi dan belum ada transaksi berhasil.",
+        "evidence": "Saya tidak mencoba lagi dan belum ada transaksi berhasil."
+      }
+    ],
+    "checks": []
+  },
+  "note": "Recorded from cmd/smoke -live output. Model identity is API metadata. No human review confirmation or export performed; one probe does not establish general semantic accuracy or provider reliability."
+}

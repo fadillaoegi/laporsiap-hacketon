@@ -1,0 +1,65 @@
+{
+  "title": "Online task offer and top-up requests — synthetic demo",
+  "rawChat": "[08/10/2026, 09:10] Demo Admin: We offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day.\n[08/10/2026, 09:14] Demo Admin: To continue the tasks, please pay a deposit of IDR 180,000 to DEMO-ACCOUNT-001.\n[08/10/2026, 09:28] Demo User: I have just sent IDR 180,000. I have not recorded the transfer time yet.\n[08/10/2026, 09:35] Demo Admin: Now add a deposit of IDR 420,000 so the balance can be withdrawn.\n[08/10/2026, 09:40] Demo User: The additional deposit is still pending. I have not seen the transaction on my bank statement.",
+  "transfers": [
+    {
+      "fromBank": "Demo Bank A",
+      "fromAccount": "DEMO-SENDER-001",
+      "toBank": "Demo Bank B",
+      "toAccount": "DEMO-ACCOUNT-001",
+      "amount": "180000",
+      "status": "successful",
+      "note": "Transfer date not recorded; do not use the message timestamp."
+    },
+    {
+      "fromBank": "Demo Bank A",
+      "fromAccount": "DEMO-SENDER-001",
+      "toBank": "Demo Bank B",
+      "toAccount": "DEMO-ACCOUNT-001",
+      "amount": "420000",
+      "status": "pending",
+      "note": "Not yet confirmed as successful."
+    }
+  ],
+  "descriptions": [
+    "Demo Admin offers tasks involving liking posts, with a promised commission of IDR 50,000 per day.",
+    "Demo Admin requests a deposit of IDR 180,000 to DEMO-ACCOUNT-001 to continue the tasks.",
+    "Demo User states that they have just sent IDR 180,000 and have not recorded the transfer time.",
+    "Demo Admin requests an additional deposit of IDR 420,000 so the balance can be withdrawn.",
+    "Demo User states that the additional deposit is still pending and is not yet visible on their bank statement."
+  ],
+  "pdfLines": [
+    [
+      22,
+      "LaporSiap - SYNTHETIC DEMO"
+    ],
+    [
+      12,
+      "Fictional reference attachment. Not a bank receipt."
+    ],
+    [
+      12,
+      "Demo Bank A / DEMO-SENDER-001"
+    ],
+    [
+      12,
+      "Destination: Demo Bank B / DEMO-ACCOUNT-001"
+    ],
+    [
+      12,
+      "Demo user record: IDR 180,000 marked successful."
+    ],
+    [
+      12,
+      "Additional record: IDR 420,000 still pending."
+    ],
+    [
+      12,
+      "Transfer date unknown; message time is not transfer time."
+    ],
+    [
+      12,
+      "All names, accounts and transactions are fictional."
+    ]
+  ]
+}

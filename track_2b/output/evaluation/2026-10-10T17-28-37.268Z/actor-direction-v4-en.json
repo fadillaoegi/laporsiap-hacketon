@@ -1,0 +1,60 @@
+{
+  "id": "actor-direction-v4-en",
+  "language": "en",
+  "category": "targeted_actor_direction_regression",
+  "started_at": "2026-10-10T17:28:38.379Z",
+  "status": "failed_or_rejected",
+  "api_status": 502,
+  "contract_passed": false,
+  "state_verified": true,
+  "transfers_unchanged": true,
+  "original_sources_unchanged": true,
+  "failed_draft_not_saved": true,
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Preserve sending IDR 264000 and no refund as two assertions.",
+    "Do not assign the payment amount to an unspecified refund.",
+    "Recruiter is the promisor, not the message sender.",
+    "IDR 63000 commission is promised next week and not paid."
+  ],
+  "provider_attempts": 1,
+  "case_id": "4f09bb1f0cefd2fd4cb1bc7049be33af6e94ab4ff941908d",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I sent IDR 264,000. No refund has reached me.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 12:00"
+    },
+    {
+      "id": "M2",
+      "text": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 12:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "en",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "I sent IDR 264,000. No refund has reached me."
+      },
+      {
+        "id": "M2",
+        "text": "The recruiter promises IDR 63,000 commission next week; it has not been paid.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "a3cede3ae5781341af629c1dc7acbb661cc19a179dfc0327bac775de44d38f6a"
+  },
+  "draft_request_seconds": 8.053077709,
+  "error": "Draft AI tidak memenuhi schema atau kutipan sumber. Draft ditolak; data asli tetap tersedia.",
+  "provider_diagnostic": {
+    "response_model": "swiss-ai/apertus-v1.5-70b",
+    "validation_rule": "chronology quote differs from original source"
+  },
+  "recording": "actor-direction-v4-en/LaporSiap_Failed_1.mp4"
+}

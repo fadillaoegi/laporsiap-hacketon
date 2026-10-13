@@ -1,0 +1,45 @@
+A suspicious online job offer can leave someone with a confusing record of messages, promises, and top-up requests. Before filling in a report, they need to explain what happened and organize their transfer details and evidence.
+
+LaporSiap was created around this preparation task. It is designed for the person preparing a report, or a family member helping them. In this demonstration, every message, account, and transaction is synthetic.
+
+The workflow has four steps: collect case materials, create a draft, review and edit, then export.
+
+The official IASC link is available from the beginning. Someone who is ready to report can go directly to the official channel without waiting for an AI draft.
+
+First, we paste a conversation or import a TXT file. The app supports plain text and a specific header format containing the sender and message time. Missing metadata is left unknown.
+
+We enter transfer details ourselves: the sending and receiving accounts, amount, date, and status. Unknown amounts and dates can remain blank.
+
+We can also attach images or PDFs as references. The current version does not read them automatically with OCR.
+
+In this example, one hundred and eighty thousand rupiah is marked successful, while another four hundred and twenty thousand is pending.
+
+The backend includes only successful transfers with known amounts, so the displayed total is one hundred and eighty thousand rupiah. This is the successful amount reported by the user, not a bank-verified loss.
+
+Pending, failed, and unconfirmed transfers are excluded. Unknown values are not converted to zero.
+
+Apertus version one point five is a language model with seventy billion parameters. Here, it helps turn the message text into a concise chronology draft. Each entry is linked to a source ID and an exact original quote, so the user can check where it came from.
+
+Before sending text to Public AI, the external provider, the app requests consent. It sends only source IDs and message text; that text may contain personal information. Transfer fields and attachment files are not sent.
+
+Apertus does not create or change transfer records. The backend checks the response's reported model identity, structure, and source quotes before saving the draft.
+
+An exact quote does not guarantee an accurate summary. In early testing, one summary changed sending money into receiving money, even though its quote was correct.
+
+That finding shaped the review process. The app displays the draft beside its source and flags some potential problems, including reversed transfer direction and instructions embedded in messages.
+
+These checks can miss mistakes or flag valid wording. The user still reviews every entry. A manual draft is also available if AI fails or the user prefers not to send text.
+
+During review, we can edit the descriptions while keeping the original quotes intact. We check the transfer details, incomplete information, and each source message before confirming the revision.
+
+The progress indicator shows how many sources have been reviewed. Revision history keeps the original draft and subsequent changes.
+
+If we later change the case materials, draft, or attachments, the previous confirmation is cleared. Export becomes available again only after reviewing and confirming the updated revision.
+
+After confirmation, we download a text chronology or a ZIP package containing the chronology, original conversation, transfer CSV, reviewed case snapshot, and attachments. Transfers are grouped by account pair in the chronology.
+
+The interface supports English and Indonesian, with English as the default. Export labels follow the selected language, while the original evidence and user-written content remain unchanged.
+
+The prototype uses a Go backend, a React and TypeScript interface, and PostgreSQL, running locally. User benefits still need testing.
+
+LaporSiap prepares supporting materials. It does not submit reports, verify transactions, or guarantee refunds, and it is not affiliated with OJK or IASC. Its goal is to help people organize their account of events with sources they can review.

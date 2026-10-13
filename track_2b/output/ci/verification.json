@@ -1,0 +1,54 @@
+{
+  "workflow": ".github/workflows/ci.yml",
+  "workflow_sha256": "d659240f7b016f2331cd011936e84c0e0c97dd0888a99cab6b5f1f1dcd4f9822",
+  "local_validation": {
+    "actionlint": {
+      "version": "v1.7.12",
+      "status": "passed",
+      "shellcheck_enabled": false,
+      "pyflakes_enabled": false
+    },
+    "yaml_parse": "passed",
+    "playwright_install_dry_run": "chrome and ffmpeg recognized",
+    "readiness": {
+      "status": "passed",
+      "writes": 0,
+      "provider_calls": 0,
+      "first_sandbox_attempt": "localhost access blocked; bounded timeout; escalated rerun passed"
+    },
+    "backend_race": "passed; same final backend source tested before CI definition",
+    "frontend_build_architecture_unit": "passed; same final production source tested before CI definition",
+    "full_browser": {
+      "status": "passed",
+      "tests": 13,
+      "seconds": 23.4,
+      "folder": "output/ci/browser-2026-10-11",
+      "live_provider_calls": 0
+    }
+  },
+  "jobs": [
+    "backend",
+    "frontend",
+    "browser"
+  ],
+  "actions": {
+    "actions/checkout": "d23441a48e516b6c34aea4fa41551a30e30af803",
+    "actions/setup-go": "924ae3a1cded613372ab5595356fb5720e22ba16",
+    "actions/setup-node": "249970729cb0ef3589644e2896645e5dc5ba9c38",
+    "actions/upload-artifact": "ea165f8d65b6e75b540449e92b4886f43607fa02"
+  },
+  "versions": {
+    "node": "24.15.0",
+    "pnpm": "11.1.3",
+    "go": "from laporsiap_BE/go.mod"
+  },
+  "real_apertus_key_in_ci": false,
+  "live_evaluators_in_ci": false,
+  "database": "Separate fresh service per backend/browser job",
+  "github_runs": 0,
+  "published_or_pushed": false,
+  "limitations": [
+    "Workflow syntax/local application checks are not an executed GitHub/Ubuntu run.",
+    "Upload artifact runs only if owner later pushes/runs the workflow; no external artifact upload occurred here."
+  ]
+}

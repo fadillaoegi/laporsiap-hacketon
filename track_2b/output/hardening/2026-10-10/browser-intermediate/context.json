@@ -1,0 +1,7 @@
+{
+  "passed": 12,
+  "failed": 1,
+  "skipped": 2,
+  "failure_reason": "The assistant started the browser suite during a backend restart; Vite returned 502 for case creation. This is a test sequencing failure, not a passed app check.",
+  "skipped_video_note": "Two skipped deployment tests were incorrectly labelled Failed by their teardown hook. They did not run the deployment workflow. Hook and suite separation have been corrected."
+}

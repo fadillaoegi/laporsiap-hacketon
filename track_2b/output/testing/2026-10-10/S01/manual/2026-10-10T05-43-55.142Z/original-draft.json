@@ -1,0 +1,77 @@
+{
+  "synthetic": true,
+  "draft": {
+    "origin": "manual",
+    "model": "",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Message quote: Hi Raka, we offer tasks liking posts and promise a commission of IDR 50,000 per day.",
+        "evidence": "Hi Raka, we offer tasks liking posts and promise a commission of IDR 50,000 per day."
+      },
+      {
+        "source_id": "M2",
+        "description": "Message quote: To continue the tasks, please pay a deposit of IDR 180,000 to ****4821.",
+        "evidence": "To continue the tasks, please pay a deposit of IDR 180,000 to ****4821."
+      },
+      {
+        "source_id": "M3",
+        "description": "Message quote: I have just sent IDR 180,000. I have not recorded the transfer time yet.",
+        "evidence": "I have just sent IDR 180,000. I have not recorded the transfer time yet."
+      },
+      {
+        "source_id": "M4",
+        "description": "Message quote: Now add a deposit of IDR 420,000 so your balance can be withdrawn.",
+        "evidence": "Now add a deposit of IDR 420,000 so your balance can be withdrawn."
+      },
+      {
+        "source_id": "M5",
+        "description": "Message quote: The additional deposit is still pending. I have not seen it in my bank statement.\n",
+        "evidence": "The additional deposit is still pending. I have not seen it in my bank statement.\n"
+      }
+    ],
+    "checks": [
+      {
+        "event_index": 1,
+        "source_id": "M2",
+        "flags": [
+          "claim_as_fact_requires_review"
+        ]
+      }
+    ],
+    "language": "en",
+    "generated_at": "2026-10-10T05:44:03Z"
+  },
+  "messages": [
+    {
+      "id": "M1",
+      "text": "Hi Raka, we offer tasks liking posts and promise a commission of IDR 50,000 per day.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:00:00"
+    },
+    {
+      "id": "M2",
+      "text": "To continue the tasks, please pay a deposit of IDR 180,000 to ****4821.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:01:00"
+    },
+    {
+      "id": "M3",
+      "text": "I have just sent IDR 180,000. I have not recorded the transfer time yet.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:02:00"
+    },
+    {
+      "id": "M4",
+      "text": "Now add a deposit of IDR 420,000 so your balance can be withdrawn.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:03:00"
+    },
+    {
+      "id": "M5",
+      "text": "The additional deposit is still pending. I have not seen it in my bank statement.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:04:00"
+    }
+  ]
+}

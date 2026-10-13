@@ -1,0 +1,22 @@
+{
+  "checked_entries": 373,
+  "crc_verified": true,
+  "configured_secret_matches": 0,
+  "case_bearer_token_matches": 0,
+  "private_environment_paths": 0,
+  "limitations": [
+    "Screens known configured secret values and case-token JSON patterns only; not an independent security audit or image OCR."
+  ],
+  "archives": [
+    {
+      "file": "LaporSiap-hardening-evidence.zip",
+      "bytes": 43118392,
+      "sha256": "0a6bb981e5b1a85b3bc49eb455af767f959816a2d7fb22177e5d44dbd14243ce"
+    },
+    {
+      "file": "LaporSiap-source-review.zip",
+      "bytes": 3408054,
+      "sha256": "6e052a373e26dcf98b72b9be47b5581d7a10407bd78af73fe92138b8ea8b6864"
+    }
+  ]
+}

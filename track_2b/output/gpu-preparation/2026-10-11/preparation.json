@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-11T08:01:24.270897+00:00",
+  "mode": "preparation_only",
+  "model_repository": "swiss-ai/Apertus-v1.5-70B",
+  "model_revision": "59e744e313e967811aefabde3732609b64201acc",
+  "runtime_image": "ghcr.io/swiss-ai/vllm_apertus_1.5_release@sha256:d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6",
+  "configuration_valid": true,
+  "gpu_deployment_proven": false,
+  "inference_requests": 0,
+  "resources_rented": 0,
+  "limitations": [
+    "Pinned metadata and preparation do not prove model execution.",
+    "Hardware capacity does not prove loaded weights or runtime compatibility."
+  ]
+}

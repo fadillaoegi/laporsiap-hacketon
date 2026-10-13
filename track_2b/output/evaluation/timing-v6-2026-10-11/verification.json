@@ -1,0 +1,93 @@
+{
+  "date_local": "2026-10-11",
+  "status": "timing_omission_fixed_for_recognized_phrases_and_live_rechecks",
+  "architecture": "Domain validation before binding/AI persistence; provider adapter prompt v6; React Redux unchanged",
+  "prompt_version": "bilingual-v6-time-preserved",
+  "prompt_sha256": "96e58e67a5dafec4ac1c23d788619ed6acfa048a5e887872112e25a3baafb96e",
+  "change": "AI generated summaries that omit/change/add five explicit relative-time groups are rejected before saving. Prompt preserves timing with its original assertion; no automatic date/summary rewrite. Existing human-edit review flags retained.",
+  "live": {
+    "attempts": 2,
+    "contract_passed": 2,
+    "relative_time_preserved": true,
+    "response_models": [
+      "swiss-ai/apertus-v1.5-70b",
+      "swiss-ai/apertus-v1.5-70b"
+    ],
+    "originals_and_transfers_unchanged": true,
+    "provider_duration_ms": [
+      3857,
+      2469
+    ],
+    "input_tokens": 1700,
+    "output_tokens": 197,
+    "retry_count": 0,
+    "fallback_count": 0,
+    "folder": "output/evaluation/2026-10-11T07-59-55.575Z",
+    "recordings": [
+      "output/evaluation/2026-10-11T07-59-55.575Z/actor-direction-v6-time-preserved-en/LaporSiap_Success_1.mp4",
+      "output/evaluation/2026-10-11T07-59-55.575Z/actor-direction-v6-time-preserved-id/LaporSiap_Success_1.mp4"
+    ]
+  },
+  "assistant_review": {
+    "events": 4,
+    "issues_for_stated_criteria": 0,
+    "independent_human": false,
+    "report": "output/evaluation/2026-10-11T07-59-55.575Z/assistant-semantic-review.json",
+    "original_outputs_modified": false
+  },
+  "tests": {
+    "backend_race": "passed; integration 11.022 seconds",
+    "domain_regressions": [
+      "previous live next-week omission rejected",
+      "EN/ID translations accepted",
+      "invented/changed time rejected",
+      "multiple recognized expressions",
+      "quotes remain exact"
+    ],
+    "application_regression": "lost timing does not save/retry, consume extra attempt, or overwrite existing draft; lease released",
+    "provider_regression": "EN/ID time omission rejected after exactly one call; source unchanged",
+    "compiled_container": {
+      "tests": 2,
+      "passed": 2,
+      "seconds": 10.1,
+      "folder": "output/hardening/deployment-2026-10-11T08-15-02.800Z",
+      "reports": [
+        "output/hardening/deployment-2026-10-11T08-15-02.800Z/deployment-compiled-privat-9d4ac-plete-manual-workflow-in-en/verification.json",
+        "output/hardening/deployment-2026-10-11T08-15-02.800Z/deployment-compiled-privat-19c97-plete-manual-workflow-in-id/verification.json"
+      ],
+      "live_provider_calls": 0,
+      "image_id": "sha256:0c2070b6742df2b9da395c73d77a03d1c3fd375d5134964d9552fa80403707de"
+    },
+    "read_only_audit": {
+      "cases": 22,
+      "all_verified": true,
+      "folder": "output/hardening/state-check-2026-10-11T08-03-45.962121000Z"
+    },
+    "gpu_preparation_unit": "4/4 passed offline",
+    "workflow_actionlint": "passed; no GitHub execution"
+  },
+  "quota": {
+    "before": 18,
+    "after": 20,
+    "limit": 20,
+    "active_leases": 0,
+    "further_live_calls_permitted_now": false,
+    "postflight_nonzero_exit": "Expected: quota has no room for two further calls; configuration/runtime/catalog remain valid."
+  },
+  "cumulative_development_rounds": {
+    "attempts": 20,
+    "contract_accepted": 14,
+    "failed_or_rejected": 6,
+    "prior_failures_preserved": true,
+    "independent_holdout": false
+  },
+  "gpu_proof": "Prepared only; no GPU rental, weight/image download or inference run. See deploy/GPU-PROOF.txt and output/gpu-preparation/2026-10-11/verification.json.",
+  "limitations": [
+    "Limited phrase groups do not verify all dates, paraphrases or event/time associations.",
+    "Only exposed masked source phrases are validated before restoring original evidence.",
+    "Two new development examples do not establish general accuracy or provider reliability.",
+    "API model metadata is not a weights audit.",
+    "Historical v5 omission and all failures remain unchanged.",
+    "No independent participant sessions, GPU execution, publication, push or submission."
+  ]
+}

@@ -1,0 +1,49 @@
+LAPORSIAP — SUPPORTING REPORT MATERIALS
+Online task offer and deposit requests
+Revision: 5 | Reviewed: 2026-10-10T01:21:56Z
+SIMULATED DATA — NOT A REAL CASE OR TRANSACTION
+
+This document is not an IASC ticket, proof of report acceptance, or verification of transaction authenticity. There is no automatic submission. Use the official channel https://iasc.ojk.go.id/.
+
+CHRONOLOGY REVIEWED BY THE USER
+Draft origin: apertus | Model (API metadata): swiss-ai/apertus-v1.5-70b | Language when generated: en
+
+1. [M1] The sender offers tasks with a promised commission of IDR 50,000 per day.
+Sender: Nadia | Message time: 08/10/2026, 09:10 (not transfer time)
+Original source: Hi Raka, we offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day.
+
+2. [M2] The sender requests a deposit of IDR 180,000 to continue tasks.
+Sender: Nadia | Message time: 08/10/2026, 09:14 (not transfer time)
+Original source: To continue the tasks, please pay a deposit of IDR 180,000 to ****4821.
+
+3. [M3] The sender claims to have sent IDR 180,000 but has not recorded the transfer time.
+Sender: Raka | Message time: 08/10/2026, 09:28 (not transfer time)
+Original source: I have just sent IDR 180,000. I have not recorded the transfer time yet.
+
+4. [M4] The sender demands an additional deposit of IDR 420,000 to withdraw balance.
+Sender: Nadia | Message time: 08/10/2026, 09:35 (not transfer time)
+Original source: Now add a deposit of IDR 420,000 so the balance can be withdrawn.
+
+5. [M5] The sender states the additional deposit is still pending and not yet seen on their bank statement.
+Sender: Raka | Message time: 08/10/2026, 09:40 (not transfer time)
+Original source: The additional deposit is still pending. I have not seen the transaction on my bank statement.
+
+
+TRANSFER DETAILS FROM USER INPUT
+Successful transfer amount reported by the user (known amounts): 180000 rupiah
+Successful transfers with unknown amounts: 0
+This total is not net losses or a bank-verified amount. Pending/failed/unconfirmed transfers are excluded.
+
+Account pair: Bank Aruna / ****7392 → Bank Lestari / ****4821
+- 0eb3ee1c-204c-488a-9a1d-214c34d2d302 | 180000 rupiah | Transfer date: Unknown | Successful (reported by the user) | Note: Transfer date not recorded; do not use the message timestamp.
+- 4a4bc9a5-ed5e-472a-8cc2-dfb069afbd6e | 420000 rupiah | Transfer date: Unknown | Pending | Note: Not yet confirmed as successful.
+
+DETAILS STILL TO COMPLETE / REVIEW
+- Transfer 1: missing transfer date.
+- Transfer 2: missing transfer date.
+
+REFERENCE ATTACHMENTS (NO OCR / AUTHENTICITY VERIFICATION)
+- d233cdb3fe9381621554b4c4bf200207d5e08ab231afb7d6 | transfer-reference.pdf | 1130 byte | SHA-256: d7b172960b085132f506f42d2a57ab932406d5fa61c93d0a2fdf2436edce4b0f
+  User-selected links — messages: M3 | transfers: 0eb3ee1c-204c-488a-9a1d-214c34d2d302
+
+Prepared with human review. Heuristic checks do not guarantee accuracy.

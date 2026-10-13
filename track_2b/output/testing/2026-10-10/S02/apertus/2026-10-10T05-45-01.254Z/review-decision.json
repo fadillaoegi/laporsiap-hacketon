@@ -1,0 +1,7 @@
+{
+  "approved": true,
+  "reviewer": "Codex assistant",
+  "independent_human_evaluation": false,
+  "entries_corrected": 0,
+  "reason": "Compared all three summaries with the sources. M1 is a request for IDR 275,000 to the masked account, M2 retains the sender's reported failure, and M3 remains a request to retry rather than an invented completed retry. No successful payment, refund or transfer time is added. Exact quotes and source order were checked separately; the successful total stays unknown rather than zero."
+}

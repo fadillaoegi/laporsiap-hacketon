@@ -1,0 +1,53 @@
+{
+  "synthetic": true,
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender requests the user to pay a registration deposit of IDR 275,000 to account ending in 4821.",
+        "evidence": "Please pay a registration deposit of IDR 275,000 to ****4821."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender claims their IDR 275,000 transfer failed, citing the bank application.",
+        "evidence": "My IDR 275,000 transfer failed. The bank application shows failed."
+      },
+      {
+        "source_id": "M3",
+        "description": "The sender asks the user to try again after checking their balance.",
+        "evidence": "Please try again after checking your balance.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T05:45:12Z",
+    "duration_ms": 3380,
+    "usage": {
+      "input_tokens": 459,
+      "output_tokens": 202
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "messages": [
+    {
+      "id": "M1",
+      "text": "Please pay a registration deposit of IDR 275,000 to ****4821.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:00:00"
+    },
+    {
+      "id": "M2",
+      "text": "My IDR 275,000 transfer failed. The bank application shows failed.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 09:01:00"
+    },
+    {
+      "id": "M3",
+      "text": "Please try again after checking your balance.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 09:02:00"
+    }
+  ]
+}

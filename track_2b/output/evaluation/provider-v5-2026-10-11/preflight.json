@@ -1,0 +1,25 @@
+{
+  "active_leases": 0,
+  "attempts_last_24h": 16,
+  "case_writes": 0,
+  "catalog_model_listed": true,
+  "checked_at": "2026-10-10T18:46:42Z",
+  "completion_requests": 0,
+  "concurrent_limit": 2,
+  "configuration_valid": true,
+  "global_daily_limit": 20,
+  "limitations": [
+    "Catalog listing does not verify completion routing or model weights.",
+    "Quota values are a read-only snapshot, not a reservation."
+  ],
+  "max_cases": 200,
+  "preflight_passed": true,
+  "prompt_sha256": "b1a96426b541d40f84a21435975d81e4315fbede2a86efe2b3bec941421d66bf",
+  "prompt_version": "bilingual-v5-source-bound",
+  "provider_label": "Public AI",
+  "quota_verified": true,
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "room_for_two_attempts": true,
+  "runtime_prompt_matches": true,
+  "stored_cases": 175
+}

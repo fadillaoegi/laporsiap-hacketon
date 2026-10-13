@@ -1,0 +1,90 @@
+{
+  "id": "failed-no-retry-id",
+  "language": "id",
+  "category": "failed-no-retry",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "started_at": "2026-10-10T14:36:42Z",
+  "case_id": "f822947980d7a4510375cc0debeeaa0d226038f7aa848b24",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Pembayaran Rp238.000 saya gagal. Saldo tidak berubah.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Silakan mencoba transfer lagi.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "Saya belum mencoba membayar lagi.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "id",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "Pembayaran Rp238.000 saya gagal. Saldo tidak berubah."
+      },
+      {
+        "id": "M2",
+        "text": "Silakan mencoba transfer lagi."
+      },
+      {
+        "id": "M3",
+        "text": "Saya belum mencoba membayar lagi.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "cf0c97f932a3436b0111cc45103f0b2076f105d86e64b2b172800dedf94abca1"
+  },
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Pengirim menyatakan pembayaran gagal dan saldo tidak berubah.",
+        "evidence": "Pembayaran Rp238.000 saya gagal. Saldo tidak berubah."
+      },
+      {
+        "source_id": "M2",
+        "description": "Pengirim meminta mencoba transfer lagi.",
+        "evidence": "Silakan mencoba transfer lagi."
+      },
+      {
+        "source_id": "M3",
+        "description": "Pengirim menyatakan belum mencoba membayar lagi.",
+        "evidence": "Saya belum mencoba membayar lagi.\n"
+      }
+    ],
+    "checks": [],
+    "language": "id",
+    "generated_at": "2026-10-10T14:36:45Z",
+    "duration_ms": 2995,
+    "usage": {
+      "input_tokens": 440,
+      "output_tokens": 156
+    },
+    "prompt_version": "bilingual-v3",
+    "privacy_mode": "redacted"
+  },
+  "contract_passed": true,
+  "transfers_unchanged": true,
+  "draft_request_seconds": 3.026668208,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Failure is not a completed payment.",
+    "A request to retry is not a new transaction.",
+    "No retry happened."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": true,
+  "draft_metadata": null,
+  "provider_diagnostic": null,
+  "started_at": "2026-10-09T23:34:52.799Z",
+  "finished_at": "2026-10-09T23:36:06.338Z",
+  "recording": "LaporSiap_Failed_3.mp4",
+  "stopped_at": "04 — Live Apertus draft",
+  "error": "Pesan error aplikasi: The AI draft failed schema or source quote validation. The draft was rejected; original data remains available.Reload saved case",
+  "case_id": "323ab09beb234ab7908e5f6cdcd0dcdc9a17c5bf50b91fb6",
+  "revision": 3,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-09T23:34:55.176Z",
+      "finished_at": "2026-10-09T23:35:13.015Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-09T23:35:13.018Z",
+      "finished_at": "2026-10-09T23:35:21.136Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-09T23:35:21.136Z",
+      "finished_at": "2026-10-09T23:35:35.541Z"
+    },
+    {
+      "name": "04 — Live Apertus draft",
+      "status": "failed",
+      "started_at": "2026-10-09T23:35:35.542Z",
+      "error": "Pesan error aplikasi: The AI draft failed schema or source quote validation. The draft was rejected; original data remains available.Reload saved case"
+    }
+  ]
+}

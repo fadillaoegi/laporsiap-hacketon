@@ -1,0 +1,48 @@
+LAPORSIAP — SUPPORTING REPORT MATERIALS
+Two sent deposits with one unknown amount
+Revision: 9 | Reviewed: 2026-10-10T05:46:19Z
+SIMULATED DATA — NOT A REAL CASE OR TRANSACTION
+
+This document is not an IASC ticket, proof of report acceptance, or verification of transaction authenticity. There is no automatic submission. Use the official channel https://iasc.ojk.go.id/.
+
+CHRONOLOGY REVIEWED BY THE USER
+Draft origin: apertus | Model (API metadata): swiss-ai/apertus-v1.5-70b | Language when generated: en
+
+1. [M1] Sender claims first IDR 225,000 transfer was successful but states transfer time is unrecorded.
+Sender: Raka | Message time: 10/10/2026, 09:00:00 (not transfer time)
+Original source: The first IDR 225,000 transfer was successful, but I have not recorded its transfer time.
+
+2. [M2] Sender claims second transfer was successful but states amount and transfer time are not found.
+Sender: Raka | Message time: 10/10/2026, 09:01:00 (not transfer time)
+Original source: My second transfer was successful too. I cannot find its amount or transfer time yet.
+
+3. [M3] Sender states third IDR 410,000 transfer is still pending and not completed.
+Sender: Raka | Message time: 10/10/2026, 09:02:00 (not transfer time)
+Original source: The next IDR 410,000 transfer is still pending. It is not a completed transfer.
+
+
+TRANSFER DETAILS FROM USER INPUT
+Successful transfer amount reported by the user (known amounts): 225000 rupiah
+Successful transfers with unknown amounts: 1
+This total is not net losses or a bank-verified amount. Pending/failed/unconfirmed transfers are excluded.
+
+Account pair: Bank Aruna / ****7392 → Bank Lestari / ****4821
+- 23f46592-bbc3-4b17-8586-2eb4c9a54133 | 225000 rupiah | Transfer date: Unknown | Successful (reported by the user) | Note: Fictional user-entered record; transfer time unknown.
+- 1af4aab0-e338-4d49-96a1-e08ed319cce0 | Unknown rupiah | Transfer date: Unknown | Successful (reported by the user) | Note: Fictional user-entered record; transfer time unknown.
+- bd47dd0f-94ab-479a-af7a-fc3cb144d240 | 410000 rupiah | Transfer date: Unknown | Pending | Note: Fictional user-entered record; transfer time unknown.
+
+DETAILS STILL TO COMPLETE / REVIEW
+- Transfer 1: missing transfer date.
+- Transfer 2: missing amount, transfer date.
+- Transfer 3: missing transfer date.
+- Partial total: some successful transfers have unknown amounts.
+
+REFERENCE ATTACHMENTS (NO OCR / AUTHENTICITY VERIFICATION)
+- 2b6de9bf634addef032c01c0b7ee12573b0650b36d36d815 | fictional-transfer-reference.pdf | 2339 byte | SHA-256: fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3
+  User-selected links — messages: M1 | transfers: 23f46592-bbc3-4b17-8586-2eb4c9a54133
+- 14bb80fc609166f6002fe562164835ea1e1051891ac74ba4 | S03-conversation-reference.png | 68838 byte | SHA-256: 689c9073bbee9ba641a1503b93a773c8f4d1e44ec27923b3326f940d7c5781d3
+  User-selected links — messages: M1 | transfers: Unknown
+- 8aa6ef109fbc0400eb16cc1d1d9723152c2bb11bceeafd66 | S03-transfer-notes.jpg | 138649 byte | SHA-256: 6771e2068ed2ef1b3b22163fb076daaf91b544bcdcb0270353472c1c1bc113ad
+  User-selected links — messages: M1 | transfers: 23f46592-bbc3-4b17-8586-2eb4c9a54133
+
+Prepared with human review. Heuristic checks do not guarantee accuracy.

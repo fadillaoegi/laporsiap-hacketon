@@ -1,0 +1,21 @@
+{
+  "currency": "USD",
+  "price_source": "Authenticated provider catalog checked 2026-10-10T15:34:42Z, selected model only",
+  "input_usd_per_million": 0.82,
+  "output_usd_per_million": 2.92,
+  "observed_accepted_input_tokens": 4578,
+  "observed_accepted_output_tokens": 1809,
+  "accepted_10_request_token_estimate_usd": 0.00903624,
+  "all_attempts": 14,
+  "attempts_with_accepted_usage": 10,
+  "other_attempts": 4,
+  "other_attempts_cost_usd": null,
+  "gpu_cost_usd_per_hour": null,
+  "human_review_seconds": null,
+  "limitations": [
+    "Catalog price units follow previous provider documentation; token estimate is not an invoice.",
+    "Failed or rejected requests may still be charged; their usage is unavailable.",
+    "Excludes hosting, database, storage, taxes, currency conversion and human review.",
+    "No scale or time-saving conclusion from development samples."
+  ]
+}

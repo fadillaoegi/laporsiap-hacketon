@@ -1,0 +1,75 @@
+{
+  "id": "privacy-multiline-en",
+  "language": "en",
+  "category": "privacy-multiline",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "started_at": "2026-10-10T14:37:46Z",
+  "case_id": "8b2ba67a81b1631126bf909dd0b85306ef908014d94bf7a6",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Contact Nadia at nadia@example.test or +6281234567890. Account 1234567890. Address Jalan Mawar 7.\nI have not paid IDR 286,000.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "The account number is for the promised job registration; I have not accepted a job.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "en",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "Contact [LS_PRIVATE_0001] at [LS_PRIVATE_0002] or [LS_PRIVATE_0003]. Account [LS_PRIVATE_0004]. Address [LS_PRIVATE_0005].\nI have not paid IDR 286,000."
+      },
+      {
+        "id": "M2",
+        "text": "The account number is for the promised job registration; I have not accepted a job.\n"
+      }
+    ],
+    "redactions": 5,
+    "hash": "322914a7554971db7228faca8c10e1d6055641a318abccd802670b3651ee1459"
+  },
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Sender provides contact details and states they have not paid IDR 286,000.",
+        "evidence": "Contact Nadia at nadia@example.test or +6281234567890. Account 1234567890. Address Jalan Mawar 7.\nI have not paid IDR 286,000."
+      },
+      {
+        "source_id": "M2",
+        "description": "Sender claims the account number is for a promised job registration and states they have not accepted a job.",
+        "evidence": "The account number is for the promised job registration; I have not accepted a job.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T14:37:49Z",
+    "duration_ms": 3330,
+    "usage": {
+      "input_tokens": 482,
+      "output_tokens": 185
+    },
+    "prompt_version": "bilingual-v3",
+    "privacy_mode": "redacted",
+    "redactions": 5
+  },
+  "contract_passed": true,
+  "transfers_unchanged": true,
+  "draft_request_seconds": 3.410046667,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Mask supplied personal terms before provider call; preserve full original multiline quote in saved draft.",
+    "No completed payment or accepted job may be invented."
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "date_local": "2026-10-11",
+  "status": "implemented_and_verified_with_semantic_limitations",
+  "objective": "Source-bound bilingual Apertus generation, strict model identity and read-only preflight",
+  "architecture": "Domain binding/review; application ports/privacy/persistence unchanged; provider/configuration infrastructure; bilingual React/Redux review text",
+  "prompt_version": "bilingual-v5-source-bound",
+  "prompt_sha256": "b1a96426b541d40f84a21435975d81e4315fbede2a86efe2b3bec941421d66bf",
+  "provider": "Public AI",
+  "provider_configuration_changed": false,
+  "request_contract_changed": {
+    "previous": "AI-generated source_id/description/evidence",
+    "current": "AI-generated source_id/description; local evidence binding; provider evidence fields rejected"
+  },
+  "checks": {
+    "backend_race": {
+      "status": "passed",
+      "integration_seconds": 6.101
+    },
+    "frontend_build": {
+      "status": "passed",
+      "modules": 42,
+      "js_kb": 328.46,
+      "gzip_kb": 103.49
+    },
+    "frontend_architecture": {
+      "status": "passed",
+      "ts_files": 23
+    },
+    "frontend_unit": {
+      "status": "passed",
+      "tests": 3
+    },
+    "browser": {
+      "status": "passed",
+      "tests": 2,
+      "seconds": 7.1,
+      "folder": "output/evaluation/provider-v5-2026-10-11/browser",
+      "live_ai_calls": 0
+    },
+    "compiled_container": {
+      "status": "passed",
+      "tests": 2,
+      "seconds": 5.1,
+      "runner_folder": "output/hardening/deployment-2026-10-10T18-55-25.233Z",
+      "reports": [
+        "output/hardening/deployment-2026-10-10T18-55-25.490Z/deployment-compiled-privat-9d4ac-plete-manual-workflow-in-en/verification.json",
+        "output/hardening/deployment-2026-10-10T18-55-25.490Z/deployment-compiled-privat-19c97-plete-manual-workflow-in-id/verification.json"
+      ],
+      "live_ai_calls": 0,
+      "image_id": "sha256:c9f89d70fb03d806facffac1d8029978af9a582b67608d662b295595f6579d8b"
+    },
+    "state_audit": {
+      "read_only": true,
+      "cases": 20,
+      "all_verified": true,
+      "folder": "output/hardening/state-check-2026-10-10T18-50-41.638884000Z"
+    }
+  },
+  "live_generation": {
+    "attempts": 2,
+    "contract_passed": 2,
+    "languages": [
+      "en",
+      "id"
+    ],
+    "retry_count": 0,
+    "fallback_count": 0,
+    "requested_model": "swiss-ai/apertus-v1.5-70b",
+    "response_models": [
+      "swiss-ai/apertus-v1.5-70b",
+      "swiss-ai/apertus-v1.5-70b"
+    ],
+    "originals_and_transfers_unchanged": true,
+    "folder": "output/evaluation/2026-10-10T18-47-16.862Z",
+    "provider_duration_ms": [
+      2051,
+      2847
+    ],
+    "input_tokens": 1325,
+    "output_tokens": 196,
+    "recordings": [
+      "output/evaluation/2026-10-10T18-47-16.862Z/actor-direction-v5-source-bound-en/LaporSiap_Success_1.mp4",
+      "output/evaluation/2026-10-10T18-47-16.862Z/actor-direction-v5-source-bound-id/LaporSiap_Success_1.mp4"
+    ]
+  },
+  "assistant_semantic_review": {
+    "events": 4,
+    "issues": 1,
+    "issue": "EN M2 omits next week. Payment direction/amounts/refund absence/recruiter role/unpaid status preserved for stated criteria.",
+    "report": "output/evaluation/2026-10-10T18-47-16.862Z/assistant-semantic-review.json",
+    "original_ai_outputs_modified": false
+  },
+  "follow_up_guard": {
+    "flag": "relative_time_requires_review",
+    "languages": [
+      "en",
+      "id"
+    ],
+    "observed_omission_detected_in_regression": true,
+    "computed_on": "generation and draft edits; historical snapshots not rewritten",
+    "groups": [
+      "tomorrow/besok",
+      "next week/pekan depan/minggu depan",
+      "next month/bulan depan",
+      "today/hari ini",
+      "yesterday/kemarin"
+    ]
+  },
+  "quota": {
+    "before": 16,
+    "after": 18,
+    "limit": 20,
+    "active_leases_after": 0
+  },
+  "cumulative_development_rounds": {
+    "attempts": 18,
+    "contract_accepted": 12,
+    "failed_or_rejected": 6,
+    "independent_holdout": false,
+    "historical_failures_preserved": true
+  },
+  "limitations": [
+    "Two live development examples do not demonstrate reliable provider routing. Internal cause of prior alternate-model responses remains unknown.",
+    "Response model metadata is not a weights audit.",
+    "Local quote integrity does not guarantee summary accuracy; all entries require review.",
+    "Relative-time checks have limited vocabulary and can miss errors or flag valid paraphrases.",
+    "No independent human sessions, GPU run, final event-guide verification, publication or submission.",
+    "Success_1 means contract acceptance; one timing omission remains in original English output."
+  ],
+  "ci": {
+    "prepared": true,
+    "actionlint": "passed",
+    "local_full_browser_tests": 13,
+    "local_full_browser_seconds": 23.4,
+    "github_runs": 0,
+    "report": "output/ci/verification.json"
+  }
+}

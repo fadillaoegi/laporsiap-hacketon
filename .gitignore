@@ -1,0 +1,31 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.cache/
+tmp/
+*.log
+.DS_Store
+**/laporsiap_BE/api
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+.pnpm-store/
+__pycache__/
+*.py[cod]
+*.bin
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+
+# Heavy evidence media stays local (publish via release/HF if needed);
+# JSON/MD/TXT/PDF verification records remain tracked.
+track_2b/output/**/*.zip
+track_2b/output/**/*.webm
+track_2b/output/**/*.mp4
+track_2b/output/**/*.wav
+track_2b/output/**/*.png
+track_2b/output/**/*.jpg

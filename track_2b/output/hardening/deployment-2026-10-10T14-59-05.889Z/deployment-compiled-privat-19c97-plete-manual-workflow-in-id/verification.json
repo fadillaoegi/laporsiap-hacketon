@@ -1,0 +1,8 @@
+{
+  "language": "id",
+  "compiled_frontend": true,
+  "csp_violations": [],
+  "workflow": "manual upload review export rotation deletion",
+  "live_ai_calls": 0,
+  "status": "passed"
+}

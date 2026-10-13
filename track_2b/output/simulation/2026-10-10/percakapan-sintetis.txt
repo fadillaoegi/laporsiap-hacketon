@@ -1,0 +1,5 @@
+[08/10/2026, 09:10] Admin Demo: Kami menawarkan tugas memberi like dengan janji komisi Rp50.000 per hari.
+[08/10/2026, 09:14] Admin Demo: Untuk lanjut tugas, silakan setor deposit Rp180.000 ke DEMO-REK-001.
+[08/10/2026, 09:28] Pengguna Demo: Saya baru mengirim Rp180.000. Waktu transfernya belum saya catat.
+[08/10/2026, 09:35] Admin Demo: Sekarang tambah deposit Rp420.000 agar saldo bisa ditarik.
+[08/10/2026, 09:40] Pengguna Demo: Status setoran tambahan masih dalam proses. Saya belum melihat mutasi rekening.

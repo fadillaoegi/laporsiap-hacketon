@@ -1,0 +1,29 @@
+{
+  "name": "laporsiap-fe",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
+    "test:ui": "playwright test",
+    "check:architecture": "node scripts/check-architecture.mjs",
+    "test:unit": "node --import ./scripts/register-typescript.mjs --test tests/unit/*.test.mjs"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "2.13.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-redux": "9.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.1"
+  }
+}

@@ -1,0 +1,42 @@
+# Judge / clean-checkout stack started by `make run`: PostgreSQL + LaporSiap.
+# Needs no .env file. Without LLM_* the app runs with the manual-draft path;
+# set LLM_NAME, LLM_BASE_URL and LLM_API_KEY to enable Apertus drafts.
+name: laporsiap-run
+services:
+  db:
+    image: postgres:18-alpine@sha256:1b1689b20d16a014a3d195653381cf2caa75a41a92d93b255a9d6ea29fd353aa
+    environment:
+      POSTGRES_USER: laporsiap
+      POSTGRES_DB: laporsiap
+      # Database is reachable only on the internal compose network.
+      POSTGRES_PASSWORD: ${RUN_DB_PASSWORD:-laporsiap-local-demo}
+    volumes:
+      - run_pgdata:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U laporsiap -d laporsiap']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  app:
+    image: laporsiap:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8787:8787'
+    environment:
+      DATABASE_URL: postgres://laporsiap:${RUN_DB_PASSWORD:-laporsiap-local-demo}@db:5432/laporsiap?sslmode=disable
+      APP_ORIGIN: ${APP_ORIGIN:-}
+      LLM_NAME: ${LLM_NAME:-swiss-ai/apertus-v1.5-70b}
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+volumes:
+  run_pgdata:

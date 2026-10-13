@@ -1,0 +1,64 @@
+{
+  "app": "LaporSiap",
+  "result": "Success",
+  "mode": "manual",
+  "synthetic": true,
+  "live_ai_called": false,
+  "started_at": "2026-10-09T17:57:29.893Z",
+  "finished_at": "2026-10-09T17:59:25.154Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "f3b4ea956e79d61b6931c0e886c60e7be1de5d2754605477",
+  "revision": 5,
+  "steps": [
+    {
+      "name": "01 — Buka aplikasi dan muat contoh",
+      "status": "passed",
+      "started_at": "2026-10-09T17:57:36.925Z",
+      "finished_at": "2026-10-09T17:57:46.762Z"
+    },
+    {
+      "name": "02 — Periksa status dan simpan bahan",
+      "status": "passed",
+      "started_at": "2026-10-09T17:57:46.765Z",
+      "finished_at": "2026-10-09T17:57:54.918Z"
+    },
+    {
+      "name": "03 — Tambahkan lampiran sintetis",
+      "status": "passed",
+      "started_at": "2026-10-09T17:57:54.918Z",
+      "finished_at": "2026-10-09T17:58:03.901Z"
+    },
+    {
+      "name": "04 — Susun draft manual",
+      "status": "passed",
+      "started_at": "2026-10-09T17:58:03.909Z",
+      "finished_at": "2026-10-09T17:58:12.578Z"
+    },
+    {
+      "name": "05 — Cocokkan dan sunting kelima entri",
+      "status": "passed",
+      "started_at": "2026-10-09T17:58:12.579Z",
+      "finished_at": "2026-10-09T17:58:41.051Z"
+    },
+    {
+      "name": "06 — Review sumber, transfer, dan data kosong",
+      "status": "passed",
+      "started_at": "2026-10-09T17:58:41.055Z",
+      "finished_at": "2026-10-09T17:59:10.826Z"
+    },
+    {
+      "name": "07 — Unduh ZIP dan kronologi TXT",
+      "status": "passed",
+      "started_at": "2026-10-09T17:59:10.826Z",
+      "finished_at": "2026-10-09T17:59:18.850Z"
+    },
+    {
+      "name": "08 — Periksa riwayat dan hasil akhir",
+      "status": "passed",
+      "started_at": "2026-10-09T17:59:18.850Z",
+      "finished_at": "2026-10-09T17:59:23.702Z"
+    }
+  ]
+}

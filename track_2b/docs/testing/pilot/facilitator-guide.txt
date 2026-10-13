@@ -1,0 +1,147 @@
+LaporSiap — panduan fasilitator, pilot pengguna
+
+Status: KIT SIAP; SESI MANUSIA BELUM DILAKSANAKAN.
+Jangan memberikan dokumen ini, plan.json, atau results-template.json kepada
+peserta sebelum sesi. Gunakan pseudonim P01/P02/P03, tanpa data korban nyata.
+
+REKRUTMEN DAN PERSIAPAN
+Prioritas: dua orang di luar tim yang dapat membaca input English. Orang
+ketiga opsional untuk kasus S02. Pemilik/pengembang boleh latihan terlebih
+dahulu dengan kasus S02, tetapi hasilnya disebut latihan internal. Tidak perlu
+mencari korban penipuan. Tidak ada undangan yang dikirim oleh kit ini.
+
+Alokasikan sekitar 30–45 menit per orang untuk dua tugas dan tanya jawab;
+ini perkiraan jadwal, bukan hasil pengukuran. Catat latar pengalaman memakai
+AI dan bahasa tanpa identitas pribadi. Jangan menunjukkan hasil uji otomatis
+atau video walkthrough sebelum sesi. Orientasi boleh mengenalkan tujuan dan
+letak pergantian bahasa tanpa menyelesaikan kasus peserta.
+
+Gunakan komputer lokal yang menjalankan frontend/backend. Buka
+http://127.0.0.1:5175 dan pastikan layanan sehat. Alamat ini hanya berlaku di
+mesin yang menjalankan aplikasi. Kit tidak mengaktifkan deployment publik.
+Gunakan profil/sesi browser terpisah per peserta, English pada kedua tugas,
+dan kasus baru setiap tugas. Masukkan judul unik dengan pseudonim + ID tugas.
+Peserta membaca dan mengoperasikan UI sendiri; jangan menjalankan skrip
+test-upload-scenarios atau record-simulation karena keduanya mengisi tugas
+dan review secara otomatis. Lampiran belum dibaca dengan OCR.
+
+URUTAN UTAMA
+P01: tugas 1 S01 manual; tugas 2 S03 Apertus.
+P02: tugas 1 S01 Apertus; tugas 2 S03 manual.
+P03 opsional: S02 manual untuk pemahaman transfer gagal, hasil eksploratif.
+Setiap peserta utama melihat kasus berbeda pada dua tugas. S01 dan S03
+masing-masing dicoba dalam kedua mode oleh orang berbeda. Ini pilot kecil:
+kemampuan peserta dan kesulitan kasus masih dapat memengaruhi perbandingan.
+Jika hanya pemilik tersedia, gunakan S02 dahulu sebagai latihan internal;
+jangan mengisi baris P01/P02 seolah-olah ada peserta independen.
+
+BAHAN PESERTA
+Berikan participant-brief.txt serta hanya folder S01/S03/S02 sesuai tugas:
+TXT percakapan, PNG percakapan, dan JPG catatan transfer. File JPG merupakan
+input status/nominal, bukan kunci total. Jangan berikan cases.json atau
+fictional-transfer-reference.pdf: keduanya mengungkap hasil yang diharapkan.
+Instruksi participant brief berlaku sama untuk kedua mode, termasuk lampiran
+dan review. Bila peserta menolak pengiriman teks ke Apertus, catat declined_ai;
+jangan mengganti mode diam-diam atau menekan consent atas nama peserta.
+
+PENCATATAN DAN REKAMAN
+Alat rekam interaktif tersedia di scripts/demo/record-user-session.mjs.
+Jalankan dari root repository saat peserta siap:
+  node scripts/demo/record-user-session.mjs
+Perintah ini membuka Chrome baru untuk INTERNAL01_T01, kasus S02 manual.
+File input disalin ke folder output/user-testing/sessions/INTERNAL01_T01/
+dengan subfolder waktu yang unik. Browser memperlihatkan panel Recorder;
+klik Start setelah brief dibaca, lalu peserta mengerjakan tugas sendiri.
+Panel dapat dilipat agar tidak menutupi aplikasi. Pause / Resume mengecualikan
+jeda di luar tugas. Setelah ZIP dan TXT diunduh, buka TXT dari folder downloads,
+lalu klik TXT opened; finish. Failure — stop menghentikan kegagalan langsung;
+Stop unfinished mempertahankan sesi yang belum selesai.
+
+Untuk peserta utama gunakan pasangan tepat dari plan.json, misalnya:
+  node scripts/demo/record-user-session.mjs --participant P01 --task P01_T01
+Bahasa default English; --language id tersedia untuk latihan/lokalisasi.
+Alat ini tidak mengisi form, consent, atau checkbox review. API HTTP >=500,
+request API gagal dan error JavaScript saat tugas berjalan menghentikan
+rekaman tanpa retry otomatis. HTTP 4xx dicatat; fasilitator menentukan apakah
+itu kesalahan input biasa atau kegagalan yang perlu dihentikan. Jika reload
+menghilangkan panel, tutup jendela atau Ctrl-C dan catat sesi tidak selesai.
+
+Video WebM asli dipertahankan dan ditranscode menjadi MP4 bila FFmpeg tersedia.
+Rekaman tidak menangkap suara atau layar di luar halaman aplikasi, sehingga
+pertanyaan/masukan lisan tetap dicatat fasilitator. result.json mencatat
+timer dan unduhan; status completed_declared bukan bukti kualitas akhir.
+Waktu request draft adalah durasi HTTP, bukan waktu tunggu sampai draft terlihat;
+ai_wait_seconds dan skor kualitas tetap null sampai pemeriksaan fasilitator.
+Identitas/independensi peserta belum diverifikasi otomatis. Semua percobaan
+memiliki folder unik; nama Failed_1 di folder tersebut tidak menimpa sesi lain.
+
+Pemeriksaan alat tanpa sesi manusia atau panggilan aplikasi/provider:
+  node scripts/demo/record-user-session.mjs --check
+Ini hanya memeriksa binding kontrol, perekaman browser, dan transcode MP4;
+bukan pengujian manfaat pengguna atau alur interaktif lengkap.
+
+Salin results-template.json ke folder sesi baru; template tetap kosong.
+Simpan draft sebelum peserta mengoreksinya melalui pengamatan/screenshot,
+tanpa token akses, header Authorization, local/sessionStorage, atau .env.
+Rekam layar aplikasi saja sesuai permintaan pemilik. Di macOS, Shift-Command-5
+menawarkan perekaman layar; gunakan area jendela aplikasi dan simpan ke folder
+sesi. Kit tidak memulai perekaman tanpa peserta. Format asli MOV/WebM boleh
+dipertahankan; jangan mengubah ekstensi menjadi MP4 tanpa transcode.
+
+Mulai rekaman sebelum tugas. Jika bug/layanan gagal menghambat tugas secara
+tidak diharapkan, segera hentikan, catat penyebab dan simpan sebagai
+LaporSiap_Failed_1.<ekstensi-asli> dalam folder khusus pilot. Naikkan N untuk
+kegagalan berikutnya; jangan menimpa file lama. Kebingungan peserta dicatat
+sebagai temuan usability, bukan otomatis bug. Jika dilakukan pemulihan atau
+pengulangan, mulai rekaman dan baris hasil baru; hasil gagal tetap disimpan.
+Sesi selesai dapat dinamai LaporSiap_P01_T01_Completed.<ekstensi-asli>.
+
+Mulai stopwatch ketika peserta mulai membuat kasus (setelah brief dibaca).
+Akhiri ketika ZIP dan TXT sudah diunduh dan TXT dibuka. Catat timestamp ISO
+dengan zona waktu. Jika tidak selesai, finish_at tetap null dan catat stopped_at.
+Catat jeda di luar tugas; elapsed = finish - start; total = elapsed - pauses.
+AI wait = klik Create draft sampai draft atau error muncul, bukan waktu
+menulis atau review. User time excluding AI wait = total - AI wait; waktu
+tunggu layanan lain tetap termasuk. Comprehension/tanya jawab setelah tugas
+dicatat terpisah dari total. Ini mengukur alur berbantuan petunjuk, bukan
+penemuan fitur tanpa petunjuk. Jangan gunakan durasi video otomatis sebagai
+waktu peserta. Bantuan fasilitator dicatat dengan kata-kata yang diberikan.
+
+Hitung authored_entries (ringkasan yang peserta tulis dari awal),
+corrected_entries (jumlah entri berbeda yang diubah sesudah draft awal), dan
+correction_actions (jumlah tindakan koreksi, boleh lebih besar). Nilai null
+berarti belum diamati, bukan nol. Tinjau draft akhir dan TXT terhadap sumber
+untuk errors_remaining, dibagi arah dana, status, nominal, waktu, pengirim,
+atau klaim tanpa sumber. Review tanpa membaca juga merupakan temuan.
+
+KUNCI JAWABAN — FASILITATOR SAJA
+S01: 5 pesan; 180000 successful + 420000 pending. Total berhasil diketahui
+180000. Tidak ada transfer komisi 50000; janji bukan penerimaan. Semua tanggal
+transfer kosong. Ringkasan mengatribusikan klaim kepada pengirim.
+S03: 3 pesan; 225000 successful + amount kosong successful + 410000 pending.
+Total sebagian 225000, satu transfer berhasil tanpa nominal. Bukan total
+lengkap, tidak memasukkan pending, tidak mengisi nominal kosong dengan nol.
+Tanggal semua transfer kosong; waktu pesan tidak menjadi waktu transfer.
+S02: 3 pesan; 275000 failed. Total Unknown, bukan 0 atau 275000. Permintaan
+coba ulang tidak membuktikan ada transaksi baru. Tanggal transfer kosong.
+Semua kasus: Bank Aruna ****7392 ke Bank Lestari ****4821; tidak mengubah
+kutipan asli. ZIP/TXT adalah bahan untuk kanal resmi, belum laporan terkirim.
+
+HASIL DAN PRIORITAS
+Setelah hasil diisi, pemeriksa data pengamatan dapat dijalankan:
+  python3 scripts/analyze-pilot.py <file-hasil-yang-sudah-diisi.json>
+Tuliskan participant_role_actual sebagai independent hanya setelah independensi
+orang tersebut diverifikasi fasilitator; pemilik/tim ditulis internal_rehearsal.
+Alat memeriksa timestamp berzona, jeda, waktu tugas, bukti rekaman, pemeriksaan
+isi akhir serta jawaban pemahaman sebelum memasukkan tugas ke ringkasan.
+Template kosong menghasilkan nol tugas, tanpa mengisi nilai null menjadi nol.
+
+Gunakan completed_unassisted, completed_assisted, blocked, stopped,
+declined_ai, atau not_started. Completed hanya mencatat penyelesaian tugas;
+bukan bukti isi benar. Nilai kualitas dan pemahaman terpisah. Pendapat peserta
+dicatat verbatim bila diizinkan; jangan mengarang testimoni atau skor.
+Perbaiki lebih dahulu bug yang menghambat, isi yang menyesatkan, atau arti
+Unknown/partial/review yang tidak dipahami; berikutnya kebingungan navigasi.
+Laporkan waktu per tugas/kasus dan bantuan, bukan persentase penghematan
+umum. Dua/tiga peserta merupakan pilot eksploratif, bukan bukti statistik
+akurasi, produktivitas, skalabilitas, atau kepatuhan lomba secara menyeluruh.

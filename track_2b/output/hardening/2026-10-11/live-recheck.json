@@ -1,0 +1,75 @@
+{
+  "checked_on_local": "2026-10-11",
+  "purpose": "Bounded recorded live recheck of existing development examples, not an independent holdout",
+  "prompt_version": "bilingual-v4",
+  "prompt_sha256": "806c3408339a5800ee19bd991ff8716405b8b9def93a7df71db67872ff2da0e0",
+  "live_app_requests": 2,
+  "accepted_drafts": 0,
+  "retries": 0,
+  "automatic_model_fallbacks": 0,
+  "results": [
+    {
+      "id": "actor-direction-v4-en",
+      "api_status": 502,
+      "diagnostic": {
+        "response_model": "swiss-ai/apertus-v1.5-70b",
+        "validation_rule": "chronology quote differs from original source"
+      },
+      "request_seconds": 8.053077709,
+      "original_inputs_unchanged": true,
+      "failed_draft_not_saved": true,
+      "recording": "output/evaluation/2026-10-10T17-28-37.268Z/actor-direction-v4-en/LaporSiap_Failed_1.mp4"
+    },
+    {
+      "id": "actor-direction-v4-id",
+      "api_status": 502,
+      "diagnostic": {
+        "requested_model": "swiss-ai/apertus-v1.5-70b",
+        "response_model": "aisingapore/Qwen-SEA-LION-v4-32B-IT"
+      },
+      "request_seconds": 6.713604625,
+      "original_inputs_unchanged": true,
+      "failed_draft_not_saved": true,
+      "recording": "output/evaluation/2026-10-10T17-28-37.268Z/actor-direction-v4-id/LaporSiap_Failed_1.mp4"
+    }
+  ],
+  "technical_recorder_failure": {
+    "path": "output/evaluation/2026-10-10T17-27-10.741Z",
+    "provider_calls": 0,
+    "reason": "Recorder initially looked outside the existing project FFmpeg cache. Fixed cache location and passed blank recorder check before the two actual calls. Both fixture cases remain preserved."
+  },
+  "read_only_database_audit": {
+    "cases": 18,
+    "all_originals_verified": true,
+    "path": "output/hardening/state-check-2026-10-10T17-29-42.697331000Z/evaluation-state.json"
+  },
+  "checks": {
+    "backend_race": "passed; app 4.668s, evaluator 1.686s before final evaluator-only adjustment",
+    "compiled_manual_ui": "2/2 passed, 6.8s",
+    "recorder_blank_check": "passed, no app/provider requests",
+    "fixture_dry_run": "passed, no app/provider requests",
+    "final_evaluator_race": "passed, 1.801s"
+  },
+  "participants": 0,
+  "gpu_inference_run": false,
+  "provider_catalog": "Pinned Apertus alias listed (HTTP 200); listing does not prove inference availability or response model identity.",
+  "limitations": [
+    "Exact rejected provider quote content was intentionally not retained; mismatch reason alone does not identify which character changed.",
+    "Wrong model response is observed API metadata; internal provider routing cause is unknown.",
+    "Rejected requests returned no usable usage accounting; their cost is unknown.",
+    "No accepted v4 output; semantic quality of v4 remains unverified.",
+    "Failed videos stop at error detection; final recorded frame may precede the visible error notification."
+  ],
+  "next_required": [
+    "Use an endpoint/operator configuration guaranteeing the requested Apertus model, without substitution. Recheck model identity and exact quotes before relying on the AI flow.",
+    "Run observed participant sessions using the existing pilot kit.",
+    "Run pinned official model/runtime on a real GPU server and record evidence.",
+    "Verify the inaccessible official track-specific Getting Started Guide."
+  ],
+  "compiled_deployment": {
+    "image_id": "sha256:f29ef5872baa6258b6b3898b64a531a04d9171a61d37a1b8aa8d82e674302b6a",
+    "origin": "http://127.0.0.1:8877",
+    "health": "healthy",
+    "prompt_sha256_verified": true
+  }
+}

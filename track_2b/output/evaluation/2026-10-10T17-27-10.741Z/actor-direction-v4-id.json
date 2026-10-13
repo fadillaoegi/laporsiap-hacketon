@@ -1,0 +1,37 @@
+{
+  "id": "actor-direction-v4-id",
+  "language": "id",
+  "category": "targeted_actor_direction_regression",
+  "started_at": "2026-10-10T17:27:12.691Z",
+  "status": "failed_or_rejected",
+  "api_status": 0,
+  "contract_passed": false,
+  "state_verified": true,
+  "transfers_unchanged": true,
+  "original_sources_unchanged": true,
+  "failed_draft_not_saved": true,
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Preserve sending IDR 264000 and no refund as two assertions.",
+    "Do not assign the payment amount to an unspecified refund.",
+    "Recruiter is the promisor, not the message sender.",
+    "IDR 63000 commission is promised next week and not paid."
+  ],
+  "provider_attempts": 0,
+  "case_id": "e6a6ac9f21934d727e3dd5156abbf6254a166fa49f954a58",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 12:00"
+    },
+    {
+      "id": "M2",
+      "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 12:01"
+    }
+  ],
+  "error": "browserContext.newPage: Executable doesn't exist at /Users/boo/Library/Caches/ms-playwright/ffmpeg-1011/ffmpeg-mac\n╔═════════════════════════════════════════════════════════════════╗\n║ Video rendering requires ffmpeg binary.                         ║\n║ Downloading it will not affect any of the system-wide settings. ║\n║ Please run the following command:                               ║\n║                                                                 ║\n║     npx playwright install ffmpeg                               ║\n║                                                                 ║\n║ <3 Playwright Team                                              ║\n╚═════════════════════════════════════════════════════════════════╝"
+}

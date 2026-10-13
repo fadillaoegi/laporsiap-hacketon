@@ -1,0 +1,46 @@
+LAPORSIAP — BAHAN BANTU LAPORAN
+Tawaran tugas daring dan permintaan top-up
+Revisi: 5 | Diperiksa: 2026-10-09T17:59:07Z
+DATA DEMO SINTETIS — BUKAN KASUS ATAU TRANSAKSI NYATA
+
+Dokumen ini bukan tiket IASC, bukti laporan diterima, atau verifikasi keaslian transaksi. Tidak ada pengiriman otomatis. Gunakan kanal resmi https://iasc.ojk.go.id/.
+
+KRONOLOGI YANG DITINJAU PENGGUNA
+
+1. [M1] Admin Demo menawarkan tugas memberi like dengan janji komisi Rp50.000 per hari.
+Pengirim: Admin Demo | Waktu pesan: 08/10/2026, 09:10 (bukan waktu transfer)
+Sumber asli: Kami menawarkan tugas memberi like dengan janji komisi Rp50.000 per hari.
+
+2. [M2] Admin Demo meminta deposit Rp180.000 ke DEMO-REK-001 untuk melanjutkan tugas.
+Pengirim: Admin Demo | Waktu pesan: 08/10/2026, 09:14 (bukan waktu transfer)
+Sumber asli: Untuk lanjut tugas, silakan setor deposit Rp180.000 ke DEMO-REK-001.
+
+3. [M3] Pengguna Demo menyatakan baru mengirim Rp180.000 dan belum mencatat waktu transfer.
+Pengirim: Pengguna Demo | Waktu pesan: 08/10/2026, 09:28 (bukan waktu transfer)
+Sumber asli: Saya baru mengirim Rp180.000. Waktu transfernya belum saya catat.
+
+4. [M4] Admin Demo meminta tambahan deposit Rp420.000 agar saldo bisa ditarik.
+Pengirim: Admin Demo | Waktu pesan: 08/10/2026, 09:35 (bukan waktu transfer)
+Sumber asli: Sekarang tambah deposit Rp420.000 agar saldo bisa ditarik.
+
+5. [M5] Pengguna Demo menyatakan setoran tambahan masih dalam proses dan belum melihat mutasi rekening.
+Pengirim: Pengguna Demo | Waktu pesan: 08/10/2026, 09:40 (bukan waktu transfer)
+Sumber asli: Status setoran tambahan masih dalam proses. Saya belum melihat mutasi rekening.
+
+RINCIAN TRANSFER DARI INPUT PENGGUNA
+Nominal transfer berhasil yang dilaporkan pengguna (nominal diketahui): 180000 rupiah
+Transfer berhasil dengan nominal belum diketahui: 0
+Total ini bukan kerugian bersih atau jumlah yang diverifikasi bank. Pending/gagal/unknown tidak dihitung.
+
+Pasangan rekening: Bank Demo A / DEMO-PENGIRIM-001 → Bank Demo B / DEMO-REK-001
+- 313a36b6-05be-4fac-bde7-4af9497f5b74 | 180000 rupiah | Tanggal transfer: Belum diketahui | Berhasil (dilaporkan pengguna) | Catatan: Tanggal transfer belum dicatat; jangan memakai waktu chat.
+- 760bfd77-4f21-481b-9041-cbbb66a72457 | 420000 rupiah | Tanggal transfer: Belum diketahui | Dalam proses | Catatan: Belum dipastikan berhasil.
+
+DATA YANG MASIH PERLU DILENGKAPI / DIPERIKSA
+- Transfer 1: tanggal transfer belum lengkap.
+- Transfer 2: tanggal transfer belum lengkap.
+
+LAMPIRAN REFERENSI (TANPA OCR / VERIFIKASI KEASLIAN)
+- 624be61b30e2b9fd273e0d7ee8d6fc82954dbc858f3ca3d8 | bukti-sintetis.pdf | 1169 byte | SHA-256: 8e3bf88317d04c98aaa1492e2c4b2ddbb9f7b65c920d97857411baae8a1bfa80
+
+Disusun dengan review manusia. Pemeriksaan heuristik bukan jaminan kebenaran.

@@ -1,0 +1,51 @@
+name: laporsiap-private
+services:
+  db:
+    image: postgres:18-alpine@sha256:1b1689b20d16a014a3d195653381cf2caa75a41a92d93b255a9d6ea29fd353aa
+    pull_policy: never
+    environment:
+      POSTGRES_USER: laporsiap
+      POSTGRES_DB: laporsiap
+      POSTGRES_PASSWORD: ${DEPLOY_DB_PASSWORD:?Generate deploy/.env using scripts/init-private-deploy.py}
+    volumes:
+      - private_pgdata:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U laporsiap -d laporsiap']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    mem_limit: 384m
+  app:
+    image: laporsiap-private:local
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8877:8787'
+    environment:
+      DATABASE_URL: postgres://laporsiap:${DEPLOY_DB_PASSWORD}@db:5432/laporsiap?sslmode=disable
+      APP_ORIGIN: http://127.0.0.1:8877
+      APERTUS_MODEL: swiss-ai/apertus-v1.5-70b
+      APERTUS_API_BASE_URL: ${DEPLOY_APERTUS_BASE_URL:-}
+      APERTUS_API_KEY: ${DEPLOY_APERTUS_API_KEY:-}
+      CASE_RETENTION_DAYS: '30'
+      CASE_ACCESS_HOURS: '168'
+      MAX_CASES: '200'
+      MAX_STORAGE_BYTES: '268435456'
+      MAX_CASE_REVISIONS: '200'
+      AI_CASE_DAILY_LIMIT: '3'
+      AI_GLOBAL_DAILY_LIMIT: '20'
+      AI_CONCURRENT_LIMIT: '2'
+      REQUESTS_PER_MINUTE: '240'
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 384m
+    cpus: 1.0
+volumes:
+  private_pgdata:

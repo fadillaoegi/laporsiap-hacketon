@@ -1,0 +1,124 @@
+{
+  "scenario": "S01",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic": true,
+  "result": "Success",
+  "started_at": "2026-10-10T05:44:22.931Z",
+  "finished_at": "2026-10-10T05:45:11.462Z",
+  "recording": "LaporSiap_Success_1.mp4",
+  "stopped_at": null,
+  "error": null,
+  "case_id": "9ff888016b98ae67bdd35b66f8c747cb0766580d95fd3c60",
+  "summary": {
+    "successful_known_total": 180000,
+    "successful_count": 1,
+    "successful_unknown_amount": 0,
+    "status_counts": {
+      "failed": 0,
+      "pending": 1,
+      "successful": 1,
+      "unknown": 0
+    },
+    "warnings": [
+      "Transfer 1: tanggal transfer belum lengkap.",
+      "Transfer 2: tanggal transfer belum lengkap."
+    ]
+  },
+  "original_draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender offers tasks and promises a daily commission of IDR 50,000.",
+        "evidence": "Hi Raka, we offer tasks liking posts and promise a commission of IDR 50,000 per day."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender requests a deposit of IDR 180,000 to continue the tasks.",
+        "evidence": "To continue the tasks, please pay a deposit of IDR 180,000 to ****4821."
+      },
+      {
+        "source_id": "M3",
+        "description": "The sender claims to have sent IDR 180,000 but has not recorded the transfer time.",
+        "evidence": "I have just sent IDR 180,000. I have not recorded the transfer time yet."
+      },
+      {
+        "source_id": "M4",
+        "description": "The sender demands an additional deposit of IDR 420,000 to enable withdrawals.",
+        "evidence": "Now add a deposit of IDR 420,000 so your balance can be withdrawn."
+      },
+      {
+        "source_id": "M5",
+        "description": "The sender states the additional deposit is still pending and not yet visible in their bank statement.",
+        "evidence": "The additional deposit is still pending. I have not seen it in my bank statement.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T05:44:38Z",
+    "duration_ms": 5775,
+    "usage": {
+      "input_tokens": 542,
+      "output_tokens": 354
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "draft_request_ui_ms": 6018,
+  "manual_entries_authored": 0,
+  "ai_entries_corrected": 0,
+  "uploads": [
+    {
+      "filename": "fictional-transfer-reference.pdf",
+      "size": 2339,
+      "sha256": "fd67ad6f567472b7d0d3af459401c8824b6e1efca8b462ef45e843c76a7bedd3",
+      "round_trip_identical": true
+    },
+    {
+      "filename": "S01-conversation-reference.png",
+      "size": 92642,
+      "sha256": "37589369bc1181e335a78e42b16a5118ceda94dbe346baed4671ac18209cc49f",
+      "round_trip_identical": true
+    },
+    {
+      "filename": "S01-transfer-notes.jpg",
+      "size": 123420,
+      "sha256": "209cdd740fd6cfd6a714160aeba5dd3a3c7e8b5da7b5bb8058040b08b4100ff1",
+      "round_trip_identical": true
+    }
+  ],
+  "steps": [
+    {
+      "name": "Import conversation TXT and save transfer inputs",
+      "started_at": "2026-10-10T05:44:24.442Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:29.752Z"
+    },
+    {
+      "name": "Upload PDF, PNG and JPEG; link and download each original",
+      "started_at": "2026-10-10T05:44:29.752Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:32.599Z"
+    },
+    {
+      "name": "Create draft with consent gates",
+      "started_at": "2026-10-10T05:44:32.600Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:44:38.943Z"
+    },
+    {
+      "name": "Review meaning and confirm current revision",
+      "started_at": "2026-10-10T05:44:38.943Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:45:02.221Z"
+    },
+    {
+      "name": "Export reviewed ZIP and TXT; verify sources, transfers and attachments",
+      "started_at": "2026-10-10T05:45:02.221Z",
+      "status": "passed",
+      "finished_at": "2026-10-10T05:45:04.242Z"
+    }
+  ],
+  "limitation": "Developer browser automation with assistant source review. Includes deliberate browser delays and review waiting; not human task time or an independent accuracy/speed study."
+}

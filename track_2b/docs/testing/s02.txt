@@ -1,0 +1,3 @@
+[08/10/2026, 10:00] Pengguna Demo: Transfer Rp275.000 ke DEMO-REK-A gagal. Saldo tidak berkurang.
+[08/10/2026, 10:01] Admin Demo: Coba kirim lagi ke rekening yang sama.
+[08/10/2026, 10:05] Pengguna Demo: Saya tidak mencoba lagi dan belum ada transfer berhasil.

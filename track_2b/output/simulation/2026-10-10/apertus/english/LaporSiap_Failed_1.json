@@ -1,0 +1,43 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "apertus",
+  "language": "en",
+  "synthetic_data_language": "en",
+  "synthetic": true,
+  "live_ai_called": true,
+  "draft_metadata": null,
+  "started_at": "2026-10-09T19:41:23.215Z",
+  "finished_at": "2026-10-09T19:43:26.735Z",
+  "recording": "LaporSiap_Failed_1.mp4",
+  "stopped_at": "04 — Live Apertus draft",
+  "error": "API memberi HTTP 502",
+  "case_id": "10fe78e90c1eefa5d72134b924ef451bdb2a1a777ee3f9d0",
+  "revision": 3,
+  "steps": [
+    {
+      "name": "01 — Open the app and import the English fictional case",
+      "status": "passed",
+      "started_at": "2026-10-09T19:41:24.802Z",
+      "finished_at": "2026-10-09T19:41:41.841Z"
+    },
+    {
+      "name": "02 — Check transfer status and save materials",
+      "status": "passed",
+      "started_at": "2026-10-09T19:41:41.843Z",
+      "finished_at": "2026-10-09T19:41:49.898Z"
+    },
+    {
+      "name": "03 — Upload the fictional reference PDF",
+      "status": "passed",
+      "started_at": "2026-10-09T19:41:49.899Z",
+      "finished_at": "2026-10-09T19:42:04.305Z"
+    },
+    {
+      "name": "04 — Live Apertus draft",
+      "status": "failed",
+      "started_at": "2026-10-09T19:42:04.305Z",
+      "error": "API memberi HTTP 502"
+    }
+  ]
+}

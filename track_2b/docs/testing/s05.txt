@@ -1,0 +1,4 @@
+[08/10/2026, 12:00] Pengguna Demo: Saya mengirim Rp125.000 ke DEMO-REK-A dan berhasil.
+[08/10/2026, 12:05] Pengguna Demo: Lalu saya mengirim Rp275.000 ke DEMO-REK-B dan berhasil.
+[08/10/2026, 12:10] Admin Demo: Kirim lagi Rp500.000 ke DEMO-REK-B.
+[08/10/2026, 12:15] Pengguna Demo: Transfer tambahan Rp500.000 masih pending.

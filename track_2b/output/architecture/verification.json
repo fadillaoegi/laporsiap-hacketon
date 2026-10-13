@@ -1,0 +1,62 @@
+{
+  "checked_on_local": "2026-10-11",
+  "scope": "LaporSiap Go backend, React frontend, evaluation and maintenance commands",
+  "architecture": {
+    "backend_layers": [
+      "domain",
+      "application",
+      "infrastructure",
+      "transport/httpapi"
+    ],
+    "frontend_layers": [
+      "domain",
+      "application",
+      "infrastructure",
+      "presentation"
+    ],
+    "composition_roots": [
+      "laporsiap_BE/cmd/api/main.go",
+      "laporsiap_FE/src/app/bootstrap.ts"
+    ],
+    "dependency_direction_checks": "passed; Go production imports and 23 TypeScript source files"
+  },
+  "redux": {
+    "toolkit": "2.13.0",
+    "react_redux": "9.3.0",
+    "state": [
+      "workspace",
+      "locale"
+    ],
+    "case_tokens_in_state_or_actions": false,
+    "redux_persistence": false,
+    "devtools": false,
+    "session_vault": "sessionStorage with in-memory fallback",
+    "language_preference": "localStorage"
+  },
+  "checks": {
+    "backend_race": "passed; application 2.352s, architecture 1.590s, integration 6.207s",
+    "frontend_unit": "3/3 passed",
+    "build": "passed; 42 modules, JS 328.09 kB (gzip 103.23 kB)",
+    "browser_initial": "13/13 passed in 58.1s",
+    "browser_final": "13/13 passed in 22.9s",
+    "compiled_container": "2/2 passed in 5.2s",
+    "production_dependency_audit": "no known vulnerabilities found",
+    "evaluation_fixture_dry_run": "passed, no app/provider requests",
+    "recorded_evaluator_dry_run": "passed, no browser/app/provider requests"
+  },
+  "recordings": {
+    "browser_initial": "output/architecture/browser-2026-10-10T18-09-10.201Z",
+    "browser_final": "output/architecture/browser-final-2026-10-10T18-16-13.292Z",
+    "compiled_container": "output/hardening/deployment-2026-10-10T18-18-00.732Z"
+  },
+  "compiled_image": "sha256:94d61ed081aeaa77f6cf85cc6c1b8a86751622f0b3c3421d6e18763de904d058",
+  "real_provider_generation_calls": 0,
+  "schema_changes": 0,
+  "independent_human_sessions": 0,
+  "gpu_inference_run": false,
+  "limitations": [
+    "Architectural refactor verifies application behavior; earlier provider failures remain unresolved.",
+    "No claim of new AI accuracy or sovereign GPU inference.",
+    "All recorded workflows use fictional developer fixtures."
+  ]
+}

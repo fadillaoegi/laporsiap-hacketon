@@ -1,0 +1,59 @@
+{
+  "backend": {
+    "command": "sh scripts/test-backend.sh",
+    "postgres_database": "separate test database",
+    "race_detector": true,
+    "go_version": "1.26.9",
+    "status": "passed",
+    "app_test_seconds": 6.383
+  },
+  "frontend_build": {
+    "status": "passed",
+    "js_kb": 299.38
+  },
+  "security": {
+    "govulncheck_version": "1.8.0",
+    "followup_findings": 0,
+    "npm_production_advisories": 0
+  },
+  "browser_final": {
+    "status": "passed",
+    "tests": 13,
+    "seconds": 46.8,
+    "live_ai_calls": 0,
+    "recordings": "output/hardening/2026-10-10/browser-final"
+  },
+  "deployment_final": {
+    "status": "passed",
+    "tests": 2,
+    "seconds": 6.7,
+    "recordings": "output/hardening/deployment-2026-10-10T15-49-29.118Z",
+    "app_image": "sha256:3a64e635af277486e8403bf3ea78fa8d33bc431a1d4876904166138c2d52a8c0",
+    "container_user": "65532:65532",
+    "read_only": true,
+    "port": "127.0.0.1:8877",
+    "cap_drop": [
+      "ALL"
+    ],
+    "no_new_privileges": true,
+    "independent_gpu_model": false
+  },
+  "live_evaluation": {
+    "initial_cases": 12,
+    "initial_accepted": 10,
+    "initial_failed_or_rejected": 2,
+    "new_v4_cases": 2,
+    "v4_accepted": 0,
+    "v4_timeout_or_connection_failures": 2,
+    "independent_human_sessions": 0,
+    "gpu_model_deployed": false
+  },
+  "bounded_read_check": {
+    "successful_reads": 20,
+    "requests": 20,
+    "concurrency": 4,
+    "live_ai_calls": 0,
+    "fictional_case_deleted": true,
+    "artifact": "output/hardening/readcheck-2026-10-10T15-53-22.460595000Z.json"
+  }
+}

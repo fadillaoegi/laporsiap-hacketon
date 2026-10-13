@@ -1,0 +1,74 @@
+{
+  "id": "direction-promise-en",
+  "language": "en",
+  "category": "direction-promise",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "started_at": "2026-10-10T14:36:32Z",
+  "case_id": "7e0d3f18ab64fa738133400fb9510b6a26e54a435ce701df",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I sent IDR 147,000. I have received no refund.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "The recruiter promises a commission of IDR 50,000 tomorrow.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "en",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "I sent IDR 147,000. I have received no refund."
+      },
+      {
+        "id": "M2",
+        "text": "The recruiter promises a commission of IDR 50,000 tomorrow.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "19aafd6ef87b7452de150cfc4c6193f50a6a3390175a584265259df9202b0a55"
+  },
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender claims to have sent IDR 147,000 and received no refund.",
+        "evidence": "I sent IDR 147,000. I have received no refund."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender claims the recruiter promises a commission of IDR 50,000 tomorrow.",
+        "evidence": "The recruiter promises a commission of IDR 50,000 tomorrow.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-10T14:36:36Z",
+    "duration_ms": 3975,
+    "usage": {
+      "input_tokens": 435,
+      "output_tokens": 139
+    },
+    "prompt_version": "bilingual-v3",
+    "privacy_mode": "redacted"
+  },
+  "contract_passed": true,
+  "transfers_unchanged": true,
+  "draft_request_seconds": 4.017184708,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Preserve sent direction and absence of refund.",
+    "Promise is not money received."
+  ]
+}

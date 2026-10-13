@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-10-09T23:27:00.303Z",
+  "synthetic": true,
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "accepted_draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "The sender promises a commission of IDR 50,000 per day for liking posts.",
+        "evidence": "We offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day."
+      },
+      {
+        "source_id": "M2",
+        "description": "The sender requests a deposit of IDR 180,000 to DEMO-ACCOUNT-001 to continue tasks.",
+        "evidence": "To continue the tasks, please pay a deposit of IDR 180,000 to DEMO-ACCOUNT-001."
+      },
+      {
+        "source_id": "M3",
+        "description": "The sender claims to have sent IDR 180,000 but has not recorded the transfer time.",
+        "evidence": "I have just sent IDR 180,000. I have not recorded the transfer time yet."
+      },
+      {
+        "source_id": "M4",
+        "description": "The sender demands an additional deposit of IDR 420,000 to enable withdrawal.",
+        "evidence": "Now add a deposit of IDR 420,000 so the balance can be withdrawn."
+      },
+      {
+        "source_id": "M5",
+        "description": "The sender states the additional deposit is still pending and not yet visible on their bank statement.",
+        "evidence": "The additional deposit is still pending. I have not seen the transaction on my bank statement.\n"
+      }
+    ],
+    "checks": [],
+    "language": "en",
+    "generated_at": "2026-10-09T23:38:24Z",
+    "duration_ms": 9060,
+    "usage": {
+      "input_tokens": 545,
+      "output_tokens": 366
+    },
+    "prompt_version": "bilingual-v3"
+  },
+  "source_messages": [
+    {
+      "id": "M1",
+      "text": "We offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day.",
+      "sender": "Demo Admin",
+      "sent_at": "08/10/2026, 09:10"
+    },
+    {
+      "id": "M2",
+      "text": "To continue the tasks, please pay a deposit of IDR 180,000 to DEMO-ACCOUNT-001.",
+      "sender": "Demo Admin",
+      "sent_at": "08/10/2026, 09:14"
+    },
+    {
+      "id": "M3",
+      "text": "I have just sent IDR 180,000. I have not recorded the transfer time yet.",
+      "sender": "Demo User",
+      "sent_at": "08/10/2026, 09:28"
+    },
+    {
+      "id": "M4",
+      "text": "Now add a deposit of IDR 420,000 so the balance can be withdrawn.",
+      "sender": "Demo Admin",
+      "sent_at": "08/10/2026, 09:35"
+    },
+    {
+      "id": "M5",
+      "text": "The additional deposit is still pending. I have not seen the transaction on my bank statement.\n",
+      "sender": "Demo User",
+      "sent_at": "08/10/2026, 09:40"
+    }
+  ],
+  "recording_result": "Failed",
+  "recording": "output/simulation/2026-10-10/apertus/english/LaporSiap_Failed_4.mp4",
+  "recording_failure_type": "scenario_assertion_false_positive",
+  "recording_failure_explanation": "The scenario regex did not include demands as a paraphrase of requests. The video stopped and was preserved. Source M4 requests an additional deposit; the generated M4 describes that demand. The script assertion was subsequently expanded.",
+  "assistant_review": "All five summaries read against their exact synthetic quotes. Requests/promises remain attributed, sent funds stay sent, the additional deposit stays pending, and no transfer date is invented. This is assistant review, not an independent human study.",
+  "estimated_inference_cost_usd": 0.00151562,
+  "pricing_usd_per_million_tokens": {
+    "input": 0.82,
+    "output": 2.92
+  },
+  "cost_limitations": "Estimate from one accepted response and the checked provider catalog, not an invoice. Excludes failed calls, infrastructure, storage, human review, and any billing adjustment. No savings or scale benefit established.",
+  "model_identity_limit": "Verified API response model metadata only; physical provider model weights were not independently audited.",
+  "successful_run": {
+    "report": "output/simulation/2026-10-10/apertus/english/LaporSiap_Success_1.json",
+    "recording": "output/simulation/2026-10-10/apertus/english/LaporSiap_Success_1.mp4",
+    "mode": "apertus",
+    "language": "en",
+    "synthetic": true,
+    "live_ai_called": true,
+    "result": "Success",
+    "steps_passed": 8,
+    "draft_metadata": {
+      "model": "swiss-ai/apertus-v1.5-70b",
+      "language": "en",
+      "generated_at": "2026-10-09T23:40:01Z",
+      "duration_ms": 3535,
+      "usage": {
+        "input_tokens": 545,
+        "output_tokens": 366
+      },
+      "prompt_version": "bilingual-v3"
+    },
+    "case_id": "235d5838e3ca91d00b116a8c68c928c60a25f7139df7ca7d",
+    "reviewed_revision": 5,
+    "note": "Original generated descriptions preserved; source comparison and review performed in the synthetic demo. No independent human evaluation.",
+    "artifacts": [
+      {
+        "path": "output/simulation/2026-10-10/apertus/english/LaporSiap_Success_1.mp4",
+        "bytes": 16950766,
+        "sha256": "a53642e382361a21b00c24f709c051edbf7346bbe2154510b2ad9b9b061fb062"
+      },
+      {
+        "path": "output/simulation/2026-10-10/apertus/english/LaporSiap-report.pdf",
+        "bytes": 19147,
+        "sha256": "fe6a6e7a33867b272c51f6830943834c5cc0aa40748f737a983e37c7f2e755fe"
+      },
+      {
+        "path": "output/simulation/2026-10-10/apertus/english/LaporSiap-simulation.zip",
+        "bytes": 20974,
+        "sha256": "7851863b4ab277dea1afb2d9c5eda36b21487eb362e222369873d8a5eeba60a7"
+      },
+      {
+        "path": "output/simulation/2026-10-10/apertus/english/LaporSiap-chronology.txt",
+        "bytes": 3009,
+        "sha256": "b02efdb90ab9feb15184c75a105851ddbc827ce58640fa081427bb20f92acd9a"
+      }
+    ]
+  }
+}

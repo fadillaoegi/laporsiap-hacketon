@@ -1,0 +1,82 @@
+{
+  "id": "actor-direction-v5-source-bound-id",
+  "language": "id",
+  "category": "targeted_actor_direction_regression",
+  "started_at": "2026-10-10T18:47:28.293Z",
+  "status": "contract_passed_review_pending",
+  "api_status": 200,
+  "contract_passed": true,
+  "state_verified": true,
+  "transfers_unchanged": true,
+  "original_sources_unchanged": true,
+  "failed_draft_not_saved": false,
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Preserve sending IDR 264000 and no refund as two assertions.",
+    "Do not assign the payment amount to an unspecified refund.",
+    "Recruiter is the promisor, not the message sender.",
+    "IDR 63000 commission is promised next week and not paid."
+  ],
+  "provider_attempts": 1,
+  "case_id": "f4e0ba9ae0bfa84cbd84df5f2530f102b2f101ce38ade505",
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 12:00"
+    },
+    {
+      "id": "M2",
+      "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 12:01"
+    }
+  ],
+  "preview": {
+    "revision": 1,
+    "language": "id",
+    "mode": "redacted",
+    "sources": [
+      {
+        "id": "M1",
+        "text": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima."
+      },
+      {
+        "id": "M2",
+        "text": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n"
+      }
+    ],
+    "redactions": 0,
+    "hash": "ecf2d82a800cdf1501f5c0659071550c43c71ab27ba159aa5d714959788bc9a0"
+  },
+  "draft_request_seconds": 2.9217897909999992,
+  "draft": {
+    "origin": "apertus",
+    "model": "swiss-ai/apertus-v1.5-70b",
+    "events": [
+      {
+        "source_id": "M1",
+        "description": "Pengirim menyatakan telah mengirim Rp264.000 dan menyatakan uang pengembalian belum diterima.",
+        "evidence": "Saya mengirim Rp264.000. Uang pengembalian belum saya terima."
+      },
+      {
+        "source_id": "M2",
+        "description": "Pengirim melaporkan perekrut menjanjikan komisi Rp63.000 pekan depan, namun komisi belum dibayarkan.",
+        "evidence": "Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n"
+      }
+    ],
+    "checks": [],
+    "language": "id",
+    "generated_at": "2026-10-10T18:47:33Z",
+    "duration_ms": 2847,
+    "usage": {
+      "input_tokens": 712,
+      "output_tokens": 107
+    },
+    "prompt_version": "bilingual-v5-source-bound",
+    "prompt_sha256": "b1a96426b541d40f84a21435975d81e4315fbede2a86efe2b3bec941421d66bf",
+    "privacy_mode": "redacted"
+  },
+  "recording": "actor-direction-v5-source-bound-id/LaporSiap_Success_1.mp4"
+}

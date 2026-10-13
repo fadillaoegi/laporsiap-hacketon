@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-09T23:27:00.303Z",
+  "endpoint": "https://api.publicai.co/v1/models",
+  "http_status": 200,
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "apertus_models": [
+    {
+      "id": "swiss-ai/apertus-8b-instruct",
+      "pricing": {
+        "input": 0.1,
+        "output": 0.2
+      }
+    },
+    {
+      "id": "swiss-ai/apertus-v1.5-8b-thinking"
+    },
+    {
+      "id": "swiss-ai/apertus-v1.5-70b-thinking"
+    },
+    {
+      "id": "swiss-ai/apertus-v1.5-8b",
+      "pricing": {
+        "input": 0.1,
+        "output": 0.2
+      }
+    },
+    {
+      "id": "swiss-ai/apertus-v1.5-70b",
+      "pricing": {
+        "input": 0.82,
+        "output": 2.92
+      }
+    },
+    {
+      "id": "swiss-ai/apertus-70b-instruct",
+      "pricing": {
+        "input": 0.82,
+        "output": 2.92
+      }
+    }
+  ],
+  "requested_model_listed": true
+}

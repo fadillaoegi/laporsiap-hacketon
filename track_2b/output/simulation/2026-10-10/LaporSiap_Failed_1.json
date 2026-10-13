@@ -1,0 +1,34 @@
+{
+  "app": "LaporSiap",
+  "result": "Failed",
+  "mode": "manual",
+  "synthetic": true,
+  "live_ai_called": false,
+  "started_at": "2026-10-09T17:56:14.024Z",
+  "finished_at": "2026-10-09T17:56:51.779Z",
+  "recording": "LaporSiap_Failed_1.mp4",
+  "stopped_at": "03 — Tambahkan lampiran sintetis",
+  "error": "locator.evaluate: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /01 Bahan kasus/ })\u001b[22m\n",
+  "case_id": "5b4a5c87647e456058f64b1bb8b5ae312b3de69f04ae9f48",
+  "revision": 1,
+  "steps": [
+    {
+      "name": "01 — Buka aplikasi dan muat contoh",
+      "status": "passed",
+      "started_at": "2026-10-09T17:56:16.618Z",
+      "finished_at": "2026-10-09T17:56:26.381Z"
+    },
+    {
+      "name": "02 — Periksa status dan simpan bahan",
+      "status": "passed",
+      "started_at": "2026-10-09T17:56:26.383Z",
+      "finished_at": "2026-10-09T17:56:34.659Z"
+    },
+    {
+      "name": "03 — Tambahkan lampiran sintetis",
+      "status": "failed",
+      "started_at": "2026-10-09T17:56:34.659Z",
+      "error": "locator.evaluate: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /01 Bahan kasus/ })\u001b[22m\n"
+    }
+  ]
+}

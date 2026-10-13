@@ -1,0 +1,63 @@
+{
+  "checked_on": "2026-10-11",
+  "status": "prepared_not_gpu_deployed",
+  "plan": "deploy/GPU-PROOF.txt",
+  "pins": "deploy/gpu-lock.json",
+  "runtime_digest_registry_verified": true,
+  "runtime_manifest_sha256": "d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6",
+  "model_revision_api_verified": true,
+  "model_revision": "59e744e313e967811aefabde3732609b64201acc",
+  "local_hardware_available": false,
+  "hardware_probe": "output/gpu-preparation/2026-10-11/local-hardware-probe.json",
+  "actual_gpu_deployments": 0,
+  "resources_rented": 0,
+  "model_weight_download_bytes": 0,
+  "gpu_runtime_image_download_bytes": 0,
+  "gpu_inference_requests": 0,
+  "cost_incurred_by_gpu_work": 0,
+  "recommendation": {
+    "route": "Linux GPU VM with Docker/Compose and four 80 GB H100 GPUs on one host",
+    "provider_example": "Lambda",
+    "price_per_gpu_hour_usd": 4.09,
+    "gpus": 4,
+    "compute_per_hour_usd": 16.36,
+    "example_duration_hours": 2,
+    "example_compute_usd": 32.72,
+    "excluded": "Tax and other charges; boot/download/loading/idle can increase paid duration",
+    "source": "https://lambda.ai/pricing",
+    "availability_verified": false
+  },
+  "alternative": {
+    "provider": "Runpod",
+    "gpu": "4 x A100 80 GB on one Pod",
+    "price_per_gpu_hour_usd": 1.79,
+    "compute_per_hour_estimate_usd": 7.16,
+    "example_two_hours_compute_usd": 14.32,
+    "source": "https://www.runpod.io/pricing",
+    "limitation": "No Docker Compose inside Pods; inference-only with approved direct SSH tunnel and adapted SSH template. Final node availability/rate must be checked in console."
+  },
+  "validation": {
+    "gpu_unit_tests": 4,
+    "passed": 4,
+    "python_compile": "passed",
+    "compose_structural_merge": "passed with dummy configuration; no container started",
+    "launcher_and_env_init_default_dry_run": "passed; no real GPU env created",
+    "local_hardware_probe": "accurately records no NVIDIA GPU; requirements false",
+    "collector": "records no GPU; proof false; no network/inference requests on this host",
+    "CI": "offline GPU tests added; actionlint passed; GitHub run not performed"
+  },
+  "outstanding": [
+    "Owner-authorized GPU access/account and spending limit",
+    "Owner acceptance of gated HF terms/token",
+    "Actual driver/runtime flags/image compatibility",
+    "GPU startup/checkpoint/runtime provenance evidence",
+    "Real LaporSiap EN/ID calls via GPU endpoint plus review/export and recording",
+    "Correlated GPU telemetry, billing and cleanup accounting"
+  ],
+  "sources": {
+    "model": "https://huggingface.co/swiss-ai/Apertus-v1.5-70B",
+    "model_metadata": "https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-70B",
+    "runtime_recipe": "https://github.com/swiss-ai/model-launch/blob/main/images/vllm_apertus_1.5_release/Dockerfile",
+    "driver": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+  }
+}

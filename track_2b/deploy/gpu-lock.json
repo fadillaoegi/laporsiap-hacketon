@@ -1,0 +1,35 @@
+{
+  "checked_on": "2026-10-11",
+  "model_repository": "swiss-ai/Apertus-v1.5-70B",
+  "served_model": "swiss-ai/apertus-v1.5-70b",
+  "model_revision": "59e744e313e967811aefabde3732609b64201acc",
+  "runtime_image": "ghcr.io/swiss-ai/vllm_apertus_1.5_release@sha256:d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6",
+  "runtime_architecture": "linux/amd64",
+  "runtime_cuda_major": 13,
+  "driver_minimum_major": 580,
+  "tensor_parallel_size": 4,
+  "dtype": "bfloat16",
+  "max_model_len": 8192,
+  "max_num_seqs": 2,
+  "gpu_memory_utilization": 0.8,
+  "planned_gpu": "4 x NVIDIA H100 80 GB on one host",
+  "minimum_gpu_memory_mib_each": 75000,
+  "minimum_host_ram_gib": 256,
+  "minimum_free_disk_gib": 250,
+  "parameters": {
+    "parameters": {
+      "BF16": 71711355040,
+      "F32": 294464099
+    },
+    "total": 72005819139
+  },
+  "weights_access": "gated auto; owner must accept model terms and provide HF token",
+  "weight_memory_estimate_bytes": 144600566476,
+  "hardware_deployment_performed": false,
+  "sources": {
+    "model": "https://huggingface.co/swiss-ai/Apertus-v1.5-70B",
+    "model_metadata": "https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-70B",
+    "runtime_recipe": "https://github.com/swiss-ai/model-launch/blob/main/images/vllm_apertus_1.5_release/Dockerfile",
+    "driver": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+  }
+}

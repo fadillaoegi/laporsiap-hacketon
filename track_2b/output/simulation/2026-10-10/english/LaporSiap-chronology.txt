@@ -1,0 +1,47 @@
+LAPORSIAP — SUPPORTING REPORT MATERIALS
+Online task offer and top-up requests — synthetic demo
+Revision: 5 | Reviewed: 2026-10-09T18:38:16Z
+SYNTHETIC DEMO DATA — NOT A REAL CASE OR TRANSACTION
+
+This document is not an IASC ticket, proof of report acceptance, or verification of transaction authenticity. There is no automatic submission. Use the official channel https://iasc.ojk.go.id/.
+
+CHRONOLOGY REVIEWED BY THE USER
+
+1. [M1] Demo Admin offers tasks involving liking posts, with a promised commission of IDR 50,000 per day.
+Sender: Demo Admin | Message time: 08/10/2026, 09:10 (not transfer time)
+Original source: We offer tasks that involve liking posts, with a promised commission of IDR 50,000 per day.
+
+2. [M2] Demo Admin requests a deposit of IDR 180,000 to DEMO-ACCOUNT-001 to continue the tasks.
+Sender: Demo Admin | Message time: 08/10/2026, 09:14 (not transfer time)
+Original source: To continue the tasks, please pay a deposit of IDR 180,000 to DEMO-ACCOUNT-001.
+
+3. [M3] Demo User states that they have just sent IDR 180,000 and have not recorded the transfer time.
+Sender: Demo User | Message time: 08/10/2026, 09:28 (not transfer time)
+Original source: I have just sent IDR 180,000. I have not recorded the transfer time yet.
+
+4. [M4] Demo Admin requests an additional deposit of IDR 420,000 so the balance can be withdrawn.
+Sender: Demo Admin | Message time: 08/10/2026, 09:35 (not transfer time)
+Original source: Now add a deposit of IDR 420,000 so the balance can be withdrawn.
+
+5. [M5] Demo User states that the additional deposit is still pending and is not yet visible on their bank statement.
+Sender: Demo User | Message time: 08/10/2026, 09:40 (not transfer time)
+Original source: The additional deposit is still pending. I have not seen the transaction on my bank statement.
+
+
+TRANSFER DETAILS FROM USER INPUT
+Successful transfer amount reported by the user (known amounts): 180000 rupiah
+Successful transfers with unknown amounts: 0
+This total is not net losses or a bank-verified amount. Pending/failed/unconfirmed transfers are excluded.
+
+Account pair: Demo Bank A / DEMO-SENDER-001 → Demo Bank B / DEMO-ACCOUNT-001
+- 444315ce-6feb-459b-af91-69294a778479 | 180000 rupiah | Transfer date: Unknown | Successful (reported by the user) | Note: Transfer date not recorded; do not use the message timestamp.
+- 62131ab3-ee15-48d1-bbef-44c27b1abeb1 | 420000 rupiah | Transfer date: Unknown | Pending | Note: Not yet confirmed as successful.
+
+DETAILS STILL TO COMPLETE / REVIEW
+- Transfer 1: missing transfer date.
+- Transfer 2: missing transfer date.
+
+REFERENCE ATTACHMENTS (NO OCR / AUTHENTICITY VERIFICATION)
+- 88307f82f670da98b39162f1f46ed37dedfe3f3e3f2c9880 | synthetic-reference.pdf | 1150 byte | SHA-256: addfbbeae749e78ea54e96a8bd06d3a26a063decbb73731c6a3a34685ba3703c
+
+Prepared with human review. Heuristic checks do not guarantee accuracy.

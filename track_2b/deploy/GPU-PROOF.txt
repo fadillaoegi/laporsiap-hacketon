@@ -1,0 +1,170 @@
+LaporSiap — rute pembuktian GPU, diperiksa 11 Oktober 2026
+
+STATUS
+Persiapan saja. Mac saat ini tidak memiliki NVIDIA GPU; belum ada instance yang
+disewa, weights diunduh, atau inference GPU dijalankan. Uji Public AI v6 sukses
+adalah bukti integrasi API, bukan deployment GPU. File lock memakai digest dan
+revisi publik nyata yang diperiksa; bukan nilai placeholder.
+
+REKOMENDASI: SATU VM LINUX DENGAN 4 x H100 80 GB
+Pilih satu host 4 GPU, bukan empat VM terpisah. Target awal: BF16, tensor parallel
+4, konteks 8192, dua sequence. Sediakan RAM >=256 GiB dan ruang kosong >=250 GiB
+sebelum download. Estimasi tensor checkpoint sekitar 144,6 GB desimal, belum KV
+cache/aktivasi/runtime. Profil ini konservatif dan belum diuji pada perangkat.
+Runtime resmi yang dipatok berbasis CUDA 13; minta driver NVIDIA >=580 dan cek
+kompatibilitas runtime sebenarnya. Jangan menyewa sebelum akses gated weights
+HF sudah tersedia dan tarif/kuota akun dikonfirmasi.
+
+Lambda menawarkan instance 4x H100 SXM dengan tarif halaman pricing $4,09 per
+GPU/jam: perkiraan compute $16,36/jam atau $32,72 untuk 2 jam, sebelum pajak dan
+biaya lain. Download, boot/loading, pengujian dan idle juga memakan waktu sewa.
+Durasi 2 jam adalah anggaran contoh, bukan janji total biaya. Ketersediaan dan
+harga checkout harus dikonfirmasi. Rute VM cocok dengan Compose yang tersedia.
+
+Alternatif: Runpod menampilkan A100 80 GB $1,79/GPU/jam pada halaman pricing:
+empat GPU sekitar $7,16/jam, contoh 2 jam $14,32 compute. Pilih satu Pod empat
+GPU dengan RAM/disk/driver cukup. Ini estimasi linear dari harga katalog, bukan
+penawaran node yang tersedia. Tarif blog Runpod berbeda dari halaman pricing;
+gunakan angka checkout. Runpod Pod tidak mendukung Docker Compose: jalankan
+inference saja dalam runtime resmi dan teruskan localhost9000 via SSH. Storage
+bisa tetap ditagih sesudah Pod berhenti; rencanakan ekspor bukti dan penghentian
+resource yang benar. Tidak ada resource dibuat oleh panduan ini.
+
+Akses GPU kampus/komunitas dengan profil yang sama bisa dipakai tanpa sewa jika owner
+memberi akses. CSCS/Phoeniqs di Resources lomba tertulis closed now; jangan
+mengandalkan alokasi baru. Kredit Hugging Face $10 yang disebut penyelenggara
+bukan bukti mendapat VM 70B multi-GPU. Belum ada permohonan atau pesan keluar.
+
+SEBELUM MEMULAI TAGIHAN
+1. Pastikan owner dapat mengakses swiss-ai/Apertus-v1.5-70B di Hugging Face dan
+   membaca/menerima ketentuan gated model pada akun sendiri. Jangan memasukkan
+   token ke chat, video, command argument, atau laporan bukti.
+2. Pilih region dan satu VM Linux amd64 empat H100 80 GB, driver580+, RAM/disk sesuai.
+   Konfirmasikan tarif serta durasi/anggaran maksimum. Ini langkah berbayar yang
+   belum dilakukan. Bukan permintaan untuk membeli hardware permanen.
+3. Upload source snapshot terbaru tanpa .env/output atau weights. Akun pengguna
+   GPU perlu Docker engine, Compose dan NVIDIA Container Toolkit. Runpod memakai
+   jalur inference-only tersendiri di bawah; jangan mencoba Docker-in-Docker.
+
+PIN REPRODUKSIBILITAS
+Lihat deploy/gpu-lock.json untuk digest runtime, revisi model dan sumbernya.
+Metadata pin tidak membuktikan model sudah dijalankan. Jangan mengganti 70B
+menjadi8B/quantization sambil tetap mengklaim verifikasi profil yang sama.
+
+JALUR A — VM GPU + COMPOSE, PROYEK/DATABASE TERPISAH
+Jalankan dari root repository di VM, bukan Mac:
+
+  python3 scripts/gpu/preflight.py --probe --disk . --output gpu-host-preflight.json
+  python3 scripts/gpu/init-env.py --write
+
+Perintah kedua membuat deploy/.env.gpu private 0600, menolak overwrite, dengan
+key DB/key inference acak dan pin resmi. Masukkan HF_TOKEN yang authorized lewat
+editor aman pada env privat itu. Tidak mengubah .env/dev atau deploy/.env lama.
+
+Verifikasi Docker/NVIDIA Toolkit dengan runtime resmi sebelum menjalankan model.
+Baca nilai APERTUS_RUNTIME_IMAGE dari gpu-lock.json; tidak perlu menyalin key.
+Pada VM gunakan docker run --rm --gpus all --entrypoint python3 IMAGE_DIGEST
+-c 'import torch; print(torch.cuda.is_available(), torch.cuda.device_count())'.
+Pastikan True dan empat GPU. IMAGE_DIGEST adalah nilai runtime_image dari lock.
+Baca vllm serve --help pada image itu; pastikan semua flags Compose tersedia,
+termasuk disable-log-requests/disable-uvicorn-access-log. Jangan menjalankan profil
+jika driver/flag tidak cocok. Metadata lookup lokal belum menguji flags image.
+
+Database pada Compose dasar memakai pull_policy=never untuk deployment lokal.
+Pada server baru, tarik DB/runtime yang dipatok terlebih dahulu; ini mengunduh
+image sekitar 8,9 GB untuk runtime (bukan inference atau bukti GPU sudah berjalan).
+
+  docker compose --project-name laporsiap-gpu-proof --env-file deploy/.env.gpu \
+    -f deploy/compose.yaml -f deploy/compose.gpu.yaml pull --policy always db inference
+
+  docker compose --project-name laporsiap-gpu-proof --env-file deploy/.env.gpu \
+    -f deploy/compose.yaml -f deploy/compose.gpu.yaml up -d --build
+
+Inference hanya loopback 9000; app 8877 juga loopback host. Shared namespace membuat
+app menghubungi inference 9000 tanpa endpoint publik. Database terpisah milik
+project laporsiap-gpu-proof; tidak menyentuh database dev/private sebelumnya.
+Model loading bisa memerlukan waktu lama; default health start_period 20 menit.
+Jika lebih lama, periksa log startup tanpa menyalin env/credential ke laporan.
+
+Akses UI dari laptop dengan SSH port-forward pada host yang owner izinkan:
+
+  ssh -N -L 8878:127.0.0.1:8877 USER@GPU_HOST
+
+Buka http://127.0.0.1:8878 . Profil GPU menyetel APP_ORIGIN dari GPU_APP_ORIGIN
+(default http://127.0.0.1:8878), sesuai Host browser pada tunnel ini. Port host
+remote tetap8877. Jika memilih port tunnel lain, ubah GPU_APP_ORIGIN di env
+privat sebelum startup; jangan menghapus pemeriksaan Host/Origin.
+
+JALUR B — RUNPOD INFERENCE-ONLY
+Gunakan image runtime resmi dari lock sebagai customcontainer; verify profile
+empat GPU/driver pada Pod. Di dalam image yang memiliki source kit, set HF_TOKEN
+serta VLLM_API_KEY secara private dan HF_HOME ke volume cache persisten.
+Default serve.py hanya dry-run. Untuk mulai setelah preflight lulus:
+
+  python3 scripts/gpu/serve.py --serve
+
+Launcher memeriksa GPU/RAM/disk/driver/flags sebelum exec vllm, dengan port9000
+loopback dan revision/alias tetap. Jalur ini tidak menjalankan app/DB di Pod.
+Gunakan SSH langsung (bukan SSH dasar proxy yang tak mendukung forwarding),
+sshd pada image sesuai panduan Runpod, serta endpoint SSH yang owner verifikasi:
+
+  ssh -N -L 9000:127.0.0.1:9000 -p SSH_PORT USER@GPU_HOST
+
+Backend lokal diarahkan melalui env private terpisah ke http://127.0.0.1:9000
+model alias tetap swiss-ai/apertus-v1.5-70b; APERTUS_API_KEY sama dengan key vLLM
+private. Jangan menimpa atau mencetak credential Public AI yang lama. Backend
+harus di-restart setelah perubahan env. Ini bukti inference GPU dengan app lokal;
+bukan klaim seluruh aplikasi di-host pada server GPU. Runpod perlu template SSH
+atau adaptasi image; Compose kit tidak kompatibel langsung di dalam Pod.
+
+BUKTI YANG DIREKAM
+1. Catat GPU/RAM/driver dan pin image/checkpoint. Untuk jalurVM, ambil IDcontainer
+   inference via docker compose ... ps -q inference; ID bukancredential.
+2. Pada host GPU mulai collector saat akan membuat draft EN/ID melalui UI:
+
+  python3 scripts/gpu/collect.py --container CONTAINER_ID --seconds 60 \
+    --output gpu-runtime-observation.json
+
+Collector hanya membaca nvidia-smi, field container terpilih, versi paket,
+keberadaan shards checkpoint pada revisi cache, health dan katalog model loopback.
+Ia tidak mengirim completion, merekam Env/credential, atau menyimpan rawinspect.
+Untuk Pod gunakan collect.py tanpa --container; digest/launchconfig dari console
+provider perlu dicatat terpisah, sebab modePod tak punya akses Dockerhost.
+Semua laporan tetap gpu_deployment_proven=false: collector sendiri tidak cukup.
+3. Recorder mendukung origin lokal/tunnel, tetap satu percobaan per bahasa:
+
+  node scripts/demo/evaluate-recorded.mjs --origin http://127.0.0.1:8878 --live
+
+Jika memakai port tunnel lain, cocokkan --origin dengan GPU_APP_ORIGIN. Recorder mencocokkan hash
+prompt binary, merekam consent/panggilan, memastikan next week/pekan depan,
+model alias, sumber/transfer dan kutipan, lalu menghentikan record saat gagal dan
+menamai LaporSiap_Failed_1. Summary.json mencatat dua percobaan tanpa retry/fallback.
+Kuota global20/24h tetap; jangan menaikkannya atau retry sampai tampil success.
+4. Periksa setiap ringkasan, konfirmasi review dan eksporTXT/PDF/ZIP di UI. Langkah
+   ini perlu direkam/didokumentasikan juga; recorder boundedAI di atas berhenti
+   pada draft, belum melakukan review/ekspor. Simpan timestamp UTC kedua laporan
+   agar GPU utilisasi dapat dicocokkan dengan waktu panggilan. Collector file/cache
+   presence bukan audit independen bobot. Catat respons, usage/latensi dan biaya
+   compute aktual dari provider; jangan menganggap katalog sebagai tagihan.
+5. Unduh video/laporan/ekspor sebelum server dihentikan. Hentikan instance sesuai
+   batas anggaran; periksa tagihan storage yang tertinggal. Jangan menghapus volume
+   bukti sebelum salinan lokal diverifikasi. Tidak ada stop/delete otomatis di kit.
+
+LOLOS PEMBUKTIAN HANYA SETELAH
+GPU nyata dan runtime/checkpoint tercatat, inference sehat, panggilan aplikasi asli
+EN/ID ke endpoint GPU yang dimaksud, model/kutipan/waktu tepat, review makna serta
+ekspor, telemetri terkorelasi, dan biaya aktual tercatat. Dokumentasikan bagian
+mana berjalan remote/lokal. Jangan menyebut config/dry-run atau ujiAPI Public AI
+sebagai bukti GPU. Belum semua langkah ini dilakukan.
+
+SUMBER PRIMER (diakses 11 Oktober 2026)
+https://huggingface.co/swiss-ai/Apertus-v1.5-70B
+https://github.com/swiss-ai/model-launch/blob/main/images/vllm_apertus_1.5_release/Dockerfile
+https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html
+https://lambda.ai/pricing
+https://lambda.ai/instances
+https://www.runpod.io/pricing
+https://docs.runpod.io/pods/overview
+https://docs.runpod.io/pods/configuration/use-ssh
+https://docs.runpod.io/pods/pricing
+https://hackapertus.devpost.com/resources

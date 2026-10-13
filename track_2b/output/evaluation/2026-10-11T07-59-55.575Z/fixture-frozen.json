@@ -1,0 +1,87 @@
+{
+  "sha256": "13f127d70956ce38ab9b01f79c9ba84acf091d4c953843e0b1b575c9426c8432",
+  "version": "actor-direction-v6-time-preserved",
+  "items": [
+    {
+      "id": "actor-direction-v6-time-preserved-en",
+      "language": "en",
+      "category": "targeted_actor_direction_regression",
+      "input": {
+        "title": "Fictional v6 time-preserved regression en",
+        "synthetic": true,
+        "parser": "whatsapp_bracket_dmy",
+        "raw_chat": "[10/10/2026, 12:00] Raka: I sent IDR 264,000. No refund has reached me.\n[10/10/2026, 12:01] Nadia: The recruiter promises IDR 63,000 commission next week; it has not been paid.\n",
+        "transfers": [
+          {
+            "id": "T1",
+            "from_bank": "Bank Aruna",
+            "from_account": "****7392",
+            "to_bank": "Bank Lestari",
+            "to_account": "****4821",
+            "amount": 264000,
+            "occurred_at": "",
+            "status": "successful",
+            "note": "Fictional test input; no bank verification."
+          }
+        ]
+      },
+      "privacy": {
+        "mode": "redacted",
+        "terms": []
+      },
+      "expected_total": 264000,
+      "expected_unknown_success": 0,
+      "semantic_review_criteria": [
+        "Preserve sending IDR 264000 and no refund as two assertions.",
+        "Do not assign the payment amount to an unspecified refund.",
+        "Recruiter is the promisor, not the message sender.",
+        "IDR 63000 commission is promised next week and not paid."
+      ],
+      "required_timing": {
+        "source_id": "M2",
+        "expression": "next week"
+      }
+    },
+    {
+      "id": "actor-direction-v6-time-preserved-id",
+      "language": "id",
+      "category": "targeted_actor_direction_regression",
+      "input": {
+        "title": "Fictional v6 time-preserved regression id",
+        "synthetic": true,
+        "parser": "whatsapp_bracket_dmy",
+        "raw_chat": "[10/10/2026, 12:00] Raka: Saya mengirim Rp264.000. Uang pengembalian belum saya terima.\n[10/10/2026, 12:01] Nadia: Perekrut menjanjikan komisi Rp63.000 pekan depan; komisi belum dibayarkan.\n",
+        "transfers": [
+          {
+            "id": "T1",
+            "from_bank": "Bank Aruna",
+            "from_account": "****7392",
+            "to_bank": "Bank Lestari",
+            "to_account": "****4821",
+            "amount": 264000,
+            "occurred_at": "",
+            "status": "successful",
+            "note": "Fictional test input; no bank verification."
+          }
+        ]
+      },
+      "privacy": {
+        "mode": "redacted",
+        "terms": []
+      },
+      "expected_total": 264000,
+      "expected_unknown_success": 0,
+      "semantic_review_criteria": [
+        "Preserve sending IDR 264000 and no refund as two assertions.",
+        "Do not assign the payment amount to an unspecified refund.",
+        "Recruiter is the promisor, not the message sender.",
+        "IDR 63000 commission is promised next week and not paid."
+      ],
+      "required_timing": {
+        "source_id": "M2",
+        "expression": "pekan depan"
+      }
+    }
+  ],
+  "note": "New session recheck of the same development examples. Prior failures are preserved."
+}

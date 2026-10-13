@@ -1,0 +1,248 @@
+LaporSiap — technical and evidence review, 10 October 2026
+
+PURPOSE AND APERTUS ROLE
+Preparing a report from scattered chats can require copying sources, arranging
+claims and listing uncertain transfers. LaporSiap supplies a bilingual local
+workspace for this preparation. It does not send an official report, verify a
+bank transaction or guarantee recovery. IASC remains linked throughout the app.
+Apertus 1.5 70B drafts short statements from source messages. Transfer facts
+come exclusively from user input. A complete manual workflow remains available.
+Whether AI saves people time has not been established by independent testing.
+
+IMPLEMENTATION
+Go 1.26.9/pgx/PostgreSQL 18 and React/TypeScript/Vite. The provider is requested
+with model alias swiss-ai/apertus-v1.5-70b, temperature zero and at most 2400
+output tokens. Each event must retain its ordered ID and entire exact source
+quote. Strict schema rejects extra fields, invented source IDs, altered quotes,
+wrong model identity and incomplete responses. Request timeout is 40 seconds,
+with no automatic retry or alternate-model fallback. These checks do not prove
+that a contract-valid summary has the same meaning as its source.
+
+SOURCE PRESERVATION AND REVIEW
+Only known amounts of reported successful transfers are totaled; pending/failed
+amounts are excluded. Unknown stays unknown; partially known totals are labelled.
+Chat timestamps do not fill transfer dates. Edits invalidate previous review.
+Users inspect each source, transfers and limitations before backend permits
+PDF/TXT/ZIP export. PNG/JPEG are decoded within limits; PDF validation remains
+basic, without OCR, malware scanning or verification of authenticity.
+
+ACCESS, PRIVACY AND COST CONTROLS
+Case bearer tokens are random, hashed in the database and kept in sessionStorage.
+Cases expire after 30 days, access after seven days. Rotation revokes old access;
+confirmed case deletion cascades to history/files. Cleanup runs at startup/hourly.
+Backup/download deletion is separate. There is no account or lost-token recovery.
+Default masking replaces detected sender names, emails, Indonesian phone numbers,
+labelled identifiers/account numbers and user-added terms. Users inspect the exact
+payload and consent to its hash/revision/language. Only source IDs/text are sent;
+quotes are restored locally after contract validation. Detection is limited,
+and original local sources/exports may still contain personal information.
+Provider disclosure follows the configured endpoint, including local inference.
+
+Persistent AI attempts: three per case, 20 globally per rolling 24 hours; two active
+leases. Failed attempts count, and deletion cannot reset the global meter. Capacity
+defaults are 200 cases, 200 revisions and 256 MiB logical case/history/file data.
+This is not a physical database/WAL/backup disk limit. API request limiting is
+local in-memory, 240 per actual client IP/minute. These limits are not proof of
+public-service capacity, distributed abuse prevention or independent security.
+
+NEW DEVELOPMENT EVALUATION
+Original frozen dataset bilingual-safety-v1 contains 12 cases: send/refund/promise,
+failed payment/no retry, partial totals/unknowns, instructions embedded in sources,
+conflicting statuses/correction and masked multiline personal data, in English
+and Indonesian. Input hash and all attempts are preserved. There were 10 accepted
+drafts, one rejected model identity, and one timeout/connectivity failure. The
+returned alternate model identity was not persisted by this evaluation runner;
+no claim is made about which alternate model the provider returned.
+Assistant review of 26 accepted events found four issues in three Indonesian
+drafts: sent-payment assertion omitted with a refund amount association, recruiter
+promise attributed to the message sender, failed-payment amount omitted, and the
+context of a previous claim omitted. Contract success is not semantic accuracy.
+Suggested corrections are documented separately; original outputs were not edited.
+Prompt v4 and limited review heuristics address these observed risks. Two new
+v4 regression cases timed out. Improved live quality has therefore not been shown.
+Read-only database verification found original chat/messages/transfers unchanged
+in all 14 cases. Every failed generation retained revision 1 with no draft/review.
+There were no retries, fallback or fabricated human results.
+
+COST AND DEPLOYABILITY
+Ten accepted responses reported 4578 input and 1809 output tokens. Authenticated
+provider catalog at 2026-10-10T15:34:42Z listed input 0.82 and output 2.92 for the
+requested model. Using USD/million-token units consistent with previous provider
+documentation gives USD 0.00903624 for these accepted responses only. This is a
+token estimate, not an invoice. Usage/cost of four rejected/failed attempts is
+unknown. Hosting, database, storage, tax and human review are excluded.
+Accepted initial request times ranged 2.919–4.151 seconds, median 3.559 seconds;
+HTTP times are not participant task times, and failures remain in the denominator.
+
+A compiled private app/container and separate PostgreSQL were exercised on
+127.0.0.1:8877: upload, manual review, export, rotation and deletion in both
+languages. App uses UID 65532, read-only root, capability drop, no-new-privileges,
+same-origin CSP and local fonts. Docker build bases are pinned to verified digests.
+GPU Compose, private networking, official checkpoint/revision pinning, deployment
+instructions and required evidence are supplied. GPU inference has not been run.
+No throughput, GPU memory/cost or large-scale capacity claim is made. API model
+identity is metadata, not a weights audit or proof of sovereign deployment.
+
+HUMAN PILOT AND REMAINING EVIDENCE
+Observed independent participants: zero. The existing kit covers two participants
+in counterbalanced manual/Apertus tasks plus an optional third participant. A
+human-operated recorder stops on failures and preserves Failed_N videos. The new
+analyzer requires timestamp, recording, content and comprehension fields before
+counting a completed reviewed task. Empty templates remain empty.
+Actual participants, measured benefit, target GPU access, and a successful v4 live
+check remain needed. Public victim-data hosting additionally needs accounts/TLS,
+backup and threat-model review; this project is a local fictional-data prototype.
+
+EVENT REVIEW
+Working alignment is Own Project / Track 2B. The official Devpost page describes
+purposeful AI use, technical rigor, value/cost/scale, sovereign deployability and
+implementation feasibility. Evidence above distinguishes implementation from
+unmeasured benefit/deployment. The linked Getting Started Guide returned 404 when
+checked, so final track-specific deliverables and eligibility must be verified
+with the organizer/current guide. A local source/evidence ZIP is not a published
+repository or submitted entry. No first-place or full compliance claim is made.
+Original code, documentation/design and synthetic inputs have separate license
+notices; model outputs and dependencies retain upstream rights. No weights or
+credentials are distributed in the review package.
+
+Primary references checked during this work:
+https://hackapertus.devpost.com/
+https://hackapertus.devpost.com/rules
+https://hackapertus.devpost.com/resources
+https://hackapertus.notion.site/getting-started-guide-onlinehack
+https://huggingface.co/swiss-ai/Apertus-v1.5-70B
+https://go.dev/dl/?mode=json
+https://go.dev/doc/security/vuln/
+
+Indonesia: Penguatan lifecycle, batas biaya/kapasitas dan privasi sudah
+diimplementasikan. Evaluasi tambahan mencatat kegagalan dan kesalahan makna
+secara terbuka; perbaikan prompt v4 belum mendapat respons live yang berhasil.
+Kit pilot, deployment GPU dan paket review tersedia, tetapi peserta independen,
+model mandiri serta aturan akhir lomba masih memerlukan bukti nyata.
+
+
+FOLLOW-UP — 11 OCTOBER 2026 (ASIA/JAKARTA)
+Prompt evidence now freezes exact embedded prompt bytes/version/SHA256 and
+compares them with the running backend before any provider call. Accepted AI
+drafts retain version/hash. Evaluators retain bounded model/contract diagnostics
+and verify persisted originals/state after failures; access tokens stay in memory.
+
+Two recorded rechecks of the same development examples (not independent holdout)
+are in output/evaluation/2026-10-10T17-28-37.268Z/. English: 8.053s, HTTP 502,
+Apertus model metadata, rejected for chronology quote differs from original source.
+Indonesian: 6.714s, HTTP 502, response model metadata
+aisingapore/Qwen-SEA-LION-v4-32B-IT, rejected for mismatched identity. Zero accepted
+v4 drafts. Application made no retries/fallbacks. Both originals/transfer records
+remain unchanged, revision 1, draft/review absent. Per-language Failed_1.mp4 files
+are retained. Failure videos stop at detection; the last frame may precede the
+visible error notification. Raw rejected provider content was not retained; the
+precise quote character difference and provider-internal routing cause are unknown.
+
+An initial recorder setup error produced two local fictional cases but zero
+provider calls; its output is preserved separately at 17-27-10.741Z. The existing
+project FFmpeg cache was then selected and the blank recording check passed
+without app/provider calls. Read-only database audit verified all 18 preserved
+cases. This includes 16 live attempts across the earlier and current checks plus
+two technical setup cases. Original 12-case results remain unchanged. Four v4
+attempts across two sessions have no accepted output; six rejected/failed live
+attempts overall have unknown usage/cost. Only the initial ten accepted drafts
+have usable usage accounting.
+
+Backend/race checks passed. Rebuilt private deployment passed both language
+manual upload/review/export/rotation/deletion workflows (2/2, 6.8s). GPU inference
+and independent participant sessions remain unperformed. Official linked guide
+again returned 404; Devpost Resources lists CSCS/Phoeniqs support applications
+as closed. A catalog-listed model is not sufficient inference readiness evidence.
+
+Priority: use an operator endpoint that guarantees requested Apertus identity,
+then conduct a bounded new live verification before depending on the AI demo.
+Preserve exact-quote rejection and manual drafting; do not accept alternate models
+or normalize rejected quotes to turn these failures into passes. No readiness,
+first-place or full event-compliance claim follows from this check.
+
+Indonesia: Dua panggilan live terbaru gagal dan direkam. Aplikasi menolak kutipan
+yang berubah serta model lain; input tetap utuh. Alur manual hasil build lulus
+dalam dua bahasa. Provider AI yang konsisten, peserta independen, GPU mandiri dan
+panduan akhir lomba masih memerlukan bukti nyata.
+
+
+ARCHITECTURE UPDATE — 11 OCTOBER 2026
+Go backend now separates domain, application use cases/ports, PostgreSQL/Apertus/
+report/config adapters, and HTTP transport. React separates domain, application,
+browser/HTTP adapters, presentation and a dependency-injection composition root.
+Redux Toolkit 2.13.0 and React Redux 9.3.0 own workspace/locale state. Credentials
+remain in the session vault and are removed before returning UI case responses;
+Redux has no token/file/callback persistence, logger or DevTools.
+
+Production dependency-direction checks passed (Go and 23 TypeScript files).
+Backend/race passed; frontend units 3/3, final browser regressions 13/13 (22.9s),
+compiled bilingual manual workflows 2/2 (5.2s), build and production dependency
+audit passed. Recordings/results are referenced by output/architecture/verification.json.
+This refactor made zero real provider generation calls and no database schema
+change. Earlier live rejections, unobserved participants and absent GPU evidence
+remain as recorded above; refactoring does not establish AI/provider readiness.
+
+APERTUS V5 UPDATE — 11 OCTOBER 2026
+The provider contract now returns exactly source_id/description. The domain
+binds evidence directly from local sources after schema/count/order/ID/word
+validation; generated evidence fields are rejected. Full saved/edit quote
+validation remains unchanged. This is an explicit new contract, not acceptance
+or normalization of previously rejected v4 responses. Prompt version:
+bilingual-v5-source-bound; hash:
+b1a96426b541d40f84a21435975d81e4315fbede2a86efe2b3bec941421d66bf.
+
+Read-only configuration/catalog/runtime/quota preflight passed (16/20 attempts).
+Two recorded rechecks of the same development sources passed the contract
+(EN/ID 200, requested Apertus metadata, 4 exact quotes, sources/transfers intact).
+Provider latency 2051/2847ms; combined usage 1325 input/196 output tokens. No
+retry/fallback. A read-only audit verified all 20 preserved evaluation cases.
+Postflight 18/20 attempts. Previous 16 attempts remain recorded: 10 accepted
+and 6 failed/rejected. Across these separate development rounds: 18 attempts,
+12 contract-accepted, 6 failed/rejected; not a holdout accuracy/reliability score.
+
+Assistant review of the 4 new entries found one issue: English M2 omits next
+week from the promised commission. Recruiter/amount/unpaid status remain.
+Indonesian retains pekan depan. A separate semantic review stores the issue and
+suggested correction, leaving original outputs untouched. New bilingual review
+flags catch omissions/changes in five limited relative-time phrase groups on
+future generation/edit; they do not prove entailment or rewrite old snapshots.
+Success_1 video names refer to contract acceptance, not semantic perfection.
+
+Recordings and original responses: output/evaluation/2026-10-10T18-47-16.862Z.
+Current verification: output/evaluation/provider-v5-2026-10-11/verification.json.
+Provider internal mismatch cause remains unknown; 2 successes do not establish
+consistent routing or prove served weights. Independent participant sessions,
+actual GPU inference and final event-guide verification remain outstanding.
+
+CI UPDATE: Three local GitHub Actions jobs cover backend/race/DB/architecture,
+frontend architecture/Redux unit/build, and 13 controlled bilingual browser
+regressions without an Apertus key. Actionlint1.7.12 and local readiness passed;
+full local browser run13/13 passed23.4s. Workflow has not been pushed/executed
+in GitHub. See output/ci/verification.json for boundaries and pinned actions.
+
+TIME PRESERVATION V6 / GPU PREPARATION — 11 OCTOBER 2026
+Explicit temporal instructions and a domain generation validator now reject
+missing/changed/invented phrases from five limited EN/ID time groups before
+persistence. Human edits keep review flags; original historical outputs remain.
+Two new recorded development rechecks pass, preserving next week/pekan depan
+in the recruiter commission statement and all stated actor/amount/payment/
+refund/unpaid criteria. Assistant review of 4 events found no issue for these stated
+criteria; not independent human evaluation or a general semantic guarantee.
+
+20 live attempts across separate development rounds:14 contract accepted and
+6 failed/rejected. Latest two pass; prior v5 timing omission unchanged. Quota 20/20
+reached, so no further live requests made. All 22 preserved evaluation cases pass
+read-only source/transfer audit. Backend/race and compiled bilingual 2/2 pass.
+Recordings: output/evaluation/2026-10-11T07-59-55.575Z. Summary:
+output/evaluation/timing-v6-2026-10-11/verification.json. Provider consistency
+and served weights are not established from response metadata/two rechecks.
+
+A GPU execution plan now contains registry-verified official runtime digest and
+HF model revision, VM 4xH100 path, Runpod inference-only alternative, current
+primary-source price examples, private envinitializer, hardware preflight and
+read-only runtime/GPU observation collector. Four offline regressions and
+Compose structure/actionlint pass. Mac has no NVIDIA GPU; no GPU runtime or
+weights downloaded, resource rented or actual inference performed. GPU proof
+remains false. See deploy/GPU-PROOF.txt and output/gpu-preparation/2026-10-11/
+verification.json. Access/account/budget and real execution evidence still
+needed; do not describe preparation as a completed deployment.

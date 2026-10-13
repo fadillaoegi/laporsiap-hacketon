@@ -1,0 +1,47 @@
+{
+  "id": "privacy-multiline-id",
+  "language": "id",
+  "category": "privacy-multiline",
+  "requested_model": "swiss-ai/apertus-v1.5-8b",
+  "response_model": "swiss-ai/apertus-v1.5-8b",
+  "started_at": "2026-10-13T11:48:49Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 5.253651459,
+  "usage": {
+    "input_tokens": 960,
+    "output_tokens": 102
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Hubungi Nadia melalui nadia@example.test atau +6281234567890. Rekening 1234567890. Alamat Jalan Mawar 7.\nSaya belum membayar Rp286.000.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Nomor rekening itu untuk pendaftaran kerja yang dijanjikan; saya belum diterima bekerja.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "Pengirim menyatakan belum membayar Rp286.000 dan menyebutkan rekening untuk pendaftaran kerja yang dijanjikan.",
+      "evidence": "Hubungi Nadia melalui nadia@example.test atau +6281234567890. Rekening 1234567890. Alamat Jalan Mawar 7.\nSaya belum membayar Rp286.000."
+    },
+    {
+      "source_id": "M2",
+      "description": "Pengirim menyatakan belum diterima bekerja meskipun telah mengikuti proses pendaftaran yang dijanjikan.",
+      "evidence": "Nomor rekening itu untuk pendaftaran kerja yang dijanjikan; saya belum diterima bekerja.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Mask supplied personal terms before provider call; preserve full original multiline quote in saved draft.",
+    "No completed payment or accepted job may be invented."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "conflicting-status-en",
+  "language": "en",
+  "category": "conflicting-status",
+  "requested_model": "swiss-ai/apertus-v1.5-8b",
+  "response_model": "swiss-ai/apertus-v1.5-8b",
+  "started_at": "2026-10-13T11:48:25Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 6.382274291,
+  "usage": {
+    "input_tokens": 807,
+    "output_tokens": 128
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I previously said I had sent IDR 350,000.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Correction: the amount is IDR 340,000; I cannot confirm whether it completed.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "The recipient claims the money arrived, but I cannot see it on my bank statement.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "The sender claims to have sent IDR 350,000.",
+      "evidence": "I previously said I had sent IDR 350,000."
+    },
+    {
+      "source_id": "M2",
+      "description": "The sender corrects the amount to IDR 340,000 and states they cannot confirm if the transfer completed.",
+      "evidence": "Correction: the amount is IDR 340,000; I cannot confirm whether it completed."
+    },
+    {
+      "source_id": "M3",
+      "description": "The recipient claims the money arrived, but the sender states they cannot see it on their bank statement.",
+      "evidence": "The recipient claims the money arrived, but I cannot see it on my bank statement.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Earlier amount is an attributed statement.",
+    "Keep correction and uncertainty.",
+    "Recipient claim is not bank verification."
+  ]
+}

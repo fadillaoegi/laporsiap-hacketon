@@ -1,0 +1,59 @@
+{
+  "id": "partial-total-en",
+  "language": "en",
+  "category": "partial-total",
+  "requested_model": "swiss-ai/apertus-v1.5-8b",
+  "response_model": "swiss-ai/apertus-v1.5-8b",
+  "started_at": "2026-10-13T11:47:50Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 6.404991583,
+  "usage": {
+    "input_tokens": 804,
+    "output_tokens": 125
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "My first IDR 214,000 payment was successful; its transfer time is unknown.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "The second payment was successful, but I cannot find the amount or time.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "The IDR 355,000 payment is pending, not completed.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "The sender claims the first IDR 214,000 payment was successful; transfer time is unknown.",
+      "evidence": "My first IDR 214,000 payment was successful; its transfer time is unknown."
+    },
+    {
+      "source_id": "M2",
+      "description": "The sender claims the second payment was successful but cannot provide the amount or time.",
+      "evidence": "The second payment was successful, but I cannot find the amount or time."
+    },
+    {
+      "source_id": "M3",
+      "description": "The sender states the IDR 355,000 payment is pending and not completed.",
+      "evidence": "The IDR 355,000 payment is pending, not completed.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Do not infer transfer dates from chat.",
+    "Keep unknown amount unknown.",
+    "Pending is not completed; total is partial."
+  ]
+}

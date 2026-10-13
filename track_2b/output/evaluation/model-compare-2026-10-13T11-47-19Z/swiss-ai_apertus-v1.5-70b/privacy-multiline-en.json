@@ -1,0 +1,47 @@
+{
+  "id": "privacy-multiline-en",
+  "language": "en",
+  "category": "privacy-multiline",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "response_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-13T11:48:47Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 2.631242875,
+  "usage": {
+    "input_tokens": 824,
+    "output_tokens": 84
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Contact Nadia at nadia@example.test or +6281234567890. Account 1234567890. Address Jalan Mawar 7.\nI have not paid IDR 286,000.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "The account number is for the promised job registration; I have not accepted a job.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "The sender states they have not paid IDR 286,000.",
+      "evidence": "Contact Nadia at nadia@example.test or +6281234567890. Account 1234567890. Address Jalan Mawar 7.\nI have not paid IDR 286,000."
+    },
+    {
+      "source_id": "M2",
+      "description": "The sender claims the account number is for a promised job registration and they have not accepted a job.",
+      "evidence": "The account number is for the promised job registration; I have not accepted a job.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Mask supplied personal terms before provider call; preserve full original multiline quote in saved draft.",
+    "No completed payment or accepted job may be invented."
+  ]
+}

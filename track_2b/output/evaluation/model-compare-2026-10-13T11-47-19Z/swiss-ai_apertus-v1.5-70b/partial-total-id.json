@@ -1,0 +1,59 @@
+{
+  "id": "partial-total-id",
+  "language": "id",
+  "category": "partial-total",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "response_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-13T11:48:07Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 2.935866916,
+  "usage": {
+    "input_tokens": 939,
+    "output_tokens": 133
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Pembayaran pertama Rp214.000 berhasil; waktunya belum diketahui.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Pembayaran kedua berhasil, tetapi nominal dan waktunya belum saya temukan.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "Pembayaran Rp355.000 masih dalam proses, belum selesai.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "Pengirim menyatakan pembayaran pertama Rp214.000 berhasil, namun waktu pembayaran tidak disebutkan.",
+      "evidence": "Pembayaran pertama Rp214.000 berhasil; waktunya belum diketahui."
+    },
+    {
+      "source_id": "M2",
+      "description": "Pengirim menyatakan pembayaran kedua berhasil, namun nominal dan waktunya belum ditemukan.",
+      "evidence": "Pembayaran kedua berhasil, tetapi nominal dan waktunya belum saya temukan."
+    },
+    {
+      "source_id": "M3",
+      "description": "Pengirim menyatakan pembayaran Rp355.000 masih dalam proses dan belum selesai.",
+      "evidence": "Pembayaran Rp355.000 masih dalam proses, belum selesai.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Do not infer transfer dates from chat.",
+    "Keep unknown amount unknown.",
+    "Pending is not completed; total is partial."
+  ]
+}

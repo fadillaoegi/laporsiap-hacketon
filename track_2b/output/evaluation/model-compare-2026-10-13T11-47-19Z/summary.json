@@ -1,0 +1,37 @@
+{
+  "fallback_count": 0,
+  "fixture_sha256": "22b2ba5f6307d33ace6fb86d494150b857dbbee24abed64b29051f6cc5e26aec",
+  "fixture_version": "bilingual-safety-v1",
+  "limitations": [
+    "Development fixture of 12 fictional cases; not a statistical benchmark.",
+    "API model identity is metadata, not a weights audit.",
+    "Request timing reflects a shared hosted endpoint at one point in time.",
+    "No retries; provider failures remain in the denominator."
+  ],
+  "models": {
+    "swiss-ai/apertus-v1.5-70b": {
+      "cases": 12,
+      "contract_passed": 6,
+      "failure_reasons": {
+        "Provider AI mengembalikan HTTP 400. Sumber tetap tersimpan; draft manual tersedia.": 6
+      },
+      "input_tokens": 5205,
+      "mean_request_seconds": 2.093077663,
+      "output_tokens": 691
+    },
+    "swiss-ai/apertus-v1.5-8b": {
+      "cases": 12,
+      "contract_passed": 12,
+      "failure_reasons": {},
+      "input_tokens": 10383,
+      "mean_request_seconds": 5.93054020825,
+      "output_tokens": 1350
+    }
+  },
+  "path": "direct provider call (PrepareAIInput → Generate → RestoreEvidence); no API server or database",
+  "prompt_sha256": "96e58e67a5dafec4ac1c23d788619ed6acfa048a5e887872112e25a3baafb96e",
+  "prompt_version": "bilingual-v6-time-preserved",
+  "retry_count": 0,
+  "semantic_review": "pending_assistant_review",
+  "timeout_seconds": 40
+}

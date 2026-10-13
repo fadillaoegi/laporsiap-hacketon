@@ -18,6 +18,7 @@ import (
 	"path/filepath"
 	"reflect"
 	"regexp"
+	"strings"
 	"time"
 )
 
@@ -93,7 +94,11 @@ func main() {
 	live := flag.Bool("live", false, "One real AI attempt per fictional case, no retries")
 	fixturePath := flag.String("fixture", "../../docs/evaluation/bilingual-safety-v1.json", "Original fictional evaluation fixture")
 	apiURL := flag.String("api", "http://127.0.0.1:8787", "Local app origin only")
+	model := flag.String("model", apertus.ApertusModel, "Apertus model the running backend was started with (LLM_NAME)")
 	flag.Parse()
+	if !apertus.IsApertusModel(*model) {
+		panic("Evaluation model must be an Apertus model")
+	}
 	raw, err := os.ReadFile(*fixturePath)
 	if err != nil {
 		panic("Evaluation fixture unavailable")
@@ -124,7 +129,7 @@ func main() {
 	if err != nil || u.Scheme != "http" || (u.Hostname() != "127.0.0.1" && u.Hostname() != "localhost") || u.User != nil || u.RawQuery != "" || u.Fragment != "" || u.Path != "" {
 		panic("Use a local app origin")
 	}
-	out := filepath.Join("../../output/evaluation", time.Now().UTC().Format("2006-01-02T15-04-05.000000000Z"))
+	out := filepath.Join("../../output/evaluation", time.Now().UTC().Format("2006-01-02T15-04-05.000000000Z")+"-"+regexp.MustCompile(`[^A-Za-z0-9.-]+`).ReplaceAllString(*model, "_"))
 	if err = os.MkdirAll(out, 0700); err != nil {
 		panic("Cannot create evaluation output")
 	}
@@ -240,7 +245,7 @@ func main() {
 			if err == nil {
 				r.Draft = after.Case.Draft
 				r.TransfersUnchanged = reflect.DeepEqual(before.Case.Transfers, after.Case.Transfers)
-				if r.Draft == nil || r.Draft.Model != apertus.ApertusModel || r.Draft.Language != item.Language || r.Draft.PromptSHA256 != apertus.PromptSHA256() || r.Draft.PromptVersion != apertus.PromptVersion {
+				if r.Draft == nil || !strings.EqualFold(r.Draft.Model, *model) || r.Draft.Language != item.Language || r.Draft.PromptSHA256 != apertus.PromptSHA256() || r.Draft.PromptVersion != apertus.PromptVersion {
 					err = fmt.Errorf("Draft model/language invalid")
 				} else {
 					sources := make([]domain.ChronologySource, len(before.Case.Messages))
@@ -296,7 +301,7 @@ func main() {
 			passed++
 		}
 	}
-	write("summary.json", map[string]any{"version": fixture.Version, "fixture_sha256": hash, "requested_model": apertus.ApertusModel, "prompt_version": apertus.PromptVersion, "prompt_sha256": apertus.PromptSHA256(), "cases": len(results), "contract_passed": passed, "results": results, "retry_count": 0, "fallback_count": 0, "independent_human_sessions": 0, "semantic_review": "Separate per-source decisions required; no automatic accuracy score.", "limitations": []string{"Development evaluation; not independent holdout.", "API model identity is metadata, not a weights audit.", "Request timing is not human work time or benefit.", "No retries; provider failures remain in the denominator."}})
+	write("summary.json", map[string]any{"version": fixture.Version, "fixture_sha256": hash, "requested_model": *model, "prompt_version": apertus.PromptVersion, "prompt_sha256": apertus.PromptSHA256(), "cases": len(results), "contract_passed": passed, "results": results, "retry_count": 0, "fallback_count": 0, "independent_human_sessions": 0, "semantic_review": "Separate per-source decisions required; no automatic accuracy score.", "limitations": []string{"Development evaluation; not independent holdout.", "API model identity is metadata, not a weights audit.", "Request timing is not human work time or benefit.", "No retries; provider failures remain in the denominator."}})
 	fmt.Printf("Evaluation artifacts: %s; contract %d/%d; semantic review pending\n", out, passed, len(results))
 	if passed != len(results) {
 		os.Exit(1)

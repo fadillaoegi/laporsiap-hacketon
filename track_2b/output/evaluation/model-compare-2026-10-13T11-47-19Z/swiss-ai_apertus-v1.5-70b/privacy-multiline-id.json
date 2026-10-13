@@ -1,0 +1,31 @@
+{
+  "id": "privacy-multiline-id",
+  "language": "id",
+  "category": "privacy-multiline",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-13T11:48:54Z",
+  "status": "failed_or_rejected",
+  "error": "Provider AI mengembalikan HTTP 400. Sumber tetap tersimpan; draft manual tersedia.",
+  "request_seconds": 1.354284458,
+  "contract_passed": false,
+  "totals_match_expected": false,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Hubungi Nadia melalui nadia@example.test atau +6281234567890. Rekening 1234567890. Alamat Jalan Mawar 7.\nSaya belum membayar Rp286.000.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Nomor rekening itu untuk pendaftaran kerja yang dijanjikan; saya belum diterima bekerja.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Mask supplied personal terms before provider call; preserve full original multiline quote in saved draft.",
+    "No completed payment or accepted job may be invented."
+  ]
+}

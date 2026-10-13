@@ -1,0 +1,38 @@
+{
+  "id": "conflicting-status-en",
+  "language": "en",
+  "category": "conflicting-status",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-13T11:48:31Z",
+  "status": "failed_or_rejected",
+  "error": "Provider AI mengembalikan HTTP 400. Sumber tetap tersimpan; draft manual tersedia.",
+  "request_seconds": 1.282407,
+  "contract_passed": false,
+  "totals_match_expected": false,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I previously said I had sent IDR 350,000.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Correction: the amount is IDR 340,000; I cannot confirm whether it completed.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "The recipient claims the money arrived, but I cannot see it on my bank statement.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Earlier amount is an attributed statement.",
+    "Keep correction and uncertainty.",
+    "Recipient claim is not bank verification."
+  ]
+}

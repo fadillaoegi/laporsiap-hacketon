@@ -1,0 +1,59 @@
+{
+  "id": "failed-no-retry-en",
+  "language": "en",
+  "category": "failed-no-retry",
+  "requested_model": "swiss-ai/apertus-v1.5-8b",
+  "response_model": "swiss-ai/apertus-v1.5-8b",
+  "started_at": "2026-10-13T11:47:34Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 5.685055959,
+  "usage": {
+    "input_tokens": 783,
+    "output_tokens": 109
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "My IDR 238,000 payment failed. My balance did not change.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Please try the transfer again.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "I have not retried the payment.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "The sender reports their IDR 238,000 payment failed and their balance did not change.",
+      "evidence": "My IDR 238,000 payment failed. My balance did not change."
+    },
+    {
+      "source_id": "M2",
+      "description": "The recipient requests the sender to try the transfer again.",
+      "evidence": "Please try the transfer again."
+    },
+    {
+      "source_id": "M3",
+      "description": "The sender states they have not retried the payment.",
+      "evidence": "I have not retried the payment.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Failure is not a completed payment.",
+    "A request to retry is not a new transaction.",
+    "No retry happened."
+  ]
+}

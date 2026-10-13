@@ -1,0 +1,59 @@
+{
+  "id": "failed-no-retry-id",
+  "language": "id",
+  "category": "failed-no-retry",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "response_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-13T11:47:48Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 2.634220167,
+  "usage": {
+    "input_tokens": 914,
+    "output_tokens": 104
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Pembayaran Rp238.000 saya gagal. Saldo tidak berubah.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Silakan mencoba transfer lagi.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "Saya belum mencoba membayar lagi.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "Pengirim menyatakan transfer Rp238.000 gagal; saldo tidak berubah.",
+      "evidence": "Pembayaran Rp238.000 saya gagal. Saldo tidak berubah."
+    },
+    {
+      "source_id": "M2",
+      "description": "Pengirim meminta mencoba transfer lagi.",
+      "evidence": "Silakan mencoba transfer lagi."
+    },
+    {
+      "source_id": "M3",
+      "description": "Pengirim menyatakan belum mencoba membayar lagi.",
+      "evidence": "Saya belum mencoba membayar lagi.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Failure is not a completed payment.",
+    "A request to retry is not a new transaction.",
+    "No retry happened."
+  ]
+}

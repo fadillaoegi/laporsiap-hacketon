@@ -1,0 +1,31 @@
+{
+  "id": "direction-promise-en",
+  "language": "en",
+  "category": "direction-promise",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-13T11:47:25Z",
+  "status": "failed_or_rejected",
+  "error": "Provider AI mengembalikan HTTP 400. Sumber tetap tersimpan; draft manual tersedia.",
+  "request_seconds": 2.010288625,
+  "contract_passed": false,
+  "totals_match_expected": false,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I sent IDR 147,000. I have received no refund.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "The recruiter promises a commission of IDR 50,000 tomorrow.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "semantic_review_status": "not_scored",
+  "semantic_review_criteria": [
+    "Preserve sent direction and absence of refund.",
+    "Promise is not money received."
+  ]
+}

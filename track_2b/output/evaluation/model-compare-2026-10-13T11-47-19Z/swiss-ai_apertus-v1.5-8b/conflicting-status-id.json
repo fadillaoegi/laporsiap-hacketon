@@ -1,0 +1,59 @@
+{
+  "id": "conflicting-status-id",
+  "language": "id",
+  "category": "conflicting-status",
+  "requested_model": "swiss-ai/apertus-v1.5-8b",
+  "response_model": "swiss-ai/apertus-v1.5-8b",
+  "started_at": "2026-10-13T11:48:33Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 6.702260583,
+  "usage": {
+    "input_tokens": 941,
+    "output_tokens": 133
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Sebelumnya saya mengatakan telah mengirim Rp350.000.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Koreksi: nominal Rp340.000; saya belum bisa memastikan pembayaran selesai.",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    },
+    {
+      "id": "M3",
+      "text": "Penerima mengaku uang sudah masuk, tetapi saya belum melihatnya pada mutasi bank.\n",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:02"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "Pengirim menyatakan telah mengirim Rp350.000.",
+      "evidence": "Sebelumnya saya mengatakan telah mengirim Rp350.000."
+    },
+    {
+      "source_id": "M2",
+      "description": "Pengirim mengoreksi nominal menjadi Rp340.000 dan menyatakan belum bisa memastikan pembayaran selesai.",
+      "evidence": "Koreksi: nominal Rp340.000; saya belum bisa memastikan pembayaran selesai."
+    },
+    {
+      "source_id": "M3",
+      "description": "Pengirim menyatakan penerima mengaku uang sudah masuk, tetapi pengirim belum melihatnya pada mutasi bank.",
+      "evidence": "Penerima mengaku uang sudah masuk, tetapi saya belum melihatnya pada mutasi bank.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Earlier amount is an attributed statement.",
+    "Keep correction and uncertainty.",
+    "Recipient claim is not bank verification."
+  ]
+}

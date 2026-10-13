@@ -1,0 +1,47 @@
+{
+  "id": "direction-promise-en",
+  "language": "en",
+  "category": "direction-promise",
+  "requested_model": "swiss-ai/apertus-v1.5-8b",
+  "response_model": "swiss-ai/apertus-v1.5-8b",
+  "started_at": "2026-10-13T11:47:19Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 5.7323495,
+  "usage": {
+    "input_tokens": 777,
+    "output_tokens": 92
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "I sent IDR 147,000. I have received no refund.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "The recruiter promises a commission of IDR 50,000 tomorrow.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "The sender states they sent IDR 147,000 and have received no refund.",
+      "evidence": "I sent IDR 147,000. I have received no refund."
+    },
+    {
+      "source_id": "M2",
+      "description": "The sender reports the recruiter promises IDR 50,000 commission tomorrow; it has not been paid.",
+      "evidence": "The recruiter promises a commission of IDR 50,000 tomorrow.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Preserve sent direction and absence of refund.",
+    "Promise is not money received."
+  ]
+}

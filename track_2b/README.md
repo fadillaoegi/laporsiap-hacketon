@@ -145,10 +145,6 @@ Paket pengujian manual ada di [docs/testing/SCENARIOS.md](docs/testing/SCENARIOS
 diharapkan, dan [lembar hasil](docs/testing/RESULTS.md). Mulai dari S01 untuk
 alur normal, lalu S02/S03 untuk total gagal dan nominal kosong.
 
-Untuk merekam demo, gunakan [skrip bilingual dan arahan layar](docs/demo/DEMO-SCRIPT.md).
-Narasi bersih tersedia dalam [English](docs/demo/VOICEOVER-EN.txt) dan
-[Indonesia](docs/demo/VOICEOVER-ID.txt), dengan durasi English sekitar 4–5 menit.
-
 ## Format input dan batas
 
 - **Teks biasa:** satu pesan per baris nonkosong. Pengirim dan waktu kosong.
@@ -210,8 +206,7 @@ go run ./cmd/smoke -live
 
 Probe mengirim teks ke provider yang dikonfigurasi melalui API lokal. Ia tidak
 mengonfirmasi review atau mengekspor otomatis. Jangan mengulangnya sebagai
-batch akurasi. Bukti verifikasi sesi ini ada di [docs/PROGRESS.md](docs/PROGRESS.md)
-dan [docs/TECHNICAL.md](docs/TECHNICAL.md).
+batch akurasi. Detail teknis ada di [docs/TECHNICAL.md](docs/TECHNICAL.md).
 
 Rekam simulasi English dengan panggilan Apertus asli:
 

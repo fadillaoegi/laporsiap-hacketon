@@ -1,7 +1,0 @@
-{
-  "checked_archive_entries": 268,
-  "known_secret_values_checked": 3,
-  "configured_secret_matches": 0,
-  "issues": [],
-  "scope": "Plain archive content, known configured secrets and bearer-shaped JSON. Images are not OCR-scanned; no independent security audit."
-}

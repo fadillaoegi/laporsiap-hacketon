@@ -29,3 +29,17 @@ track_2b/output/**/*.mp4
 track_2b/output/**/*.wav
 track_2b/output/**/*.png
 track_2b/output/**/*.jpg
+
+# Internal working material not needed for the Hack Apertus submission
+track_2b/docs/PROGRESS.md
+track_2b/docs/demo/
+track_2b/scripts/video/
+track_2b/scripts/package-review.py
+track_2b/output/ci/browser-*/
+track_2b/output/submission-review/
+track_2b/output/video/
+track_2b/output/architecture/browser-*/
+track_2b/output/hardening/deployment-*/
+track_2b/output/hardening/state-check-*/
+track_2b/output/hardening/readcheck-*.json
+track_2b/output/hardening/govulncheck*.json

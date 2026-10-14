@@ -1,0 +1,58 @@
+{
+  "app": "LaporSiap",
+  "synthetic": true,
+  "base": "http://127.0.0.1:8787",
+  "started_at": "2026-10-13T16:31:17.387Z",
+  "live_ai_requests": 1,
+  "draft": {
+    "model": "swiss-ai/apertus-v1.5-8b",
+    "language": "en",
+    "duration_ms": 13051,
+    "usage": {
+      "input_tokens": 879,
+      "output_tokens": 214
+    },
+    "prompt_version": "bilingual-v6-time-preserved",
+    "events": 5
+  },
+  "end_wall": 1791909187.469,
+  "result": "Success",
+  "finished_at": "2026-10-13T16:33:08.220Z",
+  "scene_marks": [
+    {
+      "scene": "step1_input",
+      "at_seconds": 1.5
+    },
+    {
+      "scene": "step2_preview_and_apertus",
+      "at_seconds": 19.07
+    },
+    {
+      "scene": "apertus_requested",
+      "at_seconds": 33.85
+    },
+    {
+      "scene": "apertus_draft_ready",
+      "at_seconds": 46.81
+    },
+    {
+      "scene": "step3_review",
+      "at_seconds": 48.01
+    },
+    {
+      "scene": "step4_export",
+      "at_seconds": 90.18
+    },
+    {
+      "scene": "pdf_open",
+      "at_seconds": 97.26
+    },
+    {
+      "scene": "end",
+      "at_seconds": 107.35
+    }
+  ],
+  "video": "LaporSiap-App-Demo.mp4",
+  "frames": 2459,
+  "duration_seconds": 107.3
+}

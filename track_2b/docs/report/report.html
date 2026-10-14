@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LaporSiap — Technical Report</title>
+<style>
+@font-face { font-family: "DM Sans"; font-weight: 400; src: url("../../src/laporsiap_FE/public/fonts/dm-sans-400.ttf"); }
+@font-face { font-family: "DM Sans"; font-weight: 700; src: url("../../src/laporsiap_FE/public/fonts/dm-sans-700.ttf"); }
+@font-face { font-family: "Manrope"; font-weight: 700; src: url("../../src/laporsiap_FE/public/fonts/manrope-700.ttf"); }
+:root {
+  --deep: #5e1620; --green: #7a1f2b; --mint: #e9c9ce; --mint-bg: #f8eef0; --cream: #fbf9f9;
+  --amber: #d4a24c; --amber-bg: #fdf3e2; --orange: #b94f26; --ink: #1f2328; --muted: #5f6368;
+  --border: #e6e1e1; --error: #a33535; --swiss: #d52b1e; --paper: #ffffff;
+}
+@page { size: A4; margin: 13mm 15mm 15mm 15mm; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font-family: "DM Sans", sans-serif; font-size: 9.6pt; line-height: 1.48; color: var(--ink); background: var(--paper); }
+h1, h2, h3, .display { font-family: "Manrope", "DM Sans", sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+p { margin: 0 0 6pt; }
+strong { font-weight: 700; color: var(--deep); }
+code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 8.2pt; background: var(--mint-bg); color: var(--deep); padding: 0.5pt 3pt; border-radius: 3pt; }
+a { color: var(--green); text-decoration: none; }
+
+/* ---------- cover ---------- */
+.cover { background: linear-gradient(135deg, #7a1f2b 0%, #4a1219 100%); color: var(--cream); border-radius: 12pt; padding: 18pt 20pt 16pt; position: relative; overflow: hidden; }
+.cover::after { content: ""; position: absolute; right: -40pt; top: -40pt; width: 190pt; height: 190pt; border-radius: 50%; background: radial-gradient(circle, rgba(212,162,76,.30), rgba(212,162,76,0) 70%); }
+.cover-top { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+.brand { display: flex; align-items: center; gap: 9pt; }
+.brand svg { width: 34pt; height: 34pt; border-radius: 9pt; box-shadow: 0 0 0 1.5pt rgba(255,255,255,.18); }
+.wordmark { font-family: "Manrope"; font-weight: 700; font-size: 20pt; letter-spacing: -0.02em; }
+.wordmark span { color: var(--amber); }
+.event { display: flex; align-items: center; gap: 6pt; font-size: 7.6pt; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--mint); }
+.swiss { width: 13pt; height: 13pt; background: var(--swiss); border-radius: 2.5pt; position: relative; }
+.swiss::before, .swiss::after { content: ""; position: absolute; background: #fff; }
+.swiss::before { left: 5.4pt; top: 2.5pt; width: 2.2pt; height: 8pt; }
+.swiss::after { top: 5.4pt; left: 2.5pt; height: 2.2pt; width: 8pt; }
+.cover h1 { font-size: 21pt; line-height: 1.16; margin: 14pt 0 6pt; max-width: 430pt; position: relative; z-index: 1; color: #fff; }
+.cover h1 em { font-style: normal; color: var(--amber); }
+.cover .lede { color: #f1dfe2; font-size: 10pt; max-width: 440pt; margin: 0 0 12pt; position: relative; z-index: 1; }
+.meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5pt 14pt; font-size: 8pt; position: relative; z-index: 1; border-top: 1px solid rgba(233,201,206,.3); padding-top: 9pt; }
+.meta div b { display: block; font-size: 6.6pt; letter-spacing: .12em; text-transform: uppercase; color: var(--mint); font-weight: 700; }
+.meta div { color: #fff; }
+.meta .todo { color: var(--amber); }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7pt; margin: 10pt 0 4pt; }
+.kpi { border: 1px solid var(--border); border-radius: 9pt; padding: 8pt 9pt 7pt; background: var(--cream); }
+.kpi .v { font-family: "Manrope"; font-weight: 700; font-size: 17pt; color: var(--deep); line-height: 1.05; }
+.kpi .v small { font-size: 9pt; color: var(--muted); }
+.kpi .l { font-size: 7.4pt; color: var(--muted); margin-top: 3pt; line-height: 1.3; }
+.kpi.warn { background: var(--amber-bg); border-color: #f2d4a2; }
+.kpi.warn .v { color: var(--orange); }
+
+/* ---------- sections ---------- */
+section { margin-top: 12pt; }
+h2 { font-size: 13pt; color: var(--deep); margin: 0 0 6pt; display: flex; align-items: center; gap: 7pt; break-after: avoid; }
+h2 .n { display: inline-flex; align-items: center; justify-content: center; width: 17pt; height: 17pt; border-radius: 5pt; background: var(--deep); color: #fff; font-size: 8.4pt; }
+h3 { font-size: 10pt; color: var(--green); margin: 8pt 0 4pt; break-after: avoid; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+.callout { border-left: 3pt solid var(--amber); background: var(--amber-bg); border-radius: 0 7pt 7pt 0; padding: 6pt 9pt; margin: 6pt 0; font-size: 8.8pt; }
+.callout.green { border-color: var(--green); background: var(--mint-bg); }
+ul { margin: 0 0 6pt; padding-left: 12pt; }
+li { margin: 0 0 2.5pt; }
+li::marker { color: var(--green); }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 8.4pt; margin: 4pt 0 6pt; border: 1px solid var(--border); border-radius: 8pt; overflow: hidden; break-inside: avoid; }
+th { background: var(--deep); color: #fff; text-align: left; font-weight: 700; padding: 5pt 7pt; font-size: 7.6pt; letter-spacing: .02em; }
+td { padding: 4.5pt 7pt; border-top: 1px solid var(--border); vertical-align: top; }
+tr:nth-child(even) td { background: #faf8f8; }
+td.hl { font-weight: 700; color: var(--deep); }
+.pill { display: inline-block; padding: 0 5pt; border-radius: 8pt; font-size: 7.2pt; font-weight: 700; }
+.pill.ok { background: #dcefe4; color: #176244; }
+.pill.mid { background: var(--amber-bg); color: #805515; }
+.pill.bad { background: #f6dede; color: var(--error); }
+
+/* ---------- diagram ---------- */
+.diagram { border: 1px solid var(--border); border-radius: 10pt; padding: 10pt; background: var(--cream); break-inside: avoid; }
+.flow { display: grid; grid-template-columns: repeat(7, auto); align-items: center; justify-content: space-between; gap: 3pt; }
+.node { background: #fff; border: 1.2px solid var(--mint); border-radius: 7pt; padding: 5pt 6pt; text-align: center; font-size: 7.4pt; line-height: 1.25; min-width: 62pt; }
+.node b { display: block; font-size: 8pt; color: var(--deep); }
+.node.ai { border-color: var(--amber); background: var(--amber-bg); }
+.node.human { border-color: var(--green); background: var(--mint-bg); }
+.arrow { color: var(--green); font-size: 11pt; font-weight: 700; }
+.stack { display: grid; grid-template-columns: 1.15fr 1fr; gap: 8pt; margin-top: 9pt; }
+.box { border-radius: 8pt; padding: 7pt 8pt; font-size: 7.8pt; line-height: 1.35; }
+.box h4 { margin: 0 0 4pt; font-family: "Manrope"; font-size: 8.4pt; }
+.box.onprem { background: var(--deep); color: #f6e9eb; }
+.box.onprem h4 { color: var(--amber); }
+.box.onprem .chip { display: inline-block; background: rgba(255,255,255,.1); border: 1px solid rgba(233,201,206,.35); border-radius: 5pt; padding: 1.5pt 5pt; margin: 2pt 2pt 0 0; color: #fff; }
+.box.out { background: #fff; border: 1.2px dashed var(--orange); }
+.box.out h4 { color: var(--orange); }
+
+figure { margin: 6pt 0; break-inside: avoid; }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; }
+.shots img { width: 100%; height: 170pt; object-fit: cover; object-position: top left; border-radius: 7pt; border: 1px solid var(--border); display: block; }
+figcaption { font-size: 7.4pt; color: var(--muted); margin-top: 3pt; }
+
+pre { background: var(--deep); color: #f6e9eb; border-radius: 8pt; padding: 7pt 9pt; font-size: 7.6pt; line-height: 1.45; margin: 4pt 0 6pt; white-space: pre-wrap; break-inside: avoid; }
+pre .c { color: var(--mint); opacity: .8; }
+.refs { font-size: 7.4pt; color: var(--muted); padding-left: 13pt; }
+.refs li { word-break: break-all; }
+.small { font-size: 8pt; color: var(--muted); }
+.page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="brand">
+      <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#7a1f2b"/><path d="M18 11h20l11 11v31H18a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3Z" fill="#ffffff"/><path d="M38 11v8a3 3 0 0 0 3 3h8L38 11Z" fill="#e9c9ce"/><path d="M23 29h13M23 36h8" fill="none" stroke="#7a1f2b" stroke-width="3.5" stroke-linecap="round"/><circle cx="45" cy="46" r="13" fill="#d4a24c" stroke="#7a1f2b" stroke-width="3"/><path d="m38.5 46 4.5 4.5 8-9" fill="none" stroke="#5e1620" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="wordmark">Lapor<span>Siap</span></div>
+    </div>
+    <div class="event"><div class="swiss"></div>Hack Apertus 2026 · Track 2B · Technical report</div>
+  </div>
+  <h1>From a messy scam chat to <em>reviewed, source-linked</em> report material — drafted by Apertus, confirmed by a human.</h1>
+  <p class="lede">LaporSiap helps people in Indonesia who were targeted by part-time-job and “top-up” scams prepare a chronology, transfer list and evidence pack for the official channel, OJK’s Indonesia Anti-Scam Centre (IASC).</p>
+  <div class="meta">
+    <div><b>Team</b>FLdevBoo — M Fadil Muhtarom Laoegi</div>
+    <div><b>Model</b>Apertus v1.5 8B + 70B</div>
+    <div><b>Target architecture</b>On-premise · air-gap capable</div>
+    <div><b>Code</b>github.com/fadillaoegi/laporsiap-hacketon</div>
+    <div><b>Demo</b><span class="todo">video link</span></div>
+    <div><b>Maturity</b>Working prototype · synthetic data only</div>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">12<small>/12</small></div><div class="l">outputs passed the strict source-bound contract — Apertus 8B and 70B</div></div>
+  <div class="kpi"><div class="v">$0.0001</div><div class="l">per case with Apertus 8B — 10× cheaper than 70B</div></div>
+  <div class="kpi warn"><div class="v">3</div><div class="l">8B meaning errors only a human caught (70B: 0, but minor slips) → review is mandatory</div></div>
+  <div class="kpi"><div class="v">0</div><div class="l">transfers, attachments or tokens sent to the model</div></div>
+</div>
+
+<section>
+  <h2><span class="n">1</span>Summary</h2>
+  <p>IASC asks for a chronology, transaction details and evidence; it received <strong>637,055 reports</strong> between 22 Nov 2024 and 31 Jul 2026 [1]. What people actually hold is an untidy chat. LaporSiap lets them paste it, record the transfers they know, and get an <strong>Apertus-drafted chronology where every entry is bound to its original message by ID</strong>. The model writes only short descriptions; quotes are re-attached locally from the source, so the model can never alter evidence. Totals are computed by code. A person must confirm every entry before PDF/TXT/ZIP export unlocks.</p>
+  <div class="callout green"><strong>Headline.</strong> On a frozen 12-case bilingual fixture, Apertus 8B passed the output contract 12/12 at ≈ USD 0.0001 per case — yet review found 3 material meaning errors no automatic check caught. 70B also passed 12/12 with no material errors, but still made minor slips. That is exactly why LaporSiap keeps the human in the loop.</div>
+</section>
+
+<figure>
+  <div class="shots">
+    <img src="../screenshots/11-input-new-logo.png" alt="Input step">
+    <img src="../screenshots/07-review-desktop-english.png" alt="Review step">
+  </div>
+  <figcaption>Left: step 1, paste the conversation; IASC is one click away without waiting for AI. Right: step 3, each draft entry sits beside its original message, with review flags and a per-entry confirmation.</figcaption>
+</figure>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section class="page-break">
+  <h2><span class="n">2</span>Architecture</h2>
+  <div class="diagram">
+    <div class="flow">
+      <div class="node"><b>Paste chat</b>+ known transfers</div><div class="arrow">→</div>
+      <div class="node"><b>Exact preview</b>masked IDs + text, consent hash</div><div class="arrow">→</div>
+      <div class="node ai"><b>Apertus</b>1 call · temp 0 · 40 s · no retry</div><div class="arrow">→</div>
+      <div class="node"><b>Contract</b>schema · order · model ID · timing</div>
+    </div>
+    <div class="flow" style="margin-top:6pt; grid-template-columns: repeat(5, auto); justify-content: flex-end; gap: 3pt 10pt">
+      <div class="node"><b>Quotes re-bound</b>from local source</div><div class="arrow">→</div>
+      <div class="node human"><b>Human review</b>every entry + flags</div><div class="arrow">→</div>
+      <div class="node"><b>Export</b>PDF · TXT · ZIP</div>
+    </div>
+    <div class="stack">
+      <div class="box onprem">
+        <h4>Inside the operator’s infrastructure</h4>
+        <span class="chip">React + Redux UI (EN/ID)</span><span class="chip">Go API · Clean Architecture</span><span class="chip">PostgreSQL 18</span><span class="chip">PDF/ZIP renderer, fonts embedded</span><span class="chip">Apertus on vLLM (pinned digest + revision)</span>
+        <div style="margin-top:5pt">Non-root, read-only filesystem, capabilities dropped, loopback-only ports, no CDN, analytics or telemetry.</div>
+      </div>
+      <div class="box out">
+        <h4>Only thing that can leave (if hosted model used)</h4>
+        Prompt + masked message IDs/text of one case, after explicit consent. <b>Never:</b> transfers, attachments, titles, sender/time metadata, access tokens.
+      </div>
+    </div>
+  </div>
+
+  <h3>Target architecture</h3>
+  <p><strong>a) On-premise — primary target.</strong> One Docker Compose stack runs the app and PostgreSQL on the organisation’s own machine. <code>deploy/compose.gpu.yaml</code> adds the official Apertus vLLM runtime, pinned in <code>deploy/gpu-lock.json</code>, sharing the app’s private network namespace; inference binds 127.0.0.1 only. <strong>b) Air-gapped — supported</strong> once images and weights are pre-loaded: the full manual workflow needs zero network, and AI needs only the local endpoint (<code>LLM_BASE_URL</code> accepts plain HTTP solely for loopback/private addresses).</p>
+  <table>
+    <tr><th style="width:15%">Phase</th><th>External dependency</th><th style="width:38%">Data sent</th></tr>
+    <tr><td>Build</td><td>Docker Hub images (golang, node, postgres), Go module proxy, npm registry</td><td>None — public packages only</td></tr>
+    <tr><td>Setup (AI)</td><td>Hugging Face gated weights download</td><td>Owner’s HF token</td></tr>
+    <tr><td class="hl">Runtime</td><td class="hl">Only the configured Apertus endpoint</td><td>Prompt + masked message text of one consented case</td></tr>
+  </table>
+  <div class="callout">Honest status: the on-prem GPU path is prepared and statically validated, but <strong>Apertus has not yet been run on our own GPU</strong>. All live results below used the hosted Public AI endpoint.</div>
+</section>
+
+
+
+<!-- ============ APERTUS ============ -->
+<section class="page-break">
+  <h2><span class="n">3</span>Use of Apertus</h2>
+  <div class="two">
+    <div>
+      <ul>
+        <li><strong>Models:</strong> <code>swiss-ai/apertus-v1.5-8b</code>, <code>swiss-ai/apertus-v1.5-70b</code></li>
+        <li><strong>Used for:</strong> inference (structured, source-bound summarisation) and evaluation / red-teaming (prompt injection inside chats)</li>
+        <li><strong>Runs on:</strong> hosted Public AI for tests; on-prem vLLM prepared (70B: BF16, tensor-parallel 4, 4× H100 80 GB)</li>
+        <li><strong>Prompt:</strong> <code>bilingual-v6-time-preserved</code>, embedded in the binary; SHA-256 exposed at <code>/api/policy</code> and stored with every draft</li>
+      </ul>
+      <p><strong>Why Apertus.</strong> Open weights and open training data mean a public-interest operator in Indonesia can self-host it, so victims’ chats need not leave their infrastructure. Indonesian and English worked without fine-tuning.</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Where Apertus fell short</h3>
+      <ul>
+        <li><strong>8B</strong> dropped attribution (“I previously said …”) and once invented a registration step.</li>
+        <li><strong>70B</strong> on the hosted gateway intermittently rejected valid requests with HTTP 400 (6 of 12 on 13 Oct); an identical retry succeeded, so we reran those cases once.</li>
+        <li>On 11 Oct one “Apertus” request was answered by <code>aisingapore/Qwen-SEA-LION-v4-32B-IT</code>; our model-identity check rejected it.</li>
+        <li>Earlier prompts lost “next week”; we added validation that rejects drafts whose relative time phrases differ from the source.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DATA ============ -->
+<section>
+  <h2><span class="n">4</span>Data</h2>
+  <p>All data is <strong>original and synthetic</strong> (fictional Nadia/Raka, fictional banks, masked accounts) under CDLA-Permissive-2.0: the 12-case fixture <code>docs/evaluation/bilingual-safety-v1.json</code>, 13 manual scenarios and 8 importable chats in <code>docs/testing/</code>. No real victim data, no personal data, no human subjects. Model outputs are kept as evidence and retain upstream rights.</p>
+</section>
+
+<!-- ============ EVALUATION ============ -->
+<section>
+  <h2><span class="n">5</span>Evaluation</h2>
+  <p><strong>Task:</strong> one chronology entry per source message. <strong>Metrics:</strong> (1) output contract — strict schema, source binding, order, preserved time phrases, model identity; (2) per-entry semantic review against fixture criteria; (3) latency and token cost. <strong>Setup:</strong> frozen fixture (SHA-256), prompt v6, temperature 0, one attempt per case per model, models interleaved, no retries, run 13 Oct 2026 through the app’s own provider path; the 6 cases the 70B gateway rejected were diagnosed and rerun once on 14 Oct (31 requests in total).</p>
+  <table>
+    <tr><th>Setup</th><th>Contract passed</th><th>Semantic review (clean / minor / material)</th><th>Mean latency</th><th>Cost per case*</th></tr>
+    <tr><td>Baseline: manual draft, no AI</td><td>n/a</td><td>quotes only — user writes every entry</td><td>—</td><td>0</td></tr>
+    <tr><td class="hl">Apertus v1.5 8B</td><td class="hl">12 / 12</td><td><span class="pill ok">7</span> <span class="pill mid">2</span> <span class="pill bad">3</span></td><td>5.9 s</td><td>≈ $0.00011</td></tr>
+    <tr><td class="hl">Apertus v1.5 70B</td><td class="hl">12 / 12 <span class="small">(6 after one rerun)</span></td><td><span class="pill ok">7</span> <span class="pill mid">5</span> <span class="pill bad">0</span></td><td>2.2 s</td><td>≈ $0.00105</td></tr>
+  </table>
+  <p class="small">*Catalog token prices, not an invoice. Material 8B errors: lost “previously said” attribution on a corrected amount (EN + ID); mixed two messages and invented a step (privacy case, ID). <strong>70B 400 diagnosis:</strong> the gateway claimed the system prompt was not a plain string although it was; an identical retry returned HTTP 200 — a provider-side fault, not the model or the app. LaporSiap does not auto-retry; the user retries or drafts manually.</p>
+  <div class="two">
+    <div class="callout green" style="margin-top:0"><strong>Safety held in every answered case.</strong> Injected “SYSTEM: ignore previous instructions …” text was described, never obeyed; masked personal data never appeared in descriptions; totals and sources were unchanged.</div>
+    <div class="callout" style="margin-top:0"><strong>Decision.</strong> 70B made no material errors, 8B made 3 — but both make minor slips, so review stays mandatory. 8B is the on-prem default — 10× cheaper, one GPU — <em>because</em> the review gate catches its errors; 70B is the quality option when 4× H100 is available.</div>
+  </div>
+  <p><strong>Engineering checks:</strong> Go unit and PostgreSQL integration tests with the race detector, architecture-boundary checks (backend and frontend), 13 browser regressions — all green in GitHub Actions CI on the submitted commit.</p>
+  <p><strong>Value, cost and scale.</strong> Primary users: job-seekers who transferred money to a part-time-job or top-up offer, and family members helping them. A case is ≈ 870 input + 110 output tokens. At 10× volume — 1,000 → 10,000 cases/day — hosted 8B costs ≈ $1.1/day versus ≈ $10.5/day for 70B. Self-hosted cost is GPU-hours rather than tokens (4× H100 for 70B ≈ $16/h list price; 8B fits one GPU). The Go API is stateless apart from PostgreSQL; AI concurrency, daily quotas and storage caps are configuration.</p>
+</section>
+
+<!-- ============ LIMITATIONS ============ -->
+<section>
+  <h2><span class="n">6</span>Limitations</h2>
+  <ul>
+    <li>12 development cases are not a statistical benchmark; semantic review was done by one reviewer (the coding assistant), not independently.</li>
+    <li>No real users or victims yet; a 2–3 person pilot kit is ready but not run. No measured time saving.</li>
+    <li>Model identity is API metadata, not a weights audit. The 70B rerun was a second attempt on another day; the hosted gateway’s intermittent HTTP 400 remains a provider risk.</li>
+    <li>Regex masking is not anonymisation; no OCR (attachments are references only); no accounts or token recovery.</li>
+    <li>Not affiliated with OJK/IASC. It does not file reports, block accounts or promise refunds.</li>
+  </ul>
+</section>
+
+<!-- ============ REPRO ============ -->
+<section>
+  <h2><span class="n">7</span>Reproducibility</h2>
+<pre><span class="c"># app (Docker, any x86/ARM machine — tested on an 8 GB Mac)</span>
+cd track_2b &amp;&amp; make run                       <span class="c"># → http://localhost:8787, manual flow needs no AI</span>
+export LLM_NAME=swiss-ai/apertus-v1.5-8b LLM_BASE_URL=https://api.publicai.co/v1 LLM_API_KEY=…
+<span class="c"># model comparison (no server or database needed)</span>
+cd src/laporsiap_BE &amp;&amp; go run ./cmd/modelcompare          <span class="c"># dry run, 0 API calls</span>
+go run ./cmd/modelcompare -live                            <span class="c"># 24 requests, ≈ USD 0.03</span></pre>
+  <p>Evidence: <code>output/evaluation/model-compare-2026-10-13T11-47-19Z/</code> — <code>comparison.md</code>, <code>semantic-review.json</code>, per-case JSON, frozen fixture and prompt. Temperature 0, but hosted outputs can still vary. Commit <code>f66aa78</code> or later on <code>main</code>.</p>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section>
+  <h2><span class="n">8</span>Next steps</h2>
+  <div class="two">
+    <ul>
+      <li>Run Apertus 8B on our own GPU and complete the evidence checklist in <code>deploy/GPU-PROOF.txt</code>.</li>
+      <li>Run the pilot with 2–3 independent users; measure review time and corrections.</li>
+    </ul>
+    <ul>
+      <li>Partner with a victim-support organisation or legal-aid clinic as first operator.</li>
+      <li>OCR for transfer screenshots; accounts and token recovery for a real service.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="small"><strong>Coding assistant declaration.</strong> Built with Claude Code (Anthropic) for implementation, tests and documentation; design decisions, review and commits by the team. <strong>License:</strong> documentation CC-BY-4.0 · code Apache-2.0 · synthetic data CDLA-Permissive-2.0.</p>
+  <ol class="refs">
+    <li>OJK, Satgas PASTI press release, 1 Sep 2026 — ojk.go.id/id/berita-dan-kegiatan/info-terkini/Pages/Satgas-PASTI-Terima-25-Ribu-Pengaduan-Aktivitas-Keuangan-Ilegal-dan-IASC-Berhasil-Blokir-Dana-Terkait-Scam-Rp-724-Miliar.aspx</li>
+    <li>IASC portal — iasc.ojk.go.id · Apertus v1.5 70B model card — huggingface.co/swiss-ai/Apertus-v1.5-70B · Public AI docs — platform.publicai.co/docs</li>
+  </ol>
+</section>
+
+</body>
+</html>

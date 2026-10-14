@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#12483f"/>
-  <path d="M18 11h20l11 11v31H18a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3Z" fill="#f7fcf8"/>
-  <path d="M38 11v8a3 3 0 0 0 3 3h8L38 11Z" fill="#abcfc2"/>
-  <path d="M23 29h13M23 36h8" fill="none" stroke="#195b4d" stroke-width="3.5" stroke-linecap="round"/>
-  <circle cx="45" cy="46" r="13" fill="#f0ad4e" stroke="#12483f" stroke-width="3"/>
-  <path d="m38.5 46 4.5 4.5 8-9" fill="none" stroke="#12483f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="64" height="64" rx="16" fill="#7a1f2b"/>
+  <path d="M18 11h20l11 11v31H18a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3Z" fill="#ffffff"/>
+  <path d="M38 11v8a3 3 0 0 0 3 3h8L38 11Z" fill="#e9c9ce"/>
+  <path d="M23 29h13M23 36h8" fill="none" stroke="#7a1f2b" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="45" cy="46" r="13" fill="#d4a24c" stroke="#7a1f2b" stroke-width="3"/>
+  <path d="m38.5 46 4.5 4.5 8-9" fill="none" stroke="#5e1620" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

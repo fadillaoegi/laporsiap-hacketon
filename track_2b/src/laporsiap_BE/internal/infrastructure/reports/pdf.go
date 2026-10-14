@@ -97,17 +97,17 @@ func ReportPDF(c domain.Case, language string) ([]byte, error) {
 	p.AliasNbPages("")
 	p.SetHeaderFunc(func() {
 		p.SetFont("DM", "B", 11)
-		p.SetTextColor(23, 91, 80)
+		p.SetTextColor(122, 31, 43)
 		p.SetXY(18, 12)
 		p.CellFormat(174, 6, "LaporSiap", "", 0, "L", false, 0, "")
-		p.SetDrawColor(202, 221, 216)
+		p.SetDrawColor(231, 195, 201)
 		p.Line(18, 21, 192, 21)
 		p.SetY(27)
 	})
 	p.SetFooterFunc(func() {
 		p.SetXY(18, 280)
 		p.SetFont("DM", "", 8)
-		p.SetTextColor(82, 101, 110)
+		p.SetTextColor(95, 99, 104)
 		p.CellFormat(125, 5, label("Bahan bantu laporan - diperiksa pengguna", "Supporting report materials - reviewed by user"), "", 0, "L", false, 0, "")
 		p.CellFormat(49, 5, fmt.Sprintf("%d / {nb}", p.PageNo()), "", 0, "R", false, 0, "")
 	})
@@ -135,13 +135,13 @@ func ReportPDF(c domain.Case, language string) ([]byte, error) {
 			p.SetFont("DM", style, size)
 			p.SetX(18)
 			if quote {
-				p.SetFillColor(241, 246, 247)
-				p.SetTextColor(58, 78, 85)
+				p.SetFillColor(245, 245, 245)
+				p.SetTextColor(75, 71, 71)
 				p.SetX(22)
 			} else if bold {
-				p.SetTextColor(24, 60, 58)
+				p.SetTextColor(31, 35, 40)
 			} else {
-				p.SetTextColor(36, 60, 67)
+				p.SetTextColor(42, 46, 51)
 			}
 			p.CellFormat(width, lineHeight, line, "", 1, "L", quote, 0, "")
 		}
@@ -150,7 +150,7 @@ func ReportPDF(c domain.Case, language string) ([]byte, error) {
 	section := func(title string) {
 		room(24)
 		p.SetY(p.GetY() + 6)
-		p.SetDrawColor(202, 221, 216)
+		p.SetDrawColor(231, 195, 201)
 		p.Line(18, p.GetY(), 192, p.GetY())
 		p.SetY(p.GetY() + 5)
 		block(title, true, 13, false)

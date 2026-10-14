@@ -1,0 +1,47 @@
+{
+  "id": "direction-promise-id",
+  "language": "id",
+  "category": "direction-promise",
+  "requested_model": "swiss-ai/apertus-v1.5-70b",
+  "response_model": "swiss-ai/apertus-v1.5-70b",
+  "started_at": "2026-10-14T06:16:49Z",
+  "status": "contract_passed_review_pending",
+  "request_seconds": 0.825252916,
+  "usage": {
+    "input_tokens": 909,
+    "output_tokens": 100
+  },
+  "contract_passed": true,
+  "totals_match_expected": true,
+  "original_sources": [
+    {
+      "id": "M1",
+      "text": "Saya mengirim Rp147.000. Belum ada pengembalian uang.",
+      "sender": "Raka",
+      "sent_at": "10/10/2026, 11:00"
+    },
+    {
+      "id": "M2",
+      "text": "Perekrut menjanjikan komisi Rp50.000 besok.\n",
+      "sender": "Nadia",
+      "sent_at": "10/10/2026, 11:01"
+    }
+  ],
+  "events": [
+    {
+      "source_id": "M1",
+      "description": "Pengirim menyatakan telah mengirim Rp147.000 dan menyatakan belum ada pengembalian uang.",
+      "evidence": "Saya mengirim Rp147.000. Belum ada pengembalian uang."
+    },
+    {
+      "source_id": "M2",
+      "description": "Pengirim mengatakan perekrut menjanjikan komisi Rp50.000 besok; komisi belum dibayar.",
+      "evidence": "Perekrut menjanjikan komisi Rp50.000 besok.\n"
+    }
+  ],
+  "semantic_review_status": "pending_assistant_review",
+  "semantic_review_criteria": [
+    "Preserve sent direction and absence of refund.",
+    "Promise is not money received."
+  ]
+}

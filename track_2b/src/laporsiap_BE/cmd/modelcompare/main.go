@@ -58,6 +58,7 @@ func main() {
 	fixturePath := flag.String("fixture", "../../docs/evaluation/bilingual-safety-v1.json", "Original fictional evaluation fixture")
 	models := flag.String("models", "swiss-ai/apertus-v1.5-8b,swiss-ai/apertus-v1.5-70b", "Comma-separated Apertus models")
 	outRoot := flag.String("out", "../../output/evaluation", "Output root")
+	only := flag.String("cases", "", "Optional comma-separated case IDs to run (e.g. a rerun of provider-rejected cases)")
 	flag.Parse()
 	raw, err := os.ReadFile(*fixturePath)
 	if err != nil {
@@ -134,7 +135,16 @@ func main() {
 	safeName := regexp.MustCompile(`[^A-Za-z0-9.-]+`)
 	results := map[string][]Result{}
 	// Interleave models per case so provider load drift affects both equally.
+	selected := map[string]bool{}
+	for _, id := range strings.Split(*only, ",") {
+		if id = strings.TrimSpace(id); id != "" {
+			selected[id] = true
+		}
+	}
 	for i, item := range fixture.Items {
+		if len(selected) > 0 && !selected[item.ID] {
+			continue
+		}
 		for _, p := range providers {
 			r := run(p, item, cases[i])
 			write(safeName.ReplaceAllString(p.Model, "_")+"/"+item.ID+".json", r)
@@ -164,7 +174,7 @@ func main() {
 		}
 		summary[p.Model] = map[string]any{"cases": len(results[p.Model]), "contract_passed": passed, "failure_reasons": rules, "input_tokens": in, "output_tokens": outTok, "mean_request_seconds": secs / float64(len(results[p.Model]))}
 	}
-	write("summary.json", map[string]any{"fixture_version": fixture.Version, "fixture_sha256": hash, "prompt_version": apertus.PromptVersion, "prompt_sha256": apertus.PromptSHA256(), "path": "direct provider call (PrepareAIInput → Generate → RestoreEvidence); no API server or database", "timeout_seconds": 40, "retry_count": 0, "fallback_count": 0, "models": summary, "semantic_review": "pending_assistant_review", "limitations": []string{"Development fixture of 12 fictional cases; not a statistical benchmark.", "API model identity is metadata, not a weights audit.", "Request timing reflects a shared hosted endpoint at one point in time.", "No retries; provider failures remain in the denominator."}})
+	write("summary.json", map[string]any{"fixture_version": fixture.Version, "fixture_sha256": hash, "prompt_version": apertus.PromptVersion, "prompt_sha256": apertus.PromptSHA256(), "path": "direct provider call (PrepareAIInput → Generate → RestoreEvidence); no API server or database", "timeout_seconds": 40, "case_filter": *only, "retry_count": 0, "fallback_count": 0, "models": summary, "semantic_review": "pending_assistant_review", "limitations": []string{"Development fixture of 12 fictional cases; not a statistical benchmark.", "API model identity is metadata, not a weights audit.", "Request timing reflects a shared hosted endpoint at one point in time.", "No retries; provider failures remain in the denominator."}})
 	fmt.Println("Artifacts:", out)
 }
 

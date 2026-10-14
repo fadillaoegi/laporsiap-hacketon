@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LaporSiap — Poster</title>
+<style>
+@font-face { font-family: "DM Sans"; font-weight: 400; src: url("../../src/laporsiap_FE/public/fonts/dm-sans-400.ttf"); }
+@font-face { font-family: "DM Sans"; font-weight: 700; src: url("../../src/laporsiap_FE/public/fonts/dm-sans-700.ttf"); }
+@font-face { font-family: "Manrope"; font-weight: 700; src: url("../../src/laporsiap_FE/public/fonts/manrope-700.ttf"); }
+:root { --maroon: #7a1f2b; --deep: #2a0a10; --ink: #1e060a; --gold: #e2b45e; --red: #d0112b; --rose: #e9c9ce; --muted: #d9b8bd; }
+@page { size: 297mm 420mm; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { width: 297mm; height: 420mm; font-family: "DM Sans", sans-serif; color: #fff; overflow: hidden;
+  background: radial-gradient(120% 70% at 50% 30%, #5a1520 0%, #320a11 55%, var(--ink) 100%); position: relative; }
+.grain { position: absolute; inset: 0; background:
+  radial-gradient(circle at 15% 85%, rgba(208,17,43,.18), transparent 40%),
+  radial-gradient(circle at 90% 10%, rgba(226,180,94,.14), transparent 35%); }
+.wrap { position: relative; height: 100%; padding: 20mm 22mm 18mm; display: flex; flex-direction: column; }
+
+/* top bar */
+.top { display: flex; justify-content: space-between; align-items: center; font-size: 11pt; letter-spacing: .2em; font-weight: 700; color: var(--muted); }
+.flags { display: flex; align-items: center; gap: 4mm; }
+.id { width: 13mm; height: 8.7mm; background: linear-gradient(var(--red) 50%, #fff 50%); border-radius: 1mm; }
+.ch { width: 8.7mm; height: 8.7mm; background: var(--red); border-radius: 1mm; position: relative; }
+.ch::before, .ch::after { content: ""; position: absolute; background: #fff; }
+.ch::before { left: 3.55mm; top: 1.6mm; width: 1.6mm; height: 5.5mm; }
+.ch::after { top: 3.55mm; left: 1.6mm; height: 1.6mm; width: 5.5mm; }
+.x { color: var(--gold); font-size: 13pt; }
+.stripe { height: 2.2mm; margin: 7mm 0 0; flex-shrink: 0; background: linear-gradient(var(--red) 50%, #fff 50%); width: 100%; border-radius: .6mm; opacity: .95; }
+
+/* hero */
+.hero { position: relative; margin: 4mm auto 0; width: 150mm; height: 150mm; }
+.hero img { width: 100%; height: 100%; object-fit: cover;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 71%); mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 71%); }
+
+.wordmark { text-align: center; font-family: "Manrope"; font-weight: 700; font-size: 92pt; letter-spacing: -.035em; line-height: 1; margin-top: -4mm; }
+.wordmark span { color: var(--gold); }
+.headline { text-align: center; font-family: "Manrope"; font-weight: 700; font-size: 27pt; line-height: 1.2; margin: 7mm auto 0; max-width: 230mm; }
+.headline em { font-style: normal; color: var(--gold); }
+.id-line { text-align: center; color: var(--muted); font-size: 14pt; margin: 5mm auto 0; max-width: 220mm; line-height: 1.45; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; margin-top: 10mm; }
+.step { border: .35mm solid rgba(233,201,206,.28); border-radius: 5mm; padding: 6mm 6mm 5mm; background: rgba(255,255,255,.04); }
+.step b { display: block; color: var(--gold); font-size: 11pt; letter-spacing: .18em; }
+.step h3 { margin: 2mm 0 1.5mm; font-family: "Manrope"; font-size: 19pt; }
+.step p { margin: 0; color: var(--muted); font-size: 11.5pt; line-height: 1.4; }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 9mm; border-top: .35mm solid rgba(233,201,206,.25); border-bottom: .35mm solid rgba(233,201,206,.25); }
+.stat { padding: 6mm 4mm; text-align: center; }
+.stat + .stat { border-left: .35mm solid rgba(233,201,206,.18); }
+.stat .v { font-family: "Manrope"; font-weight: 700; font-size: 30pt; line-height: 1; }
+.stat .v.g { color: var(--gold); }
+.stat .l { color: var(--muted); font-size: 10pt; margin-top: 2.5mm; line-height: 1.35; }
+
+/* footer */
+.bottom { margin-top: auto; padding-top: 8mm; display: flex; justify-content: space-between; align-items: flex-end; }
+.tagline { font-family: "Manrope"; font-weight: 700; font-size: 24pt; line-height: 1.15; }
+.tagline span { color: var(--gold); }
+.meta { text-align: right; color: var(--muted); font-size: 10.5pt; line-height: 1.6; }
+.meta strong { color: #fff; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+  <div class="top">
+    <div>HACK APERTUS 2026 · TRACK 2B</div>
+    <div class="flags"><div class="id"></div><span class="x">×</span><div class="ch"></div></div>
+  </div>
+  <div class="stripe"></div>
+
+  <div class="hero"><img src="emblem-3d.png" alt=""></div>
+  <div class="wordmark">Lapor<span>Siap</span></div>
+  <div class="headline">From messy scam chats to <em>report-ready evidence</em> — drafted by Apertus, confirmed by you.</div>
+  <div class="id-line">Dari chat penipuan yang berantakan menjadi kronologi, daftar transfer, dan bukti yang siap dibawa ke kanal resmi OJK–IASC.</div>
+
+  <div class="steps">
+    <div class="step"><b>01</b><h3>Paste</h3><p>Chat, known transfers and evidence. The official channel stays one click away.</p></div>
+    <div class="step"><b>02</b><h3>Review</h3><p>Apertus drafts; every line is bound to its original message. You confirm each one.</p></div>
+    <div class="step"><b>03</b><h3>Report</h3><p>Export a clean PDF, TXT or ZIP for the official report.</p></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="v">637K+</div><div class="l">scam reports to IASC<br>Nov 2024 – Jul 2026 (OJK)</div></div>
+    <div class="stat"><div class="v g">12/12</div><div class="l">Apertus 8B outputs passed<br>the source-bound contract</div></div>
+    <div class="stat"><div class="v">$0.0001</div><div class="l">per case with<br>Apertus 8B</div></div>
+    <div class="stat"><div class="v g">0</div><div class="l">transfers, files or tokens<br>sent to the model</div></div>
+  </div>
+
+  <div class="bottom">
+    <div class="tagline">AI that drafts.<br><span>People who decide.</span></div>
+    <div class="meta"><strong>On-premise ready · open model · synthetic demo data</strong><br>github.com/fadillaoegi/laporsiap-hacketon<br>Not affiliated with OJK / IASC</div>
+  </div>
+</div>
+</body>
+</html>

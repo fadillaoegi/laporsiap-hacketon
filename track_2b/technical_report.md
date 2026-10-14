@@ -9,7 +9,7 @@ checking every line.
 - **Team:** FLdevBoo — M Fadil Muhtarom Laoegi
 - **Model:** Apertus v1.5 8B + 70B (`swiss-ai/apertus-v1.5-8b`, `swiss-ai/apertus-v1.5-70b`)
 - **Code:** https://github.com/fadillaoegi/laporsiap-hacketon (`track_2b/`)
-- **Demo:** `link to video`
+- **Demo:** https://youtu.be/HyisiQ0RvDw
 - **Maturity:** working prototype, validated with synthetic data only (no real users yet)
 - **Coding assistant:** built with Claude Code (Anthropic) for implementation,
   tests and documentation; design decisions, review and commits by the team.
